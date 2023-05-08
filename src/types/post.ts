@@ -4,9 +4,7 @@ export type Post = {
     slug: string;
     publishedAt: string;
     mainImage: {
-        asset: {
-            url: string;
-        };
+        url: string;
         alt: string;
     };
     category: string;
