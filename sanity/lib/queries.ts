@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {}] {
+export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {
     _id,
     title,
     "slug": slug.current,
