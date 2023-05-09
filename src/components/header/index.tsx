@@ -27,14 +27,20 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
+          <a href="#main" className="text-sm font-semibold leading-6 text-gray-900">
+            Main
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
+          <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
+            Services
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
+          <a href="#testimonials" className="text-sm font-semibold leading-6 text-gray-900">
+            Testimonials
+          </a>
+          <a href="#posts" className="text-sm font-semibold leading-6 text-gray-900">
+            Blog
+          </a>
+          <a href="#contact-us" className="text-sm font-semibold leading-6 text-gray-900">
+            Contact Us
           </a>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -68,22 +74,34 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <a
-                  href="#"
+                  href="/#main"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  Main
                 </a>
                 <a
-                  href="#"
+                  href="/#services"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
+                  Services
                 </a>
                 <a
-                  href="#"
+                  href="/#testimonials"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Company
+                  Testimonials
+                </a>
+                <a
+                  href="/#posts"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Blog
+                </a>
+                <a
+                  href="/#contact-us"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Contact Us
                 </a>
               </div>
               <div className="py-6">

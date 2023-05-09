@@ -26,3 +26,16 @@ export const postsPerPage = groq`
     excerpt,
 }`;
 
+export const testimonialsForHome = groq`
+    *[_type == "testimonial" && showOnHomepage == true] {
+    _id,
+    author,
+    "image": {
+        "alt": image.alt,
+        "url": image.asset->url
+    },
+    reason,
+    content,
+    date,
+}`;
+
