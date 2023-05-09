@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
+import { CustomerRequest } from '@/types/customerRequest'
+import { sendCustomerRequest } from '../../../../sanity/lib/clientRequests'
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -9,6 +11,20 @@ function classNames(...classes: string[]) {
 
 export default function ContactUs() {
     const [agreed, setAgreed] = useState(false)
+
+    const handleSubmit = async (event: any) => {
+        event.preventDefault()
+        const form = event.target as HTMLFormElement;
+        const formData = new FormData(form);
+        const customerRequest: CustomerRequest = {
+            name: formData.get('name') as string,
+            feedbackWay: (formData.get('feedbackWay') as string).toLowerCase(),
+            feedbackWayData: formData.get('feedbackWayData') as string,
+            message: formData.get('message') as string,
+        }
+
+        await sendCustomerRequest(customerRequest);
+    }
 
     return (
         <section id="contact-us" className="isolate relative bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -30,7 +46,7 @@ export default function ContactUs() {
                     Aute magna irure deserunt veniam aliqua magna enim voluptate.
                 </p>
             </div>
-            <form action="#" method="POST" className="mx-auto mt-10 max-w-xl sm:mt-12">
+            <form onSubmit={handleSubmit} className="mx-auto mt-10 max-w-xl sm:mt-12">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="sm:col-span-2">
                         <label htmlFor="name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -47,42 +63,30 @@ export default function ContactUs() {
                         </div>
                     </div>
                     <div className="sm:col-span-2">
-                        <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
-                            Email
-                        </label>
-                        <div className="mt-2.5">
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                autoComplete="email"
-                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
-                    </div>
-                    <div className="sm:col-span-2">
                         <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-gray-900">
                             Phone number
                         </label>
                         <div className="relative mt-2.5">
                             <div className="absolute inset-y-0 left-0 flex items-center">
-                                <label htmlFor="messenger" className="sr-only">
+                                <label htmlFor="feedbackWay" className="sr-only">
                                     Messenger
                                 </label>
                                 <select
-                                    id="messenger"
-                                    name="messenger"
+                                    id="feedbackWay"
+                                    name="feedbackWay"
                                     className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                                 >
+                                    <option>Email</option>
                                     <option>Telegram</option>
                                     <option>WhatsApp</option>
                                     <option>Viber</option>
+                                    <option>Instagram</option>
                                 </select>
                             </div>
                             <input
                                 type="tel"
-                                name="phone-number"
-                                id="phone-number"
+                                name="feedbackWayData"
+                                id="feedbackWayData"
                                 autoComplete="tel"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-32 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
