@@ -1,9 +1,11 @@
 import { defineField, defineType } from "sanity";
+import { MdOutlineReviews } from "react-icons/md"; 
 
 export default defineType({
     name: 'testimonial',
     title: 'Testimonial',
     type: 'document',
+    icon: MdOutlineReviews,
     fields: [
         defineField({
             name: 'author',

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { CustomerRequest } from '@/types/customerRequest'
 import { sendCustomerRequest } from '../../../../sanity/lib/clientRequests'
@@ -12,8 +12,9 @@ function classNames(...classes: string[]) {
 export default function ContactUs() {
     const [agreed, setAgreed] = useState(false)
 
-    const handleSubmit = async (event: any) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+
         const form = event.target as HTMLFormElement;
         const formData = new FormData(form);
         const customerRequest: CustomerRequest = {

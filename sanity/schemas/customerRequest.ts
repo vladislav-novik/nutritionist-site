@@ -1,9 +1,11 @@
 import { defineType } from "sanity";
+import { MdOutlineMessage } from "react-icons/md";
 
 export default defineType({
     name: 'customerRequest',
     title: 'Customer request',
     type: 'document',
+    icon: MdOutlineMessage,
     fields: [
         {
             name: 'name',

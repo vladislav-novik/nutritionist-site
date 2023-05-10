@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import { RiArticleLine } from 'react-icons/ri'
 
 export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  icon: RiArticleLine,
   fields: [
     defineField({
       name: 'title',
