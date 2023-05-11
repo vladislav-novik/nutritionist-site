@@ -1,13 +1,11 @@
-import Image from "next/image";
+import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 import { getPostsForHome } from "../../../../sanity/lib/posts";
-import { urlForImage } from "../../../../sanity/lib/image";
 import Link from "next/link";
 
 const POSTS_AMOUNT = 3;
 
 export default async function Posts() {
   const posts = await getPostsForHome(POSTS_AMOUNT);
-  console.log(posts);
 
   return (
     <div className="lg:py-32">
@@ -21,12 +19,18 @@ export default async function Posts() {
           {posts.map((post) => (
             <article key={post.slug} className="flex justify-between items-start flex-col">
               <div className="relative w-full group-hover:opacity-75">
-                <Image
+                {/* <Image
                   src={urlForImage(post.mainImage)?.url() ?? ''}
                   alt="alt"
                   className="h-auto w-full object-cover object-center sm:aspect-[2/1] lg:aspect-[3/2] rounded-2xl"
                   placeholder="blur"
-                />
+                /> */}
+                {/* @ts-expect-error Server Component */}
+                <PlaceholderedImage 
+                  src={post.mainImage}
+                  className="h-auto w-full object-cover object-center sm:aspect-[2/1] lg:aspect-[3/2] rounded-2xl"
+                  alt={post.title}
+                ></PlaceholderedImage>
               </div>
               <div className="max-w-xl">
                 <div className="text-xs flex gap-x-4 items-center mt-8">

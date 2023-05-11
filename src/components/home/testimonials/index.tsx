@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { getTestimonials } from "../../../../sanity/lib/testimonials"
 import { Carousel } from "flowbite-react/lib/esm/components";
 import { urlForImage } from "../../../../sanity/lib/image";
+import DefaultPlaceholderedImage from "@/components/shared/DefaultPlaceholderedImage";
 // import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 export default async function Testimonials() {
@@ -26,7 +26,18 @@ export default async function Testimonials() {
                 </blockquote>
               </div>
               <div className="col-end-1 w-16 lg:row-span-4 lg:w-52">
-                <Image src={urlForImage(testimonial.image)?.url() ?? ''} alt="alt" className="mx-auto h-auto rounded-xl" placeholder="blur" />
+                <DefaultPlaceholderedImage 
+                  src={urlForImage(testimonial.image)?.url() ?? ''}
+                  alt="alt"
+                  className="mx-auto h-auto rounded-xl"
+                />
+                
+                {/* <BlurredImage
+                  useDefaultPlaceholder={true}
+                  src={testimonial.image}
+                  className="mx-auto h-auto rounded-xl"
+                  alt={testimonial.author}
+                /> */}
               </div>
               <figcaption className="text-base lg:col-start-1 lg:row-start-3">
                 <div className="font-semibold text-gray-900">{testimonial.author}</div>

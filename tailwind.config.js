@@ -9,6 +9,5 @@ module.exports = {
   theme: {},
   plugins: [
     require("flowbite/plugin"),
-    require('@tailwindcss/line-clamp'),
   ],
 }

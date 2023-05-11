@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const { withPlaiceholder } = require("@plaiceholder/next");
+
+const nextConfig = withPlaiceholder({
   experimental: {
     appDir: true,
   },
@@ -9,6 +12,6 @@ const nextConfig = {
     // path: '/images/4osbkm4l',
     dangerouslyAllowSVG: true,
   },
-}
+});
 
 module.exports = nextConfig
