@@ -5,10 +5,7 @@ export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0
     title,
     "slug": slug.current,
     publishedAt,
-    "mainImage": {
-        "alt": mainImage.alt,
-        "url": mainImage.asset->url  
-    },
+    mainImage,
     "category": category->title,
     "tags": tags[]->title,
     excerpt,
@@ -30,12 +27,18 @@ export const testimonialsForHome = groq`
     *[_type == "testimonial" && showOnHomepage == true] {
     _id,
     author,
-    "image": {
-        "alt": image.alt,
-        "url": image.asset->url
-    },
+    image,
     reason,
     content,
     date,
 }`;
+
+export const services = groq`
+    *[_type == "service"] {
+    _id,
+    name,
+    description,
+    image,
+}`;
+
 

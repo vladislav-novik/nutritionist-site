@@ -7,6 +7,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
     // path: '/images/4osbkm4l',
+    dangerouslyAllowSVG: true,
   },
 }
 

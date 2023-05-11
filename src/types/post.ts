@@ -1,12 +1,12 @@
+import { Image } from 'sanity'
+
 export type Post = {
     _id: string;
     title: string;
     slug: string;
     publishedAt: string;
-    mainImage: {
-        url: string;
-        alt: string;
-    };
+    mainImage: Image;
     category: string;
     excerpt: string;
+    tags: string[];
 }
