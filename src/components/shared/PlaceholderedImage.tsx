@@ -27,8 +27,7 @@ export default async function BlurredImage(
   const { base64, img } = await getPlaiceholder(url);
 
   return (
-    <div>
-      <Image
+    <Image
         src={img.src}
         blurDataURL={base64}
         className={className}
@@ -36,6 +35,5 @@ export default async function BlurredImage(
         height={height}
         alt={alt ?? ""}
         placeholder="blur" />
-    </div>
   );
 }

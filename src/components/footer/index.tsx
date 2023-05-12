@@ -20,7 +20,7 @@ export const Footer = () => {
           <Link href={'#about'} className="text-gray-600 leading-6 text-sm">Contact</Link>
         </div>
       </nav>
-      <div className="flex items-center justify-center mt-10 space-x-10">
+      <div className="flex items-center justify-center mt-10 sm:space-x-10">
         <Link href="https://twitter.com/JeffreySunny1" className="text-gray-400">
           Twitter
         </Link>
