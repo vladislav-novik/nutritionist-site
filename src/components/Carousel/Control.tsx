@@ -1,41 +1,16 @@
-export enum ControlType {
-  Previous,
-  Next
-}
-
 type PropsType = {
-  controlType: ControlType;
+  direction: 'left' | 'right';
 }
 
-export default function Control({ controlType }: PropsType) {
-  const icon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="h-6 w-6">
-      {controlType === ControlType.Previous ? (<path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15.75 19.5L8.25 12l7.5-7.5" />) : (<path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.25 4.5l7.5 7.5-7.5 7.5" />)}
-    </svg>
-  );
+export default function Control({ direction }: PropsType) {
+  const icon = direction === 'right' ? (<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>) : 
+    (<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>);
 
   return (
-    <button
-      className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-      type="button">
-      <span className="inline-block h-8 w-8">
+    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-300/30 group-hover:bg-green-300/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-green-300 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
+      <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 text-green-300 dark:text-gray-800 sm:h-6 sm:w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
         {icon}
-      </span>
-      <span
-        className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >{controlType.toString()}</span>
-    </button>
+      </svg>
+    </span>
   );
 }

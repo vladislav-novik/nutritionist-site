@@ -9,7 +9,7 @@ export default async function HomeTestimonials() {
   const testimonials = await getTestimonials();
 
   return (
-    <div className="mx-auto max-w-7xl lg:px-8 h-full">
+    <div className="mx-auto max-w-7xl lg:px-8 h-full relative z-10">
       <TestimonialsCarousel width={width} testimonials={testimonials}></TestimonialsCarousel>
     </div>
   )
