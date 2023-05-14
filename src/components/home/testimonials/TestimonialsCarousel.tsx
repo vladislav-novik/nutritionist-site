@@ -35,7 +35,11 @@ export default function TestimonialsCarousel({ testimonials, width }: PropsType)
   // TODO: replace that fucking carousel with not working props to a normal one
   const customTheme: DeepPartial<FlowbiteCarouselTheme> = {
     item: {
-      wrapper: 'w-full flex-shrink-0 transform cursor-grab snap-center flex items-center'
+      wrapper: "w-full flex-shrink-0 transform cursor-grab snap-center flex items-center"
+    },
+    root: {
+      leftControl: "absolute top-0 left-0 flex h-full items-center justify-center px-4 focus:outline-none invisible sm:visible",
+      rightControl: "absolute top-0 right-0 flex h-full items-center justify-center px-4 focus:outline-none invisible sm:visible",
     },
     indicators: {
       base: "h-3 w-3 rounded-full bg-green-300/50 hover:bg-green-300 dark:bg-gray-800/50 dark:hover:bg-gray-800",
@@ -48,7 +52,7 @@ export default function TestimonialsCarousel({ testimonials, width }: PropsType)
   return (
     <Carousel theme={customTheme} slide={true} slideInterval={4000} leftControl={control('left')} rightControl={control('right')}>
       {testimonials.map(testimonial => (
-        <Testimonial key={testimonial._id} testimonial={testimonial}></Testimonial>
+        <Testimonial  key={testimonial._id} testimonial={testimonial}></Testimonial>
       ))}
     </Carousel>
   );
