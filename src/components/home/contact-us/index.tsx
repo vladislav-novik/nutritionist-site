@@ -15,7 +15,6 @@ export default function ContactUs() {
             <div className="flex gap-x-4 space-y-4">
               <dt className="flex-none">
                 <span className="sr-only"></span>
-                <Image src={telegramSvg} alt="alt" width={24} height={24}></Image>
               </dt>
               <dd>
                 +1 (555) 123-4567
@@ -24,7 +23,6 @@ export default function ContactUs() {
             <div className="flex gap-x-4 space-y-4">
               <dt className="flex-none">
                 <span className="sr-only"></span>
-                <Image src={telegramSvg} alt="alt" width={24} height={24}></Image>
               </dt>
               <dd>
                 example@example.com

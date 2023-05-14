@@ -1,4 +1,4 @@
-import { Post } from "@/types/post";
+import { PostOverview as PostOverviewType } from "@/types/post";
 import { getPostsForHome } from "../../../../sanity/lib/posts";
 import PostOverview from "./PostOverview";
 
@@ -9,7 +9,7 @@ export default async function PostsOverview() {
 
   return (
     <div className="mt-16 max-w-2xl mx-auto grid gap-y-20 gap-x-8 grid-cols-1 lg:grid-cols-3 lg:max-w-none lg:mx-0">
-      {posts.map((post: Post) => (
+      {posts.map((post: PostOverviewType) => (
         <PostOverview key={post.slug} post={post}></PostOverview>
       ))}
     </div>

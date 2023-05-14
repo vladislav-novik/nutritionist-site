@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Post } from "@/types/post";
+import { PostOverview } from "@/types/post";
 import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 
 type PropsType = {
-  post: Post;
+  post: PostOverview;
 };
 
 

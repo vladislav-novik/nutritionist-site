@@ -13,11 +13,11 @@ export default async function Home() {
   return (
     <>
       <main className="scroll-smooth">
-        <section id="main" className="overflow-hidden bg-white py-24 sm:py-32">
+        <section id="main" className="overflow-hidden bg-green-200 py-24 sm:py-32">
           <Main></Main>
         </section>
 
-        <section id="about" className="overflow-hidden bg-gradient-to-r from-emerald-400 to-teal-200 py-24 sm:py-32">
+        <section id="about" className="overflow-hidden bg-green-100 py-24 sm:py-32">
           <Main></Main>
         </section>
 

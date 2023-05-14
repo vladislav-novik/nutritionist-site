@@ -23,6 +23,19 @@ export const postsPerPage = groq`
     excerpt,
 }`;
 
+export const postBySlug = groq`
+    *[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    mainImage,
+    "category": category->title,
+    "tags": tags[]->title,
+    excerpt,
+    body,
+}`;
+
 export const testimonialsForHome = groq`
     *[_type == "testimonial" && showOnHomepage == true] {
     _id,

@@ -17,10 +17,10 @@ export const Main = () => {
         </div>
          {/* @ts-expect-error Server Component */}
         <PlaceholderedImage 
-          src={'/images/main.webp'}
-          width={2432}
-          height={1442}
-          className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+          src={'/images/patient-consulting-with-a-medical-professional.png'}
+          width={1280}
+          height={720}
+          className="w-full h-auto sm:w-[42rem] md:-ml-4 lg:-ml-0"
           alt="Maryia Novik"
         ></PlaceholderedImage>
       </div>
