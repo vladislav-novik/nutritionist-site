@@ -1,6 +1,6 @@
 import { Image } from 'sanity'
 
-export type PostOverview = {
+export type PostPreview = {
     _id: string;
     title: string;
     slug: string;
@@ -11,6 +11,6 @@ export type PostOverview = {
     tags: string[];
 }
 
-export type Post = PostOverview & {
+export type Post = PostPreview & {
     body: any;
 }

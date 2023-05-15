@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer className="bg-white mx-auto overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
       <nav className="columns-2 -mb-6 space-x-12 sm:flex sm:justify-center" aria-label="Footer">
         <div className="pb-6">
-          <Link href={'#about'} className="text-gray-600 leading-6 text-sm">About</Link>
+          <Link href={'/#main'} className="text-gray-600 leading-6 text-sm">Home</Link>
         </div>
         <div className="pb-6">
           <Link href={'#about'} className="text-gray-600 leading-6 text-sm">Services</Link>

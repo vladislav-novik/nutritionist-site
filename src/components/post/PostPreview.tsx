@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { PostOverview } from "@/types/post";
+import { PostPreview } from "@/types/post";
 import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
-import Image from "next/image";
+import Tag from "./Tag";
 
 type PropsType = {
-  post: PostOverview;
+  post: PostPreview;
 };
 
 
@@ -36,7 +36,7 @@ export default function PostOverview({ post }: PropsType) {
         <div className="flex flex-col gap-3">
           <div className="text-xs flex gap-x-4 items-center justify-center">
             {post.tags.map((tag) => (
-              <a key={tag} className="text-gray-600 bg-green-200 font-medium py-[0.375rem] px-3 rounded-full hover:bg-green-300 cursor-pointer">{tag}</a>
+              <Tag key={tag}>{tag}</Tag>
             ))}
           </div>
           <p className="text-xs text-gray-600 ">

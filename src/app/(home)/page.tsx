@@ -21,6 +21,7 @@ export default async function Home() {
       {/* @ts-expect-error Server Component */}
       <HomeTestimonials></HomeTestimonials>
       
+      {/* @ts-expect-error Server Component */}
       <HomePosts></HomePosts>
       
       <ContactUs></ContactUs>

@@ -12,7 +12,7 @@ export default function Header() {
     <header className="bg-white sticky top-0 z-20">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5">
+          <a href="/" className="-m-1.5">
             <span className="sr-only">Your Company</span>
             <Image src={'/images/vegetables.png'} width={36} height={36} alt="logo"></Image>
           </a>
@@ -28,19 +28,19 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#main" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/#main" className="text-sm font-semibold leading-6 text-gray-900">
             Main
           </a>
-          <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/#services" className="text-sm font-semibold leading-6 text-gray-900">
             Services
           </a>
-          <a href="#testimonials" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/#testimonials" className="text-sm font-semibold leading-6 text-gray-900">
             Testimonials
           </a>
-          <a href="#posts" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/#posts" className="text-sm font-semibold leading-6 text-gray-900">
             Blog
           </a>
-          <a href="#contact-us" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/#contact-us" className="text-sm font-semibold leading-6 text-gray-900">
             Contact Us
           </a>
         </div>

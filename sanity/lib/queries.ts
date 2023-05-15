@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {
+const postPreviewProjection = `
     _id,
     title,
     "slug": slug.current,
@@ -8,19 +8,18 @@ export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0
     mainImage,
     "category": category->title,
     "tags": tags[]->title,
-    excerpt,
+    excerpt
+`;
+
+export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {
+   ${postPreviewProjection}
 }`;
 
-export const postsPerPage = groq`
-    *[_type == "post"] | order(publishedAt desc) [$start...$end] {
-    _id,
-    title,
-    "slug": slug.current,
-    publishedAt,
-    mainImage,
-    "category": category->title,
-    "tags": tags[]->title,
-    excerpt,
+export const postsPerPage = groq`{
+    "posts": *[_type == "post"] | order(publishedAt desc) [$start...$end] {
+        ${postPreviewProjection}
+      },
+    "totalItems": count(*[_type == "post"])
 }`;
 
 export const postBySlug = groq`
@@ -53,5 +52,3 @@ export const services = groq`
     description,
     image,
 }`;
-
-
