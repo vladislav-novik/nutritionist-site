@@ -2,11 +2,11 @@ import { Service } from "@/types/service";
 import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 import { AiFillHeart } from "react-icons/ai";
 
-type PropsType = {
+type Props = {
   service: Service;
 };
 
-export default function ServiceOverview({ service }: PropsType) {
+export default function ServiceOverview({ service }: Props) {
   return (
     <div key={service.name} className="relative pl-[5rem]">
       <dt className="text-base font-semibold leading-7 text-gray-900">

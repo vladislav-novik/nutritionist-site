@@ -1,11 +1,12 @@
-import DefaultPlaceholderedImage from "@/components/shared/DefaultPlaceholderedImage";
+import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 import { Testimonial } from "@/types/testimonial";
+import { FaUserCircle } from "react-icons/fa";
 
-type PropsType = {
+type Props = {
   testimonial: Testimonial;
 };
 
-export default function Testimonial({ testimonial }: PropsType) {
+export default function Testimonial({ testimonial }: Props) {
   return (
     <figure
       className="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10 
@@ -16,13 +17,20 @@ export default function Testimonial({ testimonial }: PropsType) {
         </blockquote>
       </div>
       <div className="col-end-1 w-16 lg:row-span-4 lg:w-52">
-        <DefaultPlaceholderedImage
+      { testimonial.image ? (
+        /* @ts-expect-error Server Component */
+        <PlaceholderedImage
           src={testimonial.image}
           alt="alt"
           className="mx-auto h-auto rounded-xl"
           width={200}
           height={200}
-        />
+        />) : (
+          <div className="mx-auto h-auto rounded-xl">
+            <FaUserCircle className="mx-auto w-full h-auto text-green-300 opacity-80" />
+          </div>
+        )}
+        
       </div>
       <figcaption className="text-base lg:col-start-1 lg:row-start-3">
         <div className="font-semibold text-gray-700">{testimonial.author}</div>

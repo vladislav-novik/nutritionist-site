@@ -2,11 +2,11 @@ import { Post } from "../../types/post"
 import PlaceholderedImage from "../shared/PlaceholderedImage";
 import PostBody from "./PostBody";
 
-type PropsType = {
+type Props = {
   post: Post;
 };
 
-export default function Post({ post }: PropsType) {
+export default function Post({ post }: Props) {
   return (
     <main>
       <div className="sm:px-8 mt-16 lg:mt-32">

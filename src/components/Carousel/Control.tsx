@@ -1,8 +1,8 @@
-type PropsType = {
+type Props = {
   direction: 'left' | 'right';
 }
 
-export default function Control({ direction }: PropsType) {
+export default function Control({ direction }: Props) {
   const icon = direction === 'right' ? (<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>) : 
     (<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>);
 
