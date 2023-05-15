@@ -9,11 +9,6 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
     h4: ({ children }: any) => <h4>{children}</h4>,
     blockquote: ({ children }: any) => <blockquote>{children}</blockquote>,
     normal: ({ children }: any) => <p>{children}</p>,
-
-    // // Ex. 2: rendering custom styles
-    // customHeading: ({ children }: any) => (
-    //   <h2 className="text-lg text-primary text-purple-700">{children}</h2>
-    // ),
   },
 
   list: {
@@ -27,8 +22,11 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }: any) => {
       return (
-        // @ts-expect-error Server Component
-        <PlaceholderedImage src={value} width={1310} height={872}></PlaceholderedImage >
+        <figure>
+          {/* @ts-expect-error Server Component */  }
+          <PlaceholderedImage src={value} width={1000} height={667}></PlaceholderedImage >
+          {value.alt && <figcaption>{value.alt}</figcaption>}
+        </figure>
       );
     }
   },
