@@ -1,16 +1,11 @@
 import { getPostsPerPage } from "../../../sanity/lib/posts"
-import Pagination from "@/components/Pagination"
-import Posts from "@/components/post/PostPreview2"
 import { PostPreview } from "@/types/post";
+import PaginatedData from "@/components/Pagination/PaginatedData";
+import Posts from "@/components/post/PostPreview2"
 
 export default async function Page({ searchParams }: any) {
   const itemsPerPage: number = 2;
-
   let currentPage: number = 1;
-
-  if (Number(searchParams.page) < 1) {
-    currentPage = 1
-  }
 
   if (Number(searchParams.page) >= 1) {
     currentPage = Number(searchParams.page)
@@ -20,12 +15,11 @@ export default async function Page({ searchParams }: any) {
 
   return (
     <main className="max-w-7xl py-24 px-6 mx-auto">
-
       <div className="mb-32 text-gray-800 text-center md:text-left">
 
         <h2 className="text-3xl font-bold mb-12 text-center">Latest articles</h2>
 
-        <div>
+        <PaginatedData page={currentPage} totalItems={totalItems} urlPrefix={'/blog?page='} itemsPerPage={itemsPerPage}>
           {posts.map((post: PostPreview, index: number, arr: PostPreview[]) => (
             <>
               <div className="mb-6">
@@ -37,13 +31,9 @@ export default async function Page({ searchParams }: any) {
               )}
             </>
           ))}
-        </div>
+        </PaginatedData>
 
-        <div className="flex justify-center mt-20">
-          <Pagination urlPrefix={'/blog?page='} page={currentPage} totalItems={totalItems} itemsPerPage={itemsPerPage} />
-        </div>
       </div>
-
     </main>
   );
 }

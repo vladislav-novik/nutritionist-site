@@ -11,6 +11,15 @@ const postPreviewProjection = `
     excerpt
 `;
 
+const testimonialProjection = `
+    _id,
+    author,
+    image,
+    reason,
+    content,
+    date
+`;
+
 export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {
    ${postPreviewProjection}
 }`;
@@ -37,12 +46,14 @@ export const postBySlug = groq`
 
 export const testimonialsForHome = groq`
     *[_type == "testimonial" && showOnHomepage == true] {
-    _id,
-    author,
-    image,
-    reason,
-    content,
-    date,
+    ${testimonialProjection}
+}`;
+
+export const testimonialsPerPage = groq`{
+    "testimonials": *[_type == "testimonial"] | order(publishedAt desc) [$start...$end] {
+        ${testimonialProjection}
+      },
+    "totalItems": count(*[_type == "testimonial"])
 }`;
 
 export const services = groq`

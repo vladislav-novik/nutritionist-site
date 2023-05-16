@@ -17,14 +17,18 @@ export const Main = () => {
 
             </div>
           </div>
-          {/* @ts-expect-error Server Component */}
-          <PlaceholderedImage
-            src={'/images/patient-consulting-with-a-medical-professional.png'}
-            width={1280}
-            height={720}
-            className="w-full h-auto sm:w-[42rem] md:-ml-4 lg:-ml-0"
-            alt="Maryia Novik"
-          ></PlaceholderedImage>
+          
+          <div>
+            {/* @ts-expect-error Server Component */}
+            <PlaceholderedImage
+              src={'/images/patient-consulting-with-a-medical-professional.png'}
+              width={1280}
+              height={720}
+              className="w-full h-auto sm:w-[42rem] md:-ml-4 lg:-ml-0"
+              alt="Maryia Novik"
+            ></PlaceholderedImage>
+          </div>
+          
         </div>
       </div>
     </section>
