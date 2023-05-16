@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Image as SanityImage } from "sanity"
-import { urlForImage } from "../../../sanity/lib/image";
+import { urlForImage } from "@/sanity/lib/image";
 import { getPlaiceholder } from "plaiceholder";
 
 export default async function BlurredImage(

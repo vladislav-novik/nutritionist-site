@@ -1,5 +1,5 @@
 import { PostPreview } from "@/types/post";
-import { getPostsForHome } from "../../../../sanity/lib/posts";
+import { getPostsForHome } from "@/sanity/lib/posts";
 import PostOverview from "../../post/PostPreview";
 
 const POSTS_AMOUNT = 3;
@@ -18,13 +18,13 @@ export default async function HomePosts() {
 
         <div className="mt-20 max-w-2xl mx-auto grid gap-y-10 sm:gap-y-14 md:gap-y-16 gap-x-8 grid-cols-1 lg:grid-cols-3 lg:max-w-none lg:mx-0">
           {posts.map((post: PostPreview, index: number, arr: PostPreview[]) => (
-            <>
-              <PostOverview key={post.slug} post={post}></PostOverview>
+            <div key={post.slug}>
+              <PostOverview post={post}></PostOverview>
               {index !== arr.length - 1 && (
                 <hr
                   className="lg:hidden my-6 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>

@@ -8,8 +8,13 @@ import ContactUs from '@/components/home/contact-us'
 
 // const inter = Inter({ subsets: ['latin'] })
 
+type Props = {
+  params: {
+    lang: string,
+  }
+}
 
-export default async function Home() {
+export default async function Home({ params }: Props) {
   return (
     <main>
       <Main></Main>

@@ -1,4 +1,4 @@
-import { getServices } from '../../../../sanity/lib/services';
+import { getServices } from '@/sanity/lib/services';
 import Service from './ServiceOverview';
 
 export default async function ServicesOverview() {

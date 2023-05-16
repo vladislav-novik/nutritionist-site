@@ -1,7 +1,7 @@
 import PaginatedData from "@/components/Pagination/PaginatedData";
 import Testimonial from "@/components/home/testimonials/Testimonial";
 import { Testimonial as TestimonialType } from "@/types/testimonial";
-import { getTestimonialsPerPage } from "../../../../sanity/lib/testimonials";
+import { getTestimonialsPerPage } from "@/sanity/lib/testimonials";
 
 export default async function Page({ searchParams }: any) {
   const itemsPerPage: number = 2;

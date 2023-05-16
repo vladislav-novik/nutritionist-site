@@ -9,9 +9,11 @@ const nextConfig = withPlaiceholder({
 
   images: {
     domains: ['cdn.sanity.io'],
-    // path: '/images/4osbkm4l',
     dangerouslyAllowSVG: true,
   },
+
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
 });
 
 module.exports = nextConfig

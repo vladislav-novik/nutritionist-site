@@ -4,8 +4,13 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import LanguageSelector from '../LanguageSelector'
 
-export default function Header() {
+type Props = {
+  lang: string
+}
+
+export default function Header({ lang }: Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -45,9 +50,7 @@ export default function Header() {
           </a>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <LanguageSelector lang={lang} />
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

@@ -6,10 +6,10 @@ import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
-import { schema } from './sanity/schema'
+import { schema } from '@/sanity/schema'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import {apiVersion, dataset, projectId} from './sanity/env'
+import {apiVersion, dataset, projectId} from '@/sanity/env'
 
 export default defineConfig({
   basePath: '/studio',

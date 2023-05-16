@@ -1,5 +1,5 @@
 import Carousel from "@/components/Carousel";
-import { getTestimonials } from "../../../../sanity/lib/testimonials"
+import { getTestimonials } from "@/sanity/lib/testimonials"
 import Testimonial from "./Testimonial";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 

@@ -1,5 +1,5 @@
 import Post from "@/components/post/Post";
-import { getPostBySlug } from "../../../../sanity/lib/posts";
+import { getPostBySlug } from "@/sanity/lib/posts";
 
 type ParamsType = {
     slug: string;

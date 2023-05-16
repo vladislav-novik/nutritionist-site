@@ -1,7 +1,7 @@
 "use client"
 
 import { FormEvent } from "react";
-import { sendCustomerRequest } from "../../../../sanity/lib/clientRequests";
+import { sendCustomerRequest } from "@/sanity/lib/clientRequests";
 import { CustomerRequest } from "@/types/customerRequest";
 
 export default function ContactForm() {
