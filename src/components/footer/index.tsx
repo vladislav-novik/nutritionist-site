@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer () {
   return (
-    <footer className="bg-white mx-auto overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
+    <footer className="bg-green-200 mx-auto overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
       <nav className="columns-2 -mb-6 space-x-12 sm:flex sm:justify-center" aria-label="Footer">
         <div className="pb-6">
           <Link href={'/#main'} className="text-gray-600 leading-6 text-sm">Home</Link>

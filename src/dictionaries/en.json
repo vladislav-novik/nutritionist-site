@@ -1,0 +1,53 @@
+{
+    "sections": {
+        "main": {
+            "title": "Why Do You Need a Nutritionist",
+            "subtitle": "The Importance of Healthy Eating",
+            "description": "Achieving health and well-being starts with proper nutrition. Get personalized assistance from a nutritionist who will help you create a healthy diet, prevent diseases, and boost your energy. Enhance your life through balanced and quality nutrition with an expert in the field."
+        },
+        "about": {
+            "title": "Your Personal Guide to Healthy Nutrition: Name Lastname",
+            "subtitle": "Name Lastname",
+            "description": "My knowledge and experience will help you create a personalized meal plan based on your unique needs and goals, to achieve optimal health. Together, we will transform your life through proper nutrition and achieve remarkable results. I will support and inspire you at every stage, ensuring long-term positive changes."
+        },
+        "services": {
+            "title": "Health through Nutrition",
+            "subtitle": "Personalized Nutrition Services",
+            "description": "Optimize your nutrition by creating a personalized strategy under my guidance and embark on a journey towards improved health today.",
+            "service": [{
+                "title": "Individualized Meal Plan",
+                "description": "Receive a personalized meal plan based on your lifestyle, preferences, and goals. This plan will be optimized to provide you with all the necessary nutrients and support your overall health",
+                "icon": ""
+            }, {
+                "title": "Health Assessment",
+                "description": "Through an analysis of your current health status, including factors such as overall health, metabolic indicators, allergies, and individual needs, I will create an optimal nutrition strategy tailored to you.",
+                "icon": ""
+            }, {
+                "title": "Healthy Eating Habits Training",
+                "description": "Learn to develop healthy eating habits, including making the right food choices, portion control, and stress management. I will provide you with practical tools and advice to help you incorporate these habits into your daily life.",
+                "icon": ""
+            }]
+        },
+        "testimonials": {
+            "title": "Client Testimonials",
+            "subtitle": "Inspiring Success Stories",
+            "description": "Discover how our clients have achieved remarkable results and improved their health. Read their heartfelt testimonials that will inspire you on your journey to a healthy lifestyle."
+        },
+        "articles": {
+            "title": "My Articles",
+            "subtitle": "Healthy Eating and Well-being",
+            "description": "Receive valuable tips and insights about healthy eating and well-being in my articles."
+        },
+        "contactMe": {
+            "title": "Contact Me",
+            "description": "If you have any questions, comments, or would like to schedule a consultation, please get in touch with me. Fill out the form below, and I will contact you as soon as possible. Your feedback and input are important to me.",
+            "form": {
+                "name": "Name",
+                "email": "Email",
+                "message": "Message",
+                "submit": "Submit"
+            }
+        }
+    }
+}
+

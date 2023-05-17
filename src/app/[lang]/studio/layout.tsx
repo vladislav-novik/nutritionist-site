@@ -10,7 +10,7 @@ export default function Layout({
   children,
 }: Props) {
   return (
-    <html lang="en">
+  <html lang="en">
     <body className={openSans.className}>
       {children}
     </body>

@@ -1,14 +1,24 @@
 import PaginatedData from "@/components/Pagination/PaginatedData";
-import Testimonial from "@/components/home/testimonials/Testimonial";
+import Testimonial from "@/components/home/Testimonials/Testimonial";
 import { Testimonial as TestimonialType } from "@/types/testimonial";
 import { getTestimonialsPerPage } from "@/sanity/lib/testimonials";
 
-export default async function Page({ searchParams }: any) {
+export function generateStaticParams() {
+  return [{ page: '1' }];
+}
+
+type Props = {
+  params: {
+    page: string
+  }
+}
+
+export default async function Page({ params }: Props) {
   const itemsPerPage: number = 2;
   let currentPage: number = 1;
 
-  if (Number(searchParams.page) >= 1) {
-    currentPage = Number(searchParams.page)
+  if (Number(params.page) >= 1) {
+    currentPage = Number(params.page)
   }
 
   const { testimonials, totalItems } = await getTestimonialsPerPage(currentPage, itemsPerPage)

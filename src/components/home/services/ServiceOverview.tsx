@@ -1,5 +1,4 @@
 import { Service } from "@/types/service";
-import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 import { AiFillHeart } from "react-icons/ai";
 
 type Props = {
