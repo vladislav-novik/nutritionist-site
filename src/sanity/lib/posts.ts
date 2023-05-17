@@ -1,5 +1,5 @@
 import { Post, PostPreview } from "@/types/post";
-import { postBySlug, postsForHome, postsPerPage } from "./queries"
+import { postBySlug, postsForHome, posts } from "./queries"
 import client from "./client"
 
 export async function getPostsForHome(amount: number): Promise<PostPreview[]> {
@@ -10,11 +10,8 @@ export async function getPostsForHome(amount: number): Promise<PostPreview[]> {
     return posts;
 }
 
-export async function getPostsPerPage(page: number, amount: number): Promise<{totalItems: number, posts: PostPreview[]}> {
-    const result = await client.fetch<{totalItems: number, posts: PostPreview[]}>(postsPerPage, {
-        start: (page - 1) * amount,
-        end: page * amount
-    })
+export async function getPosts(): Promise<PostPreview[]> {
+    const result = await client.fetch<PostPreview[]>(posts)
 
     return result;
 }

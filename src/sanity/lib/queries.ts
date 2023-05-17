@@ -24,12 +24,17 @@ export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0
    ${postPreviewProjection}
 }`;
 
-export const postsPerPage = groq`{
-    "posts": *[_type == "post"] | order(publishedAt desc) [$start...$end] {
-        ${postPreviewProjection}
-      },
-    "totalItems": count(*[_type == "post"])
+export const posts = groq`*[_type == "post"] | order(publishedAt desc) {
+    ${postPreviewProjection}
+  
 }`;
+
+// export const postsPerPage = groq`{
+//     "posts": *[_type == "post"] | order(publishedAt desc) [$start...$end] {
+//         ${postPreviewProjection}
+//       },
+//     "totalItems": count(*[_type == "post"])
+// }`;
 
 export const postBySlug = groq`
     *[_type == "post" && slug.current == $slug][0] {

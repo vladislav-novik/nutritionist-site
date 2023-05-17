@@ -1,6 +1,4 @@
 import { PostPreview } from "@/types/post";
-import PlaceholderedImage from "../shared/PlaceholderedImage";
-import Tag from "./Tag";
 
 type Props = {
   post: PostPreview;
@@ -8,32 +6,40 @@ type Props = {
 
 export default function Component({ post }: Props) {
   return (
-    <article className="flex flex-wrap mb-6">
-      <div className="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-        <div
-          className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mb-6">
-          {/* @ts-expect-error Server Component */}
-          <PlaceholderedImage src={post.mainImage} width={600} height={300} className="w-full" />
+    <article key={post._id} className="md:grid md:grid-cols-4 md:items-baseline">
+      <div className="md:col-span-3 group relative flex flex-col items-start">
+        <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+          <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
+          <a href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
+            <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+            <span className="relative z-10">{post.title}</span>
+          </a>
+        </h2>
+        <time className="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5" dateTime="2022-09-05">
+          <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
+            <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+          </span>
+          September 5, 2022
+        </time>
+        <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{post.excerpt}</p>
+        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
+          Read article
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            className="ml-1 h-4 w-4 stroke-current"
+          >
+            <path
+              d="M6.75 5.75 9.25 8l-2.5 2.25"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
         </div>
       </div>
-
-      <div className="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
-        <h5 className="text-lg font-bold mb-3">{post.title}</h5>
-        <div className="text-xs gap-x-4 mb-3">
-          {post.tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </div>
-        <p className="text-gray-500 mb-6">
-          <small>Published <time className="text-gray-500 underline" dateTime={post.publishedAt}>
-            <u>{new Date(post.publishedAt).toLocaleDateString('en-En', { month: 'narrow', day: 'numeric', year: 'numeric' })}</u>
-          </time>
-          </small>
-        </p>
-        <p className="text-gray-500">
-          {post.excerpt}
-        </p>
-      </div>
+      <time className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500" dateTime="2022-09-05">September 5, 2022</time>
     </article>
   );
 }
