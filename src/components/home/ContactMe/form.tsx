@@ -1,42 +1,19 @@
 "use client"
 
-import { FormEvent } from "react";
-import { sendCustomerRequest } from "@/sanity/lib/clientRequests";
-import { CustomerRequest } from "@/types/customerRequest";
-
-// async function handleSubmit(e: any) {
-//   "use server"
-
-//   console.log('handleSubmit', e)
-// }
+import { submitContact } from "@/app/[lang]/(home)/action";
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
 export default function ContactForm() {
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const { pending } = useFormStatus();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const customerRequest: CustomerRequest = {
-      name: formData.get('name') as string,
-      feedbackWay: (formData.get('feedbackWay') as string).toLowerCase(),
-      feedbackWayData: formData.get('feedbackWayData') as string,
-      message: formData.get('message') as string,
-    }
-
-    const result = await fetch('/api/home', {
-      method: 'POST',
-      body: JSON.stringify(customerRequest),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-
-    console.log('result', result)
-    // await sendCustomerRequest(customerRequest);
+  async function handle(e: FormData) {
+    console.log('client handle', e)
+    const result = await submitContact(e)
+    console.log(result)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
+    <form action={handle} className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
       <div className="max-w-xl mx-auto lg:max-w-lg lg:mr-0">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2">

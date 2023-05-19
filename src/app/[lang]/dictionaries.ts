@@ -1,5 +1,5 @@
 // import 'server-only';
-import { locales } from '@/helpers/locale.helper';
+import { locales } from '@/utils/locales';
 
 export type ValidLocale = typeof locales[number];
 

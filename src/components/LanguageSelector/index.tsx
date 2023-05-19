@@ -1,6 +1,6 @@
 "use client"
 
-import { locales } from "@/helpers/locale.helper";
+import { locales } from "@/utils/locales";
 import Link from "next/link";
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
