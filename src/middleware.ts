@@ -6,6 +6,10 @@ export function middleware(request: NextRequest) {
   // Get the pathname of the URL
   let pathname = request.nextUrl.pathname
 
+  if (pathname === '/studio') {
+    return;
+  }
+
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = locales.every(
     (locale) => {

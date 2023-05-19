@@ -13,9 +13,9 @@ type Props = {
   }
 }
 
-export async function generateStaticParams() {
-  return [{ lang: 'ru' }, { lang: 'by' }, { lang: 'en' }];
-}
+// export async function generateStaticParams() {
+//   return [{ lang: 'ru' }, { lang: 'by' }, { lang: 'en' }];
+// }
 
 export default function Layout({
   children,

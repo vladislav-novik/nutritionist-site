@@ -4,16 +4,16 @@ const { withPlaiceholder } = require("@plaiceholder/next");
 
 const nextConfig = withPlaiceholder({
   experimental: {
-    appDir: true,
+    serverActions: true,
   },
 
   images: {
     domains: ['cdn.sanity.io'],
     dangerouslyAllowSVG: true,
   },
-
-  skipTrailingSlashRedirect: true,
+  
   skipMiddlewareUrlNormalize: true,
+  skipTrailingSlashRedirect: true,
 });
 
 module.exports = nextConfig

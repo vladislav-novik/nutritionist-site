@@ -11,17 +11,20 @@ type PropsType = {
 export default function PostOverview({ post }: PropsType) {
   return (
     <article key={post.slug} className="relative group">
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-      <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
-        {/* @ts-expect-error Server Component */}
-        <PlaceholderedImage
-          src={post.mainImage}
-          className="h-auto w-full rounded-2xl object-contain object-center aspect-[2/1] lg:aspect-[3/2] lg:object-cover z-10"
-          width={600}
-          height={300}
-          alt={post.title}
-        ></PlaceholderedImage>
-      </Link>
+      {/* <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div> */}
+      <div className="w-full rounded-2xl ring-inset ring-1 ring-gray-900/10">
+      {/* border border-gray-900/10 */}
+        <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
+          {/* @ts-expect-error Server Component */}
+          <PlaceholderedImage
+            src={post.mainImage}
+            className="h-auto w-full rounded-2xl object-contain object-center aspect-[2/1] lg:aspect-[3/2] lg:object-cover bg-gray-100"
+            width={600}
+            height={300}
+            alt={post.title}
+          ></PlaceholderedImage>
+        </Link>
+      </div>
 
       <div className="md:col-span-3  relative flex flex-col items-start">
         <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -48,9 +51,9 @@ export default function PostOverview({ post }: PropsType) {
           >
             <path
               d="M6.75 5.75 9.25 8l-2.5 2.25"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
         </div>
