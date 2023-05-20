@@ -5,6 +5,7 @@ import { getDictionary } from "@/app/[lang]/dictionaries";
 import SectionHeader from "@/components/Section/Header";
 import SectionSubHeader from "@/components/Section/Subheader";
 import SectionDescription from "@/components/Section/Description";
+import Link from "next/link";
 
 const POSTS_AMOUNT = 3;
 type Props = {
@@ -31,6 +32,10 @@ export default async function HomePosts({ lang }: Props) {
           {posts.map((post: PostPreview) => (
             <PostOverview key={post.slug} post={post}></PostOverview>
           ))}
+        </div>
+
+        <div className="mt-10 w-full text-center text-green-500">
+          <Link href={'/articles'}>{dict.sections.articles.readArticle}</Link>
         </div>
       </div>
     </section>

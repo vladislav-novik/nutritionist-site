@@ -1,6 +1,6 @@
 import { PostPreview } from "@/types/post";
 import Link from "next/link";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import ReadArticleButton from "./ReadArticleButton";
 
 type Props = {
   post: PostPreview;
@@ -24,10 +24,7 @@ export default function Component({ post }: Props) {
           September 5, 2022
         </time>
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{post.excerpt}</p>
-        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-          Read article
-          <MdOutlineKeyboardArrowRight className="ml-1 h-3 w-3 stroke-current" />
-        </div>
+        <ReadArticleButton>Read article</ReadArticleButton>
       </div>
       <time className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500" dateTime="2022-09-05">September 5, 2022</time>
     </article>
