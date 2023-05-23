@@ -8,6 +8,7 @@ import SectionDescription from "@/components/Section/Description";
 import Link from "next/link";
 
 const POSTS_AMOUNT = 3;
+
 type Props = {
   lang: string,
 }
@@ -30,12 +31,12 @@ export default async function HomePosts({ lang }: Props) {
 
         <div className="max-w-4xl mx-auto mt-20 space-y-20">
           {posts.map((post: PostPreview) => (
-            <PostOverview key={post.slug} post={post}></PostOverview>
+            <PostOverview key={post.slug} post={post} dict={dict}></PostOverview>
           ))}
         </div>
 
         <div className="mt-10 w-full text-center text-green-500">
-          <Link href={'/articles'}>{dict.sections.articles.readArticle}</Link>
+          <Link href={'/articles'}>{dict.btn.readArticle}</Link>
         </div>
       </div>
     </section>

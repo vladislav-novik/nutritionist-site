@@ -2,6 +2,7 @@ import { getPosts } from "@/sanity/lib/posts"
 import { PostPreview } from "@/types/post";
 import PostsPreview from "@/components/post/PostPreview2"
 import { getDictionary } from "../dictionaries";
+import PageWrapper from "@/components/Animation/PageWrapper";
 
 type Props = {
   params: {
@@ -14,7 +15,8 @@ export default async function Page({ params }: Props) {
   const posts = await getPosts()
 
   return (
-    <div className="text-gray-800">
+    <PageWrapper>
+      <div className="text-gray-800">
       <h2 className="text-2xl font-bold text-center">{dict.sections.articles.title}: {dict.sections.articles.subtitle}</h2>
       <p className="leading-8 text-lg mt-2 text-center">{dict.sections.articles.description}</p>
 
@@ -28,5 +30,6 @@ export default async function Page({ params }: Props) {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 }

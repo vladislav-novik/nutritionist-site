@@ -6,10 +6,11 @@ import ReadArticleButton from "./ReadArticleButton";
 
 type PropsType = {
   post: PostPreview;
+  dict: any;
 };
 
 
-export default function PostOverview({ post }: PropsType) {
+export default function PostOverview({ post, dict }: PropsType) {
   return (
     <article className="flex flex-col gap-8 lg:flex-row relative">
       <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:flex-shrink-0 lg:w-64 lg:aspect-[1/1]">
@@ -40,7 +41,7 @@ export default function PostOverview({ post }: PropsType) {
             </h3>
             <p className="text-gray-600 leading-6 text-sm mt-5">{post.excerpt}</p>
             <Link href={`articles/${encodeURIComponent(post.slug)}`} aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-              <ReadArticleButton>Read article</ReadArticleButton>
+              <ReadArticleButton>{dict.btn.readMore}</ReadArticleButton>
             </Link>
           </div>
         </div>

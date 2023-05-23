@@ -5,6 +5,8 @@ import HomePosts from '@/components/home/Articles/HomePosts'
 import HomeTestimonials from '@/components/home/Testimonials/HomeTestimonials'
 import HomeServices from '@/components/home/Services'
 import ContactUs from '@/components/home/ContactMe'
+import PageWrapper from '@/components/Animation/PageWrapper'
+import SectionWrapper from '@/components/Animation/SectionWrapper'
 
 type Props = {
   params: {
@@ -14,23 +16,34 @@ type Props = {
 
 export default async function Home({ params }: Props) {
   return (
-    <main>
-      {/* @ts-expect-error Server Component */}
-      <About lang={params.lang}></About>
+    <PageWrapper>
+      <main>
+        {/* @ts-expect-error Server Component */}
+        <About lang={params.lang}></About>
 
-      {/* <Main lang={params.lang}></Main> */}
+        {/* <Main lang={params.lang}></Main> */}
 
-      {/* @ts-expect-error Server Component */}
-      <HomeServices lang={params.lang}></HomeServices>
+        <SectionWrapper>
+          {/* @ts-expect-error Server Component */}
+          <HomeServices lang={params.lang}></HomeServices>
+        </SectionWrapper>
 
-      {/* @ts-expect-error Server Component */}
-      <HomeTestimonials lang={params.lang}></HomeTestimonials>
+        <SectionWrapper>
+          {/* @ts-expect-error Server Component */}
+          <HomeTestimonials lang={params.lang}></HomeTestimonials>
+        </SectionWrapper>
 
-      {/* @ts-expect-error Server Component */}
-      <HomePosts lang={params.lang}></HomePosts>
+        <SectionWrapper>
+          {/* @ts-expect-error Server Component */}
+          <HomePosts lang={params.lang}></HomePosts>
+        </SectionWrapper>
 
-      {/* @ts-expect-error Server Component */}
-      <ContactUs lang={params.lang}></ContactUs>
-    </main>
+        <SectionWrapper>
+          {/* @ts-expect-error Server Component */}
+          <ContactUs lang={params.lang}></ContactUs>
+        </SectionWrapper>
+
+      </main>
+    </PageWrapper>
   )
 }

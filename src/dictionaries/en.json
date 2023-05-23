@@ -36,9 +36,7 @@
         "articles": {
             "title": "My Articles",
             "subtitle": "Healthy Eating and Well-being",
-            "description": "Receive valuable tips and insights about healthy eating and well-being in my articles.",
-            "readArticle": "Read article",
-            "readMore": "Read more"
+            "description": "Receive valuable tips and insights about healthy eating and well-being in my articles."
         },
         "contactMe": {
             "title": "Contact Me",
@@ -50,6 +48,10 @@
                 "submit": "Submit"
             }
         }
+    },
+    "btn": {
+        "readArticle": "Read article",
+        "readMore": "Read more"
     }
 }
 
