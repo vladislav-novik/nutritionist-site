@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
 import Image from 'next/image'
 import LanguageSelector from '../LanguageSelector'
-import Link from 'next/link'
+import MobilePanel from './MobilePanel'
+import NavLinks from './NavLinks'
+import { Squash as Hamburger } from 'hamburger-react'
 
 type Props = {
   lang: string
@@ -15,104 +16,33 @@ export default function Header({ lang }: Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white sticky top-0 z-20 shadow-md shadow-slate-900/5">
+    <header className="bg-white max-h-16 my-auto sticky top-0 z-20 shadow-md shadow-slate-900/5">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
+        <div className="flex md:flex-1">
           <a href="/" className="-m-1.5">
             <span className="sr-only">Your Company</span>
             <Image src={'/images/vegetables.png'} width={36} height={36} alt="logo"></Image>
           </a>
         </div>
-        <div className="flex lg:hidden">
-          <button
+        <div className="flex md:hidden">
+          {/* <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
+          ></button> */}
+          <span className="sr-only">Open main menu</span>
+          <div className="flex items-center justify-center text-green-600 w-10 h-10">
+            <Hamburger rounded size={20} toggled={mobileMenuOpen} toggle={() => setMobileMenuOpen(!mobileMenuOpen)}  aria-hidden="true" />
+          </div>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#main" className="text-sm font-semibold leading-6 text-gray-900">
-            Main
-          </a>
-          <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
-            Services
-          </a>
-          <a href="#testimonials" className="text-sm font-semibold leading-6 text-gray-900">
-            Testimonials
-          </a>
-          <a href="#posts" className="text-sm font-semibold leading-6 text-gray-900">
-            Blog
-          </a>
-          <a href="#contact-us" className="text-sm font-semibold leading-6 text-gray-900">
-            Contact Us
-          </a>
+        <div className="hidden md:flex md:gap-x-12">
+          <NavLinks mobileMenu={false} />
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden md:flex md:flex-1 md:justify-end">
           <LanguageSelector lang={lang} />
         </div>
       </nav>
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <a
-                  href="/#main"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Main
-                </a>
-                <a
-                  href="/#services"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Services
-                </a>
-                <a
-                  href="/#testimonials"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Testimonials
-                </a>
-                <a
-                  href="/#posts"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Blog
-                </a>
-                <a
-                  href="/#contact-us"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Contact Us
-                </a>
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
-              </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+      <MobilePanel open={mobileMenuOpen} closeHandler={() => setMobileMenuOpen(false)} ></MobilePanel>
     </header>
   )
 }

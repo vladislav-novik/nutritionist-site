@@ -18,7 +18,7 @@ export default async function HomePosts({ lang }: Props) {
   const dict = await getDictionary(lang)
 
   return (
-    <section id="posts" className="bg-white">
+    <section id="articles" className="bg-white">
       {/* #ffefff */}
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
         <div className="text-center max-w-2xl mx-auto">
