@@ -6,9 +6,9 @@ type Props = {
     children: React.ReactNode
 }
 
-export default function PageWrapper({ children }: Props) {
+export default function PageAnimation({ children }: Props) {
     return (
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
             <motion.div
                 initial={{opacity: 0, y: 15}}
                 animate={{opacity: 1, y: 0}}

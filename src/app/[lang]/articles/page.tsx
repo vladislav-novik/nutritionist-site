@@ -2,7 +2,7 @@ import { getPosts } from "@/sanity/lib/posts"
 import { PostPreview } from "@/types/post";
 import PostsPreview from "@/components/post/PostPreview2"
 import { getDictionary } from "../dictionaries";
-import PageWrapper from "@/components/Animation/PageWrapper";
+import PageWrapper from "@/components/Animation/PageAnimation";
 
 type Props = {
   params: {

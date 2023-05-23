@@ -41,7 +41,7 @@ export default function PostOverview({ post, dict }: PropsType) {
             </h3>
             <p className="text-gray-600 leading-6 text-sm mt-5">{post.excerpt}</p>
             <Link href={`articles/${encodeURIComponent(post.slug)}`} aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-              <ReadArticleButton>{dict.btn.readMore}</ReadArticleButton>
+              <ReadArticleButton>{dict.btn.readArticle}</ReadArticleButton>
             </Link>
           </div>
         </div>
