@@ -23,7 +23,7 @@ export default function Layout({
 }: Props) {
   return (
     <html lang={params.lang}>
-      <body className={openSans.className}>
+      <body className={`relative ${openSans.className}`}>
         <Header lang={params.lang}></Header>
         {children}
         <Footer></Footer>
