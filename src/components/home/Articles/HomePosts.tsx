@@ -20,7 +20,7 @@ export default async function HomePosts({ lang }: Props) {
   const dict = await getDictionary(lang)
 
   return (
-    <Section id="articles" className="bg-zinc-50">
+    <Section id="articles" className="bg-zinc-100">
       <SectionAnimation>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">

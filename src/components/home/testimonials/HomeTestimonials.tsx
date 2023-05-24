@@ -21,7 +21,7 @@ export default async function HomeTestimonials({ lang }: Props) {
     <Section id="testimonials" className="bg-white">
       <div className="relative w-full h-full">
         <SectionAnimation>
-          <div className="mx-auto max-w-7xl py-20 lg:py-24 px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="w-full text-left lg:text-center">
               <SectionHeader>{dict.sections.testimonials.title}</SectionHeader>
               <SectionSubHeader>{dict.sections.testimonials.subtitle}</SectionSubHeader>
