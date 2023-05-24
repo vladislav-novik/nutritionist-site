@@ -20,15 +20,13 @@ export default async function HomePosts({ lang }: Props) {
   const dict = await getDictionary(lang)
 
   return (
-    <Section id="articles" className="bg-white">
+    <Section id="articles" className="bg-zinc-50">
       <SectionAnimation>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <SectionHeader>{dict.sections.articles.title}</SectionHeader>
             <SectionSubHeader>{dict.sections.articles.subtitle}</SectionSubHeader>
             <SectionDescription>{dict.sections.articles.description}</SectionDescription>
-            {/* <h2 className="text-2xl leading-8 font-bold md:text-4xl -tracking-tight">{dict.sections.articles.title}:{dict.sections.articles.subtitle}</h2>
-          <p className="leading-8 text-lg mt-2">{dict.sections.articles.description}</p> */}
           </div>
 
           <div className="max-w-4xl mx-auto mt-20 space-y-20">
@@ -37,7 +35,7 @@ export default async function HomePosts({ lang }: Props) {
             ))}
           </div>
 
-          <div className="mt-20 w-full text-center text-green-500">
+          <div className="mt-20 w-full text-center text-emerald-500">
             <Link href={'/articles'}>{dict.btn.readMore}</Link>
           </div>
         </div>

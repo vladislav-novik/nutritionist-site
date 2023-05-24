@@ -28,8 +28,7 @@ export default function PostOverview({ post, dict }: PropsType) {
       </div>
       <div>
         <div className="group relative cursor-pointer">
-          <Link className="absolute cursor-pointer -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" href={`articles/${post.slug}`}>
-            {/* <span className="absolute cursor-pointer -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></span> */}
+          <Link className="absolute cursor-pointer -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl" href={`articles/${post.slug}`}>
           </Link>
 
           <div className="text-sm flex gap-x-4 items-center relative mt-6">
@@ -40,7 +39,8 @@ export default function PostOverview({ post, dict }: PropsType) {
               <Link href={`articles/${encodeURIComponent(post.slug)}`}>{post.title}</Link>
             </h3>
             <p className="text-gray-600 leading-6 text-sm mt-5">{post.excerpt}</p>
-            <Link href={`articles/${encodeURIComponent(post.slug)}`} aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
+            <Link href={`articles/${encodeURIComponent(post.slug)}`} aria-hidden="true"
+              className="relative z-10 mt-4 flex items-center text-sm font-medium text-emerald-500">
               <ReadArticleButton>{dict.btn.readArticle}</ReadArticleButton>
             </Link>
           </div>

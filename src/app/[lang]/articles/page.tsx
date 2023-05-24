@@ -24,7 +24,7 @@ export default async function Page({ params }: Props) {
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {posts.map((post: PostPreview) => (
-              <PostsPreview key={post._id} post={post} />
+              <PostsPreview key={post._id} post={post} dict={dict} />
             ))}
           </div>
         </div>

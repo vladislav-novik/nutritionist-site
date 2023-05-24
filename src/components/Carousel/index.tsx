@@ -23,8 +23,8 @@ export default function Component({children}: Props) {
     },
     indicators: {
       active: {
-        off: "h-3 w-3 rounded-full bg-green-300/50 hover:bg-green-300 dark:bg-gray-800/50 dark:hover:bg-gray-800",
-        on: "h-3 w-3 rounded-full bg-green-300 hover:bg-green-300 dark:bg-gray-800 dark:hover:bg-gray-800",
+        off: "h-3 w-3 rounded-full bg-emerald-400/50 hover:bg-emerald-400",
+        on: "h-3 w-3 rounded-full bg-emerald-400 hover:bg-emerald-400",
       },
     }
   };
@@ -32,9 +32,8 @@ export default function Component({children}: Props) {
   return (
     <Carousel 
         theme={customTheme}
-        slide={false}
-        // slide={true} 
-        // slideInterval={4000} 
+        slide={true} 
+        slideInterval={4000} 
         leftControl={control('left')}
         rightControl={control('right')}>
       {children}

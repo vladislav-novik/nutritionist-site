@@ -4,9 +4,10 @@ import ReadArticleButton from "./ReadArticleButton";
 
 type Props = {
   post: PostPreview;
+  dict: any;
 }
 
-export default function Component({ post }: Props) {
+export default function Component({ post, dict }: Props) {
   return (
     <article key={post._id} className="md:grid md:grid-cols-4 md:items-baseline">
       <div className="md:col-span-3 group relative flex flex-col items-start">
@@ -17,16 +18,16 @@ export default function Component({ post }: Props) {
             <span className="relative z-10">{post.title}</span>
           </Link>
         </h2>
-        <time className="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5" dateTime="2022-09-05">
+        <time className="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 pl-3.5" dateTime="2022-09-05">
           <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
             <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
           </span>
           September 5, 2022
         </time>
-        <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{post.excerpt}</p>
-        <ReadArticleButton>Read article</ReadArticleButton>
+        <p className="relative z-10 mt-2 text-sm text-zinc-600">{post.excerpt}</p>
+        <ReadArticleButton>{dict.btn.readArticle}</ReadArticleButton>
       </div>
-      <time className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500" dateTime="2022-09-05">September 5, 2022</time>
+      <time className="mt-1 hidden md:flex relative z-10 order-first mb-3 items-center text-sm text-zinc-400" dateTime="2022-09-05">September 5, 2022</time>
     </article>
   );
 }

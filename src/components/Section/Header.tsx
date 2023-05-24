@@ -4,6 +4,6 @@ type Props = {
 
 export default function SectionHeader({ children }: Props) {
     return (
-        <h2 className="text-lg font-semibold leading-7 text-green-600">{children}</h2>
+        <h2 className="text-lg font-semibold leading-7 text-emerald-700">{children}</h2>
     )
 }

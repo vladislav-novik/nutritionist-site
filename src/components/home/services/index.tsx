@@ -14,7 +14,7 @@ export default async function HomeServices({ lang }: Props) {
   const dict = await getDictionary(lang)
 
   return (
-    <Section id="services" className="bg-white">
+    <Section id="services" className="bg-zinc-50">
       <SectionAnimation>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">

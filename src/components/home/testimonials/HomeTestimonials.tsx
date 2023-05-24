@@ -36,8 +36,8 @@ export default async function HomeTestimonials({ lang }: Props) {
             </div>
           </div>
         </SectionAnimation>
-        <ImQuotesLeft className="absolute max-w-[20%] text-green-200 opacity-40 top-10 left-10" size={200} />
-        <ImQuotesRight className="absolute max-w-[20%] text-green-200 opacity-40 bottom-10 right-10" size={200} />
+        <ImQuotesLeft className="absolute max-w-[20%] text-emerald-200 opacity-40 top-10 left-10" size={200} />
+        <ImQuotesRight className="absolute max-w-[20%] text-emerald-200 opacity-40 bottom-10 right-10" size={200} />
       </div>
     </Section>
   )

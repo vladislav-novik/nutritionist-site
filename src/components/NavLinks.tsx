@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll'
+import classnames from 'classnames'
 
 const links: NavLink[] = [{
   href: 'about',
@@ -23,11 +24,6 @@ type Props = {
 }
 
 export default function NavLinks({ mobileMenu }: Props) {
-  const mobileClasses = "-mx-3 block rounded-lg px-3 py-2 text-center cursor-pointer text-base font-semibold leading-7 text-gray-900"
-  const desktopClasses = "cursor-pointer text-sm font-semibold leading-6 text-gray-900" 
-
-  const classNames = mobileMenu ? mobileClasses : desktopClasses;
-
   return (
     <>
       {links.map(l => (
@@ -37,8 +33,11 @@ export default function NavLinks({ mobileMenu }: Props) {
           whileTap={{scale: 0.95}}
         >
           <Link 
-            className={classNames}
-            activeClass="text-green-600"
+            className={classnames([{
+              "-mx-3 block rounded-lg px-3 py-2 text-center cursor-pointer text-base font-semibold leading-7 text-emerald-900": mobileMenu,
+              "cursor-pointer text-sm font-semibold leading-6 text-gray-900" : !mobileMenu
+            }])}
+            activeClass="text-emerald-700"
             to={l.href}
             spy={true}
             smooth={true}
