@@ -27,23 +27,23 @@ export default function About({ dict }: Props) {
 
           {/* <SectionAnimation> */}
             <div className="max-w-sm mx-auto px-2.5 lg:max-w-none">
-              {/* @ts-expect-error Server Component */}
-              <PlaceholderedImage
+              
+              {/* <PlaceholderedImage
                 src={'/images/main.webp'}
                 width={800}
                 height={800}
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                 alt="Maryia Novik"
                 priority={true}
-              ></PlaceholderedImage>
-              {/* <Image 
+              ></PlaceholderedImage> */}
+              <Image 
                 src={'/images/main.webp'}
                 width={800}
                 height={800}
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                 alt="Maryia Novik"
                 priority={true}
-                /> */}
+                />
             </div>
           {/* </SectionAnimation> */}
         </div>
