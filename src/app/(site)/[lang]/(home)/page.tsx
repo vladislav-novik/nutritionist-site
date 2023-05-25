@@ -32,7 +32,7 @@ export default async function Page({ params }: Props) {
 
         {/* <Main lang={params.lang}></Main> */}
 
-        {/* <Services dict={dict}></Services> */}
+        <Services dict={dict}></Services>
         <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
         <HomePosts dict={dict} posts={posts}></HomePosts>
         <ContactUs dict={dict}></ContactUs>
