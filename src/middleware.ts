@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getLocale, locales } from "./utils/locales";
 
+const DEFINED_URLS: string[] = ['/articles/'];
+const ADMIN_URL: string = '/admin';
+
 
 export function middleware(request: NextRequest) {
   // Get the pathname of the URL
   let pathname = request.nextUrl.pathname
 
-  if (pathname === '/studio') {
+  if (pathname === ADMIN_URL) {
     return;
   }
 
