@@ -13,7 +13,7 @@ type Props = {
   testimonials: TestimonialType[];
 }
 
-export default function HomeTestimonials({ dict, testimonials }: Props) {
+export default function Testimonials({ dict, testimonials }: Props) {
 
   return (
     <Section id="testimonials" className="bg-white">
