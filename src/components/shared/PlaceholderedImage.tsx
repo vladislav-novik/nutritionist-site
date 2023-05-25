@@ -3,8 +3,17 @@ import { Image as SanityImage } from "sanity"
 import { urlForImage } from "@/sanity/lib/image";
 import { getPlaiceholder } from "plaiceholder";
 
+type Props = { 
+  src: SanityImage | string; 
+  width?: number; 
+  height?: number; 
+  className?: string; 
+  alt?: string;
+  priority?: boolean;
+}
+
 export default async function BlurredImage(
-  { src, width, height, className, alt }: { src: SanityImage | string, width?: number, height?: number, className?: string, alt?: string }
+  { src, width, height, className, alt, priority }: Props 
 ) {
   let url = "";
 
@@ -34,6 +43,7 @@ export default async function BlurredImage(
         width={width}
         height={height}
         alt={alt ?? ""}
+        priority={priority}
         placeholder="blur" />
   );
 }
