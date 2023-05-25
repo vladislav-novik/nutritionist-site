@@ -3,7 +3,7 @@
 import { sendCustomerRequest } from "@/sanity/lib/clientRequests";
 import { CustomerRequest } from "@/types/customerRequest";
 
-export const submitContact = async (data: FormData) => {
+export async function submitRequest(data: FormData) {
     console.log('handleSubmit', data)
 
     const validationResult = verifyData(data);
@@ -19,7 +19,7 @@ export const submitContact = async (data: FormData) => {
     const customerRequest: CustomerRequest = {
         name: (data.get('name') as string).trim(),
         feedbackWay: (data.get('feedbackWay') as string).trim(),
-        feedbackWayData: (data.get('feedbackWayData') as string).trim(),
+        feedbackWayData: (data.get('feedbackWayData') as string).trim().toLowerCase(),
         message: (data.get('message') as string).trim(),
     }
 

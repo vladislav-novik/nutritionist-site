@@ -6,9 +6,8 @@ export const sendCustomerRequest = async (data: CustomerRequest) => {
         _type: 'customerRequest',
         ...data,
     }, {
-        token: process.env.NEXT_PUBLIC_SANITY_EDITOR_TOKEN,
+        token: process.env.SANITY_EDITOR_TOKEN,
     });
 
-    console.log(response);
     return response;
 }

@@ -1,19 +1,9 @@
-"use client"
+import { submitRequest } from "@/app/[lang]/(home)/action";
 
-import { submitContact } from "@/app/[lang]/(home)/action";
-import { experimental_useFormStatus as useFormStatus } from 'react-dom';
-
-export default function ContactForm() {
-  const { pending } = useFormStatus();
-
-  async function handle(e: FormData) {
-    console.log('client handle', e)
-    const result = await submitContact(e)
-    console.log(result)
-  }
+export default async function ContactForm() {
 
   return (
-    <form action={handle} className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
+    <form action={submitRequest} className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
       <div className="max-w-xl mx-auto lg:max-w-lg lg:mr-0">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2">

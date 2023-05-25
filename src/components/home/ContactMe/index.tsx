@@ -48,6 +48,7 @@ export default async function ContactUs({ lang }: Props) {
           </div>
         </div>
         {/* <SectionAnimation> */}
+        {/* @ts-expect-error Server Component */}
           <ContactForm></ContactForm>
         {/* </SectionAnimation> */}
       </div>
