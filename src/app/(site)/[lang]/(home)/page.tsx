@@ -1,8 +1,8 @@
 // import { Inter } from 'next/font/google'
 // import Main from '@/components/home/Main'
 import About from '@/components/home/About'
-import HomePosts from '@/components/home/Articles/HomePosts'
-import Testimonials from '@/components/home/Testimonials/Testimonials'
+import HomePosts from '@/components/home/Articles'
+import Testimonials from '@/components/home/Testimonials'
 import Services from '@/components/home/Services/Services'
 import ContactUs from '@/components/home/ContactMe'
 // import PageAnimation from '@/components/Animation/PageAnimation'
@@ -32,10 +32,10 @@ export default async function Page({ params }: Props) {
 
         {/* <Main lang={params.lang}></Main> */}
 
-        <Services dict={dict}></Services>
-        <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
         <HomePosts dict={dict} posts={posts}></HomePosts>
         <ContactUs dict={dict}></ContactUs>
+        <Services dict={dict}></Services>
+        <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
       </main>
     // </PageAnimation>
   )

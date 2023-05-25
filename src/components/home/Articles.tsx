@@ -1,5 +1,5 @@
 import { PostOverview as PostOverviewType } from "@/types/post";
-import PostOverview from "../../post/PostPreview";
+import PostOverview from "../post/PostPreview";
 import SectionHeader from "@/components/Section/Header";
 import SectionSubHeader from "@/components/Section/Subheader";
 import SectionDescription from "@/components/Section/Description";
