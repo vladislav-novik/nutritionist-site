@@ -1,21 +1,19 @@
 import Carousel from "@/components/Carousel";
-import { getTestimonials } from "@/sanity/lib/testimonials"
 import Testimonial from "./Testimonial";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import { getDictionary } from "@/app/[lang]/dictionaries";
 import SectionHeader from "@/components/Section/Header";
 import SectionSubHeader from "@/components/Section/Subheader";
 import SectionDescription from "@/components/Section/Description";
 import Section from "@/components/Section/Section";
 import SectionAnimation from "@/components/Animation/SectionAnimation";
+import { Testimonial as TestimonialType } from "@/types/testimonial";
 
 type Props = {
-  lang: string,
+  dict: any;
+  testimonials: TestimonialType[];
 }
 
-export default async function HomeTestimonials({ lang }: Props) {
-  const testimonials = await getTestimonials();
-  const dict = await getDictionary(lang)
+export default function HomeTestimonials({ dict, testimonials }: Props) {
 
   return (
     <Section id="testimonials" className="bg-white">

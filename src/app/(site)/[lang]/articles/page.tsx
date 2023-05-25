@@ -1,5 +1,5 @@
 import { getPosts } from "@/sanity/lib/posts"
-import { PostPreview } from "@/types/post";
+import { PostOverview } from "@/types/post";
 import PostsPreview from "@/components/post/PostPreview2"
 import { getDictionary } from "../dictionaries";
 import PageWrapper from "@/components/Animation/PageAnimation";
@@ -23,7 +23,7 @@ export default async function Page({ params }: Props) {
       <div className="max-w-6xl mx-auto mt-16 sm:mt-20">
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            {posts.map((post: PostPreview) => (
+            {posts.map((post: PostOverview) => (
               <PostsPreview key={post._id} post={post} dict={dict} />
             ))}
           </div>

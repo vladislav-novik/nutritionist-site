@@ -36,6 +36,8 @@ export const posts = groq`*[_type == "post"] | order(publishedAt desc) {
 //     "totalItems": count(*[_type == "post"])
 // }`;
 
+export const postsSlugs = groq`*[_type == "post"  && defined(slug.current)][].slug.current`;
+
 export const postBySlug = groq`
     *[_type == "post" && slug.current == $slug][0] {
     _id,

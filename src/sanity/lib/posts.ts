@@ -1,19 +1,23 @@
-import { Post, PostPreview } from "@/types/post";
-import { postBySlug, postsForHome, posts } from "./queries"
+import { Post, PostOverview } from "@/types/post";
+import { postBySlug, postsForHome, posts, postsSlugs } from "./queries"
 import client from "./client"
 
-export async function getPostsForHome(amount: number): Promise<PostPreview[]> {
-    const posts = await client.fetch<PostPreview[]>(postsForHome, {
+export async function getPostsForHome(amount: number): Promise<PostOverview[]> {
+    const posts = await client.fetch<PostOverview[]>(postsForHome, {
         amount
     })
 
     return posts;
 }
 
-export async function getPosts(): Promise<PostPreview[]> {
-    const result = await client.fetch<PostPreview[]>(posts)
+export async function getPosts(): Promise<PostOverview[]> {
+    const result = await client.fetch<PostOverview[]>(posts)
 
     return result;
+}
+
+export async function getPostsSlugs(): Promise<string[]> {
+    return await client.fetch<string[]>(postsSlugs);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post> {

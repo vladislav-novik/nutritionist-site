@@ -2,10 +2,10 @@ import { getServices } from '@/sanity/lib/services';
 import Service from './ServiceOverview';
 
 type Props = {
-  lang: string,
+  dict: any,
 }
 
-export default async function ServicesOverview({lang}: Props) {
+export default async function ServicesOverview({dict}: Props) {
   const services = await getServices();
 
   return (

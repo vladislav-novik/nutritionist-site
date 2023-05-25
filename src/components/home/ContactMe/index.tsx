@@ -1,4 +1,3 @@
-import { getDictionary } from '@/app/[lang]/dictionaries';
 import ContactForm from './form';
 import Section from '@/components/Section/Section';
 import SectionAnimation from '@/components/Animation/SectionAnimation';
@@ -6,12 +5,10 @@ import Background from './Background';
 import Image from 'next/image'
 
 type Props = {
-  lang: string,
+  dict: any,
 }
 
-export default async function ContactUs({ lang }: Props) {
-  const dict = await getDictionary(lang)
-
+export default function ContactUs({ dict }: Props) {
   return (
     <Section id="contact-me" className="bg-white relative">
       <div className="absolute inset-0 w-full h-full">

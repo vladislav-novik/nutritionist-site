@@ -18,7 +18,7 @@ const socials: SocialLink[] = [{
 }, {
   href: 'https://tiktok.com',
   icon: IoLogoTiktok,
-  title: 'instagram',
+  title: 'tiktok',
 }];
 
 type Props = {

@@ -1,9 +1,9 @@
-import { PostPreview } from "@/types/post";
+import { PostOverview } from "@/types/post";
 import Link from "next/link";
 import ReadArticleButton from "./ReadArticleButton";
 
 type Props = {
-  post: PostPreview;
+  post: PostOverview;
   dict: any;
 }
 

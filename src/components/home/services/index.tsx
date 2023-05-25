@@ -1,4 +1,3 @@
-import { getDictionary } from '@/app/[lang]/dictionaries';
 import ServicesOverview from './ServicesOverview';
 import SectionHeader from '@/components/Section/Header';
 import SectionSubHeader from '@/components/Section/Subheader';
@@ -7,12 +6,10 @@ import Section from '@/components/Section/Section';
 import SectionAnimation from '@/components/Animation/SectionAnimation';
 
 type Props = {
-  lang: string,
+  dict: any,
 }
 
-export default async function HomeServices({ lang }: Props) {
-  const dict = await getDictionary(lang)
-
+export default function HomeServices({ dict }: Props) {
   return (
     <Section id="services" className="bg-zinc-100">
       {/* <SectionAnimation> */}
@@ -23,7 +20,7 @@ export default async function HomeServices({ lang }: Props) {
             <SectionDescription>{dict.sections.services.description}</SectionDescription>
           </div>
           {/* @ts-expect-error Server Component */}
-          <ServicesOverview lang={lang}></ServicesOverview>
+          <ServicesOverview dict={dict}></ServicesOverview>
         </div>
       {/* </SectionAnimation> */}
     </Section>

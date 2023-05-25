@@ -1,16 +1,13 @@
-import { getDictionary } from '@/app/[lang]/dictionaries';
 import SectionDescription from '@/components/Section/Description';
 import SectionHeader from '@/components/Section/Header';
 import SectionSubHeader from '@/components/Section/Subheader';
 import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
 
 type Props = {
-  lang: string,
+  dict: any,
 }
 
-export default async function Main({ lang }: Props) {
-  const dict = await getDictionary(lang);
-
+export default function Main({ dict }: Props) {
   return (
     // bg-green-200
     <section id="main" className="overflow-hidden py-24 sm:py-32 bg-gradient-to-tr from-green-100 to-white">

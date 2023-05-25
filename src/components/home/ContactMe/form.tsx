@@ -1,4 +1,4 @@
-import { submitRequest } from "@/app/[lang]/(home)/action";
+import { submitRequest } from "@/app/(site)/[lang]/(home)/action";
 
 export default async function ContactForm() {
 

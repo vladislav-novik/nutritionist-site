@@ -1,6 +1,13 @@
 import Post from "@/components/post/Post";
-import { getPostBySlug } from "@/sanity/lib/posts";
-import { HiArrowLeft } from "react-icons/hi";
+import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
+
+export async function generateStaticParams() {
+  const slugs = await getPostsSlugs();
+ 
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
 
 type ParamsType = {
   slug: string;

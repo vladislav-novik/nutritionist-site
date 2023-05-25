@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { PostPreview } from "@/types/post";
+import { PostOverview } from "@/types/post";
 import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 // import Tag from "./Tag";
 import ReadArticleButton from "./ReadArticleButton";
 
 type PropsType = {
-  post: PostPreview;
+  post: PostOverview;
   dict: any;
 };
 

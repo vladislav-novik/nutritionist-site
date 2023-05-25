@@ -1,4 +1,3 @@
-import { getDictionary } from '@/app/[lang]/dictionaries';
 import SectionDescription from '@/components/Section/Description';
 import SectionHeader from '@/components/Section/Header';
 import Section from '@/components/Section/Section';
@@ -7,12 +6,10 @@ import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
 import SectionAnimation from '@/components/Animation/SectionAnimation'
 
 type Props = {
-  lang: string,
+  dict: any,
 }
 
-export default async function About({ lang }: Props) {
-  const dict = await getDictionary(lang);
-
+export default function About({ dict }: Props) {
   return (
     <Section id="about" className="bg-gradient-to-br from-green-100 to-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
