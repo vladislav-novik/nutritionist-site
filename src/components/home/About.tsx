@@ -4,6 +4,7 @@ import Section from '@/components/Section/Section';
 import SectionSubHeader from '@/components/Section/Subheader';
 import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
 import SectionAnimation from '@/components/Animation/SectionAnimation'
+import Image from 'next/image'
 
 type Props = {
   dict: any,
@@ -26,14 +27,19 @@ export default function About({ dict }: Props) {
 
           {/* <SectionAnimation> */}
             <div className="max-w-sm mx-auto px-2.5 lg:max-w-none">
-              {/* @ts-expect-error Server Component */}
-              <PlaceholderedImage
+              {/* <PlaceholderedImage
                 src={'/images/main.webp'}
                 width={800}
                 height={800}
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                 alt="Maryia Novik"
-              ></PlaceholderedImage>
+              ></PlaceholderedImage> */}
+              <Image 
+                src={'/images/main.webp'}
+                width={800}
+                height={800}
+                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                alt="Maryia Novik" />
             </div>
           {/* </SectionAnimation> */}
         </div>
