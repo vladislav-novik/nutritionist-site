@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 type Props = {
     children: React.ReactNode;
     className: string;

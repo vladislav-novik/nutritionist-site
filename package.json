@@ -31,6 +31,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-scroll": "^1.8.9",
+    "react-share": "^4.4.1",
     "sanity": "^3.10.0",
     "sanity-plugin-asset-source-unsplash": "^1.0.6",
     "server-only": "^0.0.1",

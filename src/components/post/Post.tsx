@@ -1,4 +1,5 @@
 import { Post } from "../../types/post"
+import ShareButtons from "../ShareButtons";
 import PlaceholderedImage from "../shared/PlaceholderedImage";
 import PostBody from "./PostBody";
 
@@ -20,6 +21,9 @@ export default function Post({ post }: Props) {
         {/* @ts-expect-error Server Component */}
         <PlaceholderedImage src={post.mainImage} width={1310} height={872} />
         <PostBody content={post.body}></PostBody>
+      </div>
+      <div className="mt-8 w-full flex justify-end">
+        <ShareButtons />
       </div>
     </article>
   );

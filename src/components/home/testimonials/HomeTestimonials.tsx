@@ -20,7 +20,7 @@ export default async function HomeTestimonials({ lang }: Props) {
   return (
     <Section id="testimonials" className="bg-white">
       <div className="relative w-full h-full">
-        <SectionAnimation>
+        {/* <SectionAnimation> */}
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="w-full text-left lg:text-center">
               <SectionHeader>{dict.sections.testimonials.title}</SectionHeader>
@@ -35,7 +35,7 @@ export default async function HomeTestimonials({ lang }: Props) {
               </Carousel>
             </div>
           </div>
-        </SectionAnimation>
+        {/* </SectionAnimation> */}
         <ImQuotesLeft className="absolute max-w-[20%] text-emerald-200 opacity-40 top-10 left-10" size={200} />
         <ImQuotesRight className="absolute max-w-[20%] text-emerald-200 opacity-40 bottom-10 right-10" size={200} />
       </div>

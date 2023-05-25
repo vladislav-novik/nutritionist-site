@@ -15,7 +15,7 @@ export default async function HomeServices({ lang }: Props) {
 
   return (
     <Section id="services" className="bg-zinc-100">
-      <SectionAnimation>
+      {/* <SectionAnimation> */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <SectionHeader>{dict.sections.services.title}</SectionHeader>
@@ -25,7 +25,7 @@ export default async function HomeServices({ lang }: Props) {
           {/* @ts-expect-error Server Component */}
           <ServicesOverview lang={lang}></ServicesOverview>
         </div>
-      </SectionAnimation>
+      {/* </SectionAnimation> */}
     </Section>
   )
 }

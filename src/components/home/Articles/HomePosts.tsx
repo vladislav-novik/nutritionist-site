@@ -21,8 +21,9 @@ export default async function HomePosts({ lang }: Props) {
 
   return (
     <Section id="articles" className="bg-zinc-100">
-      <SectionAnimation>
+      {/* <SectionAnimation> */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="bg-emerald-50 rounded- max-w-4xl mx-auto">
           <div className="text-center max-w-2xl mx-auto">
             <SectionHeader>{dict.sections.articles.title}</SectionHeader>
             <SectionSubHeader>{dict.sections.articles.subtitle}</SectionSubHeader>
@@ -38,8 +39,9 @@ export default async function HomePosts({ lang }: Props) {
           <div className="mt-20 w-full text-center text-emerald-500">
             <Link href={'/articles'}>{dict.btn.readMore}</Link>
           </div>
+          </div>
         </div>
-      </SectionAnimation>
+      {/* </SectionAnimation> */}
     </Section>
   )
 }
