@@ -1,4 +1,4 @@
-import ServicesOverview from './ServicesOverview';
+import ServicesOverview from '../Services/ServicesOverview';
 import SectionHeader from '@/components/Section/Header';
 import SectionSubHeader from '@/components/Section/Subheader';
 import SectionDescription from '@/components/Section/Description';
