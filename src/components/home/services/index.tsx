@@ -3,13 +3,12 @@ import SectionHeader from '@/components/Section/Header';
 import SectionSubHeader from '@/components/Section/Subheader';
 import SectionDescription from '@/components/Section/Description';
 import Section from '@/components/Section/Section';
-import SectionAnimation from '@/components/Animation/SectionAnimation';
 
 type Props = {
   dict: any,
 }
 
-export default function HomeServices({ dict }: Props) {
+export default function Services({ dict }: Props) {
   return (
     <Section id="services" className="bg-zinc-100">
       {/* <SectionAnimation> */}
