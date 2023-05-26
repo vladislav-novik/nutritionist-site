@@ -10,7 +10,7 @@ import { getDictionary } from '../dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
 import { Metadata } from 'next/types'
-import { getAlternateLangs } from '@/utils/locales'
+import { getAlternateLangs, langs } from '@/utils/locales'
 
 export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
   const { lang } = params
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
     openGraph: {
       type: 'website',
       title: dict.SEO.home.title,
+      description: dict.SEO.home.description,
       locale: lang,
       alternateLocale: alternateLangs,
       url: `${process.env.BASE_URL}/${lang}/`,
@@ -55,6 +56,10 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
   }
 }
 
+
+export function generateStaticParams() {
+  return langs.map(l => ({ lang: l }));
+}
 
 type Props = {
   params: {
