@@ -8,6 +8,7 @@ const ADMIN_URL: string = '/admin';
 export function middleware(request: NextRequest) {
   // Get the pathname of the URL
   let pathname = request.nextUrl.pathname
+  console.log(pathname);
 
   if (pathname === ADMIN_URL) {
     return;
@@ -32,16 +33,8 @@ export function middleware(request: NextRequest) {
     // Create a new URL with the locale
     const newUrl = new URL(`/${locale}${pathname}`, request.url)
     // Add a trailing slash if needed
-    if (!newUrl.pathname.endsWith('/')) {
-      newUrl.pathname += '/'
-    }
-    return NextResponse.redirect(newUrl)
-  }
 
-  // Add a trailing slash if needed
-  if (!pathname.endsWith('/')) {
-    request.nextUrl.pathname += '/'
-    return NextResponse.redirect(`${request.nextUrl.origin}${request.nextUrl.pathname}`)
+    return NextResponse.redirect(newUrl)
   }
 }
 

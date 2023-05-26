@@ -13,7 +13,6 @@ const nextConfig = withPlaiceholder({
   },
   
   skipMiddlewareUrlNormalize: true,
-  skipTrailingSlashRedirect: true,
 });
 
 module.exports = nextConfig

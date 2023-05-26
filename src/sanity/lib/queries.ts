@@ -20,13 +20,12 @@ const testimonialProjection = `
     date
 `;
 
-export const postsForHome = groq`*[_type == "post"] | order(publishedAt desc) [0...$amount] {
+export const postsForHome = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...$amount] {
    ${postPreviewProjection}
 }`;
 
-export const posts = groq`*[_type == "post"] | order(publishedAt desc) {
+export const posts = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
     ${postPreviewProjection}
-  
 }`;
 
 // export const postsPerPage = groq`{
@@ -36,7 +35,7 @@ export const posts = groq`*[_type == "post"] | order(publishedAt desc) {
 //     "totalItems": count(*[_type == "post"])
 // }`;
 
-export const postsSlugs = groq`*[_type == "post"  && defined(slug.current)][].slug.current`;
+export const postsSlugs = groq`*[_type == "post" && defined(slug.current)][].slug.current`;
 
 export const postBySlug = groq`
     *[_type == "post" && slug.current == $slug][0] {

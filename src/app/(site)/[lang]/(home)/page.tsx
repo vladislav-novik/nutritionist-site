@@ -48,11 +48,10 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
       }]
     },
     alternates: {
-      canonical: `${process.env.BASE_URL}/${lang}/`,
+      canonical: `${process.env.BASE_URL}`,
       languages: alternates
     },
     keywords: [],
-    // verification
   }
 }
 
