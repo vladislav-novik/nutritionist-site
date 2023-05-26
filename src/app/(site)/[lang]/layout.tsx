@@ -1,7 +1,11 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-type Props = {
+type MetadataProps = {
+  
+}
+
+type Props = MetadataProps & {
   children: React.ReactNode,
   params: {
     lang: string,

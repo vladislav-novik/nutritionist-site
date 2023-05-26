@@ -1,6 +1,6 @@
 "use client"
 
-import { locales } from "@/utils/locales";
+import { langs } from "@/utils/locales";
 import Link from "next/link";
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
@@ -33,7 +33,7 @@ export default function LanguageSelector({ lang }: Props) {
             leaveTo="opacity-0"
           >
             <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {locales.map((locale, localeIdx) => (
+              {langs.map((locale, localeIdx) => (
                 <Listbox.Option
                   key={localeIdx}
                   className={({ active }) =>

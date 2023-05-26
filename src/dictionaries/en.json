@@ -52,6 +52,12 @@
     "btn": {
         "readArticle": "Read article",
         "readMore": "Read more"
+    },
+    "SEO": {
+        "home": {
+            "title": "Marya Novik | Nutritionist",
+            "description": "description of page"
+        }
     }
 }
 

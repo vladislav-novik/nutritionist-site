@@ -1,7 +1,7 @@
 // import 'server-only';
-import { locales } from '@/utils/locales';
+import { langs } from '@/utils/locales';
 
-export type ValidLocale = typeof locales[number];
+export type ValidLocale = typeof langs[number];
 
 const dictionaries: Record<ValidLocale, Function> = {
     ru: () => import('@/dictionaries/ru.json').then((module) => module.default),

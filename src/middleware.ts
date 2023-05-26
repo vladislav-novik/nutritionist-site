@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getLocale, locales } from "./utils/locales";
+import { getLocale, langs } from "./utils/locales";
 
 const DEFINED_URLS: string[] = ['/articles/'];
 const ADMIN_URL: string = '/admin';
@@ -14,14 +14,14 @@ export function middleware(request: NextRequest) {
   }
 
   // Check if the pathname is missing a locale
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => {
+  const pathnameIsMissingLocale = langs.every(
+    (lang) => {
       // Get the locale path (e.g. '/en/')
-      const localePath = `/${locale}/`
+      const localePath = `/${lang}/`
       // Check if the pathname starts with the locale path
       const isLocalePath = pathname.startsWith(localePath)
       // Return true if the pathname is missing a locale
-      return !isLocalePath && pathname !== `/${locale}`
+      return !isLocalePath && pathname !== `/${lang}`
     }
   )
 
