@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
   const dict = await getDictionary(lang)
 
   const alternateLangs = getAlternateLangs(lang);
-  const alternates = alternateLangs.reduce((acc, l) => ({ ...acc, [l]: `${process.env.BASE_URL}/${l}/` }), {});
+  const alternates = alternateLangs.reduce((acc, l) => ({ ...acc, [l]: `${process.env.BASE_URL}/${l}` }), {});
 
   return {
     title: dict.SEO.home.title,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
       description: dict.SEO.home.description,
       locale: lang,
       alternateLocale: alternateLangs,
-      url: `${process.env.BASE_URL}/${lang}/`,
+      url: `${process.env.BASE_URL}/${lang}`,
       images: [{
         url: '/images/main.webp',
         width: 1280,
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      site: `${process.env.BASE_URL}/${lang}/`,
+      site: `${process.env.BASE_URL}/${lang}`,
       title: dict.SEO.home.title,
       description: dict.SEO.home.description,
       images: [{
