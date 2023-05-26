@@ -44,6 +44,7 @@ export const postBySlug = groq`
     "slug": slug.current,
     publishedAt,
     mainImage,
+    "imageUrl": mainImage.asset->url,
     "category": category->title,
     "tags": tags[]->title,
     excerpt,

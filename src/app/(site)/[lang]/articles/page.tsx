@@ -3,6 +3,50 @@ import { PostOverview } from "@/types/post";
 import PostsPreview from "@/components/post/PostPreview2"
 import { getDictionary } from "../dictionaries";
 import PageWrapper from "@/components/Animation/PageAnimation";
+import { Metadata } from "next";
+import { getAlternateLangs } from "@/utils/locales";
+
+export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
+  const { lang } = params
+  const dict = await getDictionary(lang)
+
+  const alternateLangs = getAlternateLangs(lang);
+  const alternates = alternateLangs.reduce((acc, l) => ({ ...acc, [l]: `${process.env.BASE_URL}/${l}/articles` }), {});
+
+  return {
+    title: dict.SEO.articles.title,
+    description: dict.SEO.articles.description,
+    metadataBase: new URL(process.env.BASE_URL!),
+    openGraph: {
+      type: 'website',
+      title: dict.SEO.articles.title,
+      description: dict.SEO.articles.description,
+      locale: lang,
+      alternateLocale: alternateLangs,
+      url: `${process.env.BASE_URL}/${lang}/articles`,
+      images: [{
+        url: '/images/main.webp',
+        width: 1280,
+        height: 640
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: `${process.env.BASE_URL}/${lang}/articles`,
+      title: dict.SEO.articles.title,
+      description: dict.SEO.articles.description,
+      images: [{
+        url: '/images/main.webp',
+        width: 1280,
+        height: 640
+      }]
+    },
+    alternates: {
+      canonical: `${process.env.BASE_URL}/${lang}/articles`,
+      languages: alternates
+    },
+  }
+}
 
 type Props = {
   params: {

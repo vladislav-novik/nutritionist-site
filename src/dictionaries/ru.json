@@ -57,6 +57,10 @@
         "home": {
             "title": "Marya Novik | Nutritionist",
             "description": "description of page"
+        },
+        "articles": {
+            "title": "Marya Novik | Nutritionist | Articles",
+            "description": "Articles description of page"
         }
     }
 }

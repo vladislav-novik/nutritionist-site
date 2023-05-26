@@ -12,5 +12,6 @@ export type PostOverview = {
 }
 
 export type Post = PostOverview & {
+    imageUrl: string;
     body: any;
 }
