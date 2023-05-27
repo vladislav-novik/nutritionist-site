@@ -6,53 +6,17 @@ import Testimonials from '@/components/home/Testimonials'
 import Services from '@/components/home/Services'
 import ContactUs from '@/components/home/ContactMe'
 // import PageAnimation from '@/components/Animation/PageAnimation'
-import { getDictionary } from '../dictionaries'
+import { getDictionary } from '../../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
 import { Metadata } from 'next/types'
-import { getAlternateLangs, langs } from '@/utils/locales'
+import { langs } from '@/utils/locales'
+import { generateMetadataForPage } from '@/utils/metadata'
 
-export async function generateMetadata({ params }: Props, ): Promise<Metadata> {
+export async function generateMetadata({ params }: Props ): Promise<Metadata> {
   const { lang } = params
-  const dict = await getDictionary(lang)
 
-  const alternateLangs = getAlternateLangs(lang);
-  const alternates = alternateLangs.reduce((acc, l) => ({ ...acc, [l]: `${process.env.BASE_URL}/${l}` }), {});
-
-  return {
-    title: dict.SEO.home.title,
-    description: dict.SEO.home.description,
-    metadataBase: new URL(process.env.BASE_URL!),
-    openGraph: {
-      type: 'website',
-      title: dict.SEO.home.title,
-      description: dict.SEO.home.description,
-      locale: lang,
-      alternateLocale: alternateLangs,
-      url: `${process.env.BASE_URL}/${lang}`,
-      images: [{
-        url: '/images/main.webp',
-        width: 1280,
-        height: 640
-      }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: `${process.env.BASE_URL}/${lang}`,
-      title: dict.SEO.home.title,
-      description: dict.SEO.home.description,
-      images: [{
-        url: '/images/main.webp',
-        width: 1280,
-        height: 640
-      }]
-    },
-    alternates: {
-      canonical: `${process.env.BASE_URL}`,
-      languages: alternates
-    },
-    keywords: [],
-  }
+  return await generateMetadataForPage('home', lang);
 }
 
 
