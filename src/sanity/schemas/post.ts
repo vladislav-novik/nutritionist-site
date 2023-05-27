@@ -11,6 +11,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -18,8 +19,9 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96,
+        maxLength: 70,
       },
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'mainImage',
@@ -34,12 +36,14 @@ export default defineType({
           type: 'string',
           title: 'Alternative Text',
         }
-      ]
+      ],
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
+      validation: Rule => Rule.required().min(70).max(320)
     }),
     defineField({
       name: 'category',
@@ -63,11 +67,13 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: Rule => Rule.required(),
     }),
   ],
 
