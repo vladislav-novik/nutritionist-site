@@ -25,19 +25,19 @@ export async function generateMetadataForPage(page: 'home' | 'articles' | 'artic
 
   return {
     title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-    description: titleAndDescription.title.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+    description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
     metadataBase: new URL(process.env.BASE_URL!),
     alternates: createAlternatesMetadata(lang, page, data),
     keywords: [],
 
     openGraph: {
       title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-      description: titleAndDescription.title.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+      description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
       ...openGraph
     },
     twitter: {
       title: titleAndDescription.title.slice(0, MAX_TWITTER_TITLE_LENGTH),
-      description: titleAndDescription.title.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
+      description: titleAndDescription.description.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
       ...twitter
     }
   }
