@@ -1,5 +1,6 @@
 import NavLinks from './NavLinks';
 import { AnimatePresence, motion } from 'framer-motion';
+import SocialLinks from './SocialLinks';
 
 type Props = {
   open: boolean;
@@ -19,9 +20,12 @@ export default function MobilePanel({ open, closeHandler }: Props) {
         >
           <div onClick={closeHandler} className="fixed inset-0 top-16 z-[5]" />
           <div className="mt-6 flow-root relative z-10">
-            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="-my-6">
               <div className="space-y-2 py-6">
                 <NavLinks mobileMenu={true} />
+              </div>
+              <div>
+                <SocialLinks size={28} />
               </div>
             </div>
           </div>

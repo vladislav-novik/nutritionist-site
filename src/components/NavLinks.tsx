@@ -27,28 +27,23 @@ export default function NavLinks({ mobileMenu }: Props) {
   return (
     <>
       {links.map(l => (
-        <motion.div 
-          key={l.href}
-          whileHover={{scale: 1.05}}
-          whileTap={{scale: 0.95}}
-        >
-          <Link 
-            className={classnames([{
-              "-mx-3 block rounded-lg px-3 py-2 text-center cursor-pointer text-base font-semibold leading-7 text-emerald-900": mobileMenu,
-              "cursor-pointer text-sm font-semibold leading-6 text-gray-900" : !mobileMenu
-            }])}
-            activeClass="text-emerald-700"
-            to={l.href}
-            spy={true}
-            smooth={true}
-            isDynamic={true}
-            duration={500}
-            delay={300}
-            offset={-64}
-            spyThrottle={500}>
-            {l.title}
-          </Link>
-        </motion.div>
+        <Link
+          key={l.title}
+          className={classnames("text-gray-900 transition hover:text-emerald-700", [{
+            "-mx-3 block rounded-lg px-3 py-2 text-center cursor-pointer text-base font-semibold leading-7": mobileMenu,
+            "cursor-pointer text-base font-semibold leading-6": !mobileMenu
+          }])}
+          activeClass="text-emerald-700"
+          to={l.href}
+          spy={true}
+          smooth={true}
+          isDynamic={true}
+          duration={500}
+          delay={300}
+          offset={-64}
+          spyThrottle={500}>
+          {l.title}
+        </Link>
       ))}
     </>
 
