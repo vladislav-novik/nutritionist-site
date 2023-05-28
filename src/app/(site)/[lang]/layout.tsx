@@ -1,19 +1,20 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
+
+import { generateMetadataForPage } from '@/utils/metadata'
+import { Metadata } from 'next/types';
+
+export async function generateMetadata({ params }: Props ): Promise<Metadata> {
+  const { lang } = params
+
+  return await generateMetadataForPage('home', lang);
+}
 
 type Props = {
   children: React.ReactNode,
   params: {
     lang: string,
   }
-}
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: `${process.env.BASE_URL}`
-  }
-  // verification: 
 }
 
 export default function Layout({ children, params }: Props) {

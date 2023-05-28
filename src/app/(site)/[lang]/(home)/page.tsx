@@ -9,15 +9,7 @@ import ContactUs from '@/components/home/ContactMe'
 import { getDictionary } from '../../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
-import { Metadata } from 'next/types'
 import { langs } from '@/utils/locales'
-import { generateMetadataForPage } from '@/utils/metadata'
-
-export async function generateMetadata({ params }: Props ): Promise<Metadata> {
-  const { lang } = params
-
-  return await generateMetadataForPage('home', lang);
-}
 
 
 export function generateStaticParams() {

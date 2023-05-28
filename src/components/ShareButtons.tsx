@@ -1,42 +1,39 @@
 "use client"
 
+import { usePathname } from "next/navigation";
+import { RiFacebookBoxFill, RiLinkedinBoxFill, RiTwitterFill } from "react-icons/ri";
 import {
 	FacebookShareButton,
-	FacebookIcon,
 	LinkedinShareButton,
-	LinkedinIcon,
-	TelegramShareButton,
-	TelegramIcon,
-	TwitterShareButton,
-	TwitterIcon,
-	WhatsappShareButton,
-	WhatsappIcon
+	TwitterShareButton
 } from "react-share";
-
-const url = "https://youtube.com"
+import Facebook from "./ShareButtons/Facebook";
+import Linkedin from "./ShareButtons/Linkedin";
+import Twitter from "./ShareButtons/Twitter";
+import Copy from "./ShareButtons/Copy";
 
 export default function ShareButtons() {
+	const rootUrl = typeof window === 'undefined' ? process.env.BASE_URL : window.location.origin
+	const pathname = usePathname()
+	const url = `${rootUrl}${pathname}`
+
+	const className="h-10 w-10 fill-zinc-500 transition hover:fill-zinc-600"
+
 	return (
-		<div className="flex space-x-4 items-center">
+		<div className="flex space-x-6 items-center">
+			<Copy className="h-10 w-10 stroke-zinc-500 transition hover:stroke-zinc-600" />
+
 			<FacebookShareButton url={url}>
-				<FacebookIcon round={true} size={32} />
+				<Facebook className={className} />
 			</FacebookShareButton>
 
 			<LinkedinShareButton url={url}>
-				<LinkedinIcon round={true} size={32} />
+				<Linkedin className={className} />
 			</LinkedinShareButton>
 
-			<TelegramShareButton url={url}>
-				<TelegramIcon round={true} size={32} />
-			</TelegramShareButton>
-
 			<TwitterShareButton url={url}>
-				<TwitterIcon round={true} size={32} />
+				<Twitter className={className} />
 			</TwitterShareButton>
-
-			<WhatsappShareButton url={url}>
-				<WhatsappIcon round={true} size={32} />
-			</WhatsappShareButton>
 		</div>
 	);
 }
