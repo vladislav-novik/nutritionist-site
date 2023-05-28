@@ -17,11 +17,11 @@ export default function ShareButtons() {
 	const pathname = usePathname()
 	const url = `${rootUrl}${pathname}`
 
-	const className="h-8 w-8 fill-zinc-500 transition hover:fill-zinc-600"
+	const className="h-8 w-8 fill-zinc-500 transition hover:fill-emerald-600"
 
 	return (
 		<div className="flex space-x-6 items-center">
-			<Copy className="h-8 w-8 stroke-zinc-500 transition hover:stroke-zinc-600" />
+			<Copy className={className} />
 
 			<FacebookShareButton url={url}>
 				<Facebook className={className} />
