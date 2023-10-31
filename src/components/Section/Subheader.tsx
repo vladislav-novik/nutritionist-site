@@ -1,9 +1,12 @@
+import classNames from "classnames";
+
 type Props = {
     children: React.ReactNode,
+    fontSizeClasses?: string;
 }
 
-export default function SectionSubHeader({ children }: Props) {
+export default function SectionSubHeader({ children, fontSizeClasses }: Props) {
     return (
-        <p className="mt-2 text-3xl font-bold tracking-tight text-emerald-950">{children}</p>
+        <p className={classNames("mt-2 font-bold tracking-tight text-emerald-950", fontSizeClasses || 'text-3xl')}>{children}</p>
     );
 }
