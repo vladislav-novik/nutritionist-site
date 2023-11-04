@@ -6,10 +6,9 @@ import Testimonials from '@/components/home/Testimonials'
 import Services from '@/components/home/Services'
 import ContactUs from '@/components/home/ContactMe'
 // import PageAnimation from '@/components/Animation/PageAnimation'
-import { getDictionary } from '../../../../utils/dictionaries'
+import { getDictionary } from '../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
-import { langs } from '@/utils/locales'
 
 
 // export function generateStaticParams() {

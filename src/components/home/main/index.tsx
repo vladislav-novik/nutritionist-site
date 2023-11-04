@@ -16,9 +16,9 @@ export default function Main({ dict }: Props) {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <SectionHeader>{dict.sections.about.title}</SectionHeader>
-              <SectionSubHeader>{dict.sections.about.subtitle}</SectionSubHeader>
-              <SectionDescription>{dict.sections.about.description}</SectionDescription>
+              <SectionHeader>{dict.sections.hero.title}</SectionHeader>
+              <SectionSubHeader>{dict.sections.hero.subtitle}</SectionSubHeader>
+              <SectionDescription>{dict.sections.hero.description}</SectionDescription>
             </div>
           </div>
           

@@ -11,9 +11,9 @@ type Props = {
 
 export default function RootLayout({
   children
-}: Props) {
+}: Props): React.JSX.Element {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={openSans.className}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"

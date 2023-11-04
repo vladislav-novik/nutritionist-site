@@ -1,9 +1,9 @@
-import { submitRequest } from "@/app/(site)/[lang]/(home)/action";
+// import { submitRequest } from "@/app/(site)/(home)/action";
 
 export default async function ContactForm() {
-
+  // action={submitRequest}
   return (
-    <form action={submitRequest} className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
+    <form  className="pb-24 pt-20 px-6 sm:pb-32 lg:py-48 lg:px-8">
       <div className="max-w-xl mx-auto lg:max-w-lg lg:mr-0">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2">
