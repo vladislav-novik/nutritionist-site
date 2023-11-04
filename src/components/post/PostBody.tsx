@@ -1,5 +1,6 @@
+import { urlForImage } from '@/sanity/lib/image';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react'
-import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
+import Image from 'next/image';
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   block: {
@@ -24,7 +25,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
       return (
         <figure>
           {/* @ts-expect-error Server Component */  }
-          <PlaceholderedImage src={value} width={1000} height={667}></PlaceholderedImage >
+          <Image src={urlForImage(value).width(1000).height(667)} width={1000} height={667} alt='alt'></Image >
           {value.alt && <figcaption>{value.alt}</figcaption>}
         </figure>
       );

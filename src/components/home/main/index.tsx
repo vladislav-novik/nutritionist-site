@@ -1,7 +1,7 @@
 import SectionDescription from '@/components/Section/Description';
 import SectionHeader from '@/components/Section/Header';
 import SectionSubHeader from '@/components/Section/Subheader';
-import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
+import Image from 'next/image'
 
 type Props = {
   dict: any,
@@ -23,14 +23,13 @@ export default function Main({ dict }: Props) {
           </div>
           
           <div>
-            {/* @ts-expect-error Server Component */}
-            <PlaceholderedImage
+            <Image
               src={'/images/patient-consulting-with-a-medical-professional.png'}
               width={1280}
               height={720}
               className="w-full h-auto sm:w-[42rem] md:-ml-4 lg:-ml-0"
               alt="Maryia Novik"
-            ></PlaceholderedImage>
+            />
           </div>
           
         </div>

@@ -1,6 +1,6 @@
 // import { Inter } from 'next/font/google'
 // import Main from '@/components/home/Main'
-import About from '@/components/home/About'
+import Hero from '@/components/home/Hero'
 import HomePosts from '@/components/home/Articles'
 import Testimonials from '@/components/home/Testimonials'
 import Services from '@/components/home/Services'
@@ -12,9 +12,9 @@ import { getPostsForHome } from '@/sanity/lib/posts'
 import { langs } from '@/utils/locales'
 
 
-export function generateStaticParams() {
-  return langs.map(l => ({ lang: l }));
-}
+// export function generateStaticParams() {
+//   return langs.map(l => ({ lang: l }));
+// }
 
 type Props = {
   params: {
@@ -36,7 +36,7 @@ export default async function Page({ params }: Props) {
   return (
     // <PageAnimation>
       <main>
-        <About dict={dict}></About>
+        <Hero dict={dict}></Hero>
 
         {/* <Main lang={params.lang}></Main> */}
 

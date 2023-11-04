@@ -2,11 +2,8 @@ import SectionDescription from '@/components/Section/Description';
 import SectionHeader from '@/components/Section/Header';
 import Section from '@/components/Section/Section';
 import SectionSubHeader from '@/components/Section/Subheader';
-import PlaceholderedImage from '@/components/shared/PlaceholderedImage'
 import SectionAnimation from '@/components/Animation/SectionAnimation'
 import Image from 'next/image'
-import Pear from '../Backgrounds/Broccoli';
-import Broccoli from '../Backgrounds/Broccoli';
 
 type Props = {
   dict: any,
@@ -26,30 +23,16 @@ export default function Hero({ dict }: Props) {
         </div>
         <div className="float-right max-w-sm mx-auto px-2.5 top-0 right-0">
 
-{/* @ts-expect-error Server Component */}
-            <PlaceholderedImage
-                src={'/images/main.webp'}
-                width={800}
-                height={800}
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-                alt="Maryia Novik"
-                priority={true}
-              ></PlaceholderedImage>
-            {/* <Image
+            <Image
               src={'/images/doctor.png'}
               sizes=''
-              width={1200}
+              width={800}
               height={800}
               quality={100}
               className="aspect-square rounded-2xl bg-tranparent object-cover z-10"
               alt="Maryia Novik"
               priority={true}
-            /> */}
-
-            {/* <div className='absolute inset-0'>
-              <Broccoli className="h-36 w-36 text-emerald-300/50" traceStroke="#34d399" />
-
-              </div> */}
+            />
           </div>
       </div>
     </Section>

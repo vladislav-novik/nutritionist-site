@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { PostOverview } from "@/types/post";
-import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 // import Tag from "./Tag";
 import ReadArticleButton from "./ReadArticleButton";
+import { urlForImage } from "@/sanity/lib/image";
+import Image from 'next/image';
 
 type PropsType = {
   post: PostOverview;
@@ -15,14 +16,13 @@ export default function PostOverview({ post, dict }: PropsType) {
     <article className="flex flex-col gap-8 lg:flex-row relative">
       <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:flex-shrink-0 lg:w-64 lg:aspect-[1/1]">
         <Link href={`/articles/${encodeURIComponent(post.slug)}`}>
-          {/* @ts-expect-error Server Component */}
-          <PlaceholderedImage
-            src={post.mainImage}
+          <Image
+            src={urlForImage(post.mainImage).width(800).height(400).url()}
             className="w-full h-full absolute inset-0 object-cover bg-gray-50 rounded-2xl"
             width={800}
             height={400}
             alt={post.title}
-          ></PlaceholderedImage>
+          ></Image>
           <div className="ring-inset ring-1 ring-gray-900/10 rounded-2xl absolut inset-0"></div>
         </Link>
       </div>

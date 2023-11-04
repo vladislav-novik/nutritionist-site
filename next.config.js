@@ -1,18 +1,15 @@
 /** @type {import('next').NextConfig} */
 
-const { withPlaiceholder } = require("@plaiceholder/next");
-
-const nextConfig = withPlaiceholder({
-  experimental: {
-    serverActions: true,
-  },
-
+const nextConfig = {
   images: {
-    domains: ['cdn.sanity.io'],
+    remotePatterns:  [{
+      protocol: 'https',
+      hostname: 'cdn.sanity.io',
+    }],
     dangerouslyAllowSVG: true,
   },
   
   skipMiddlewareUrlNormalize: true,
-});
+};
 
 module.exports = nextConfig

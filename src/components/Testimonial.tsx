@@ -1,6 +1,7 @@
-import PlaceholderedImage from "@/components/shared/PlaceholderedImage";
 import { Testimonial } from "@/types/testimonial";
 import { FaUserCircle } from "react-icons/fa";
+import Image from 'next/image'
+import { urlForImage } from "@/sanity/lib/image";
 
 type Props = {
   testimonial: Testimonial;
@@ -18,9 +19,8 @@ export default function Testimonial({ testimonial }: Props) {
       </div>
       <div className="col-end-1 w-16 lg:row-span-4 lg:w-52">
       { testimonial.image ? (
-        /* @ts-expect-error Server Component */
-        <PlaceholderedImage
-          src={testimonial.image}
+        <Image
+          src={urlForImage(testimonial.image).url()}
           alt="alt"
           className="mx-auto h-auto rounded-xl"
           width={200}
