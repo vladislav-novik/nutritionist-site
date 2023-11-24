@@ -1,23 +1,22 @@
 import Post from "@/components/post/Post";
-import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
-import { urlForImage } from "@/sanity/lib/image";
 
+// TODO: update to Tina
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = params
 
-  const post = await getPostBySlug(slug);
+  // const post = await getPostBySlug(slug);
 
-  return await generateMetadataForPage('article', lang, post);
+  // return await generateMetadataForPage('article', lang, post);
 }
 
 export async function generateStaticParams() {
-  const slugs = await getPostsSlugs();
+  // const slugs = await getPostsSlugs();
 
-  return slugs.map((slug) => ({
-    slug,
-  }));
+  // return slugs.map((slug) => ({
+  //   slug,
+  // }));
 }
 
 type Props = {
@@ -29,14 +28,14 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const { slug } = params
-  const post = await getPostBySlug(slug);
+  // const post = await getPostBySlug(slug);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    "headline": post.title,
-    "image": [urlForImage(post.mainImage).width(720).height(360).fit("fill").url()],
-    "datePublished": post.publishedAt,
+    // "headline": post.title,
+    // "image": [urlForImage(post.mainImage).width(720).height(360).fit("fill").url()],
+    // "datePublished": post.publishedAt,
     "author": [{
       "@type": "Person",
       "name": "Marya Novik",
@@ -55,7 +54,7 @@ export default async function Page({ params }: Props) {
         <div className="mx-auto max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-2xl">
-              <Post post={post}></Post>
+              {/* <Post post={post}></Post> */}
             </div>
           </div>
         </div>

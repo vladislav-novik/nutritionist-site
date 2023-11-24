@@ -1,4 +1,4 @@
-import { Image } from 'sanity'
+// import { Image } from 'sanity'
 
 export type PostOverview = {
     _id: string;
@@ -6,7 +6,7 @@ export type PostOverview = {
     slug: string;
     publishedAt: string;
     mainImage: {
-        ref: Image,
+        // ref: Image,
         lquip: string,
         blurHash: string,
     }

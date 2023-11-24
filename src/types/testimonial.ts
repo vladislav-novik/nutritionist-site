@@ -1,10 +1,8 @@
-import { Image } from "sanity";
-
 export type Testimonial = {
     _id: string;
     author: string;
     image: {
-        ref: Image,
+        // ref: Image,
         lquip: string,
         blurHash: string,
     }

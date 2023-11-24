@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PostOverview } from "@/types/post";
 // import Tag from "./Tag";
 import ReadArticleButton from "./ReadArticleButton";
-import { urlForImage } from "@/sanity/lib/image";
 import Image from 'next/image';
 
 type PropsType = {
@@ -18,7 +17,8 @@ export default function PostOverview({ post, dict }: PropsType) {
         <Link href={`/articles/${encodeURIComponent(post.slug)}`}>
           <Image
             placeholder="blur" blurDataURL={post.mainImage.lquip}
-            src={urlForImage(post.mainImage.ref).width(800).height(400).url()}
+            // TODO: update to Tina
+            src={''}
             className="w-full h-full absolute inset-0 object-cover bg-gray-50 rounded-2xl"
             width={800}
             height={400}

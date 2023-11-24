@@ -1,8 +1,7 @@
+import { Metadata } from 'next';
 import { getDictionary } from '@/utils/dictionaries';
 import { Post } from '@/types/post'
-import { Metadata } from 'next/types'
 import { getAlternateLangs } from './locales';
-import { urlForImage } from '@/sanity/lib/image';
 
 const MAX_GENERAL_TITLE_LENGTH = 65;
 const MAX_GENERAL_DESCRIPTION_LENGTH = 320;
@@ -56,8 +55,9 @@ function createAlternatesMetadata(lang: string, page: 'home' | 'articles' | 'art
 }
 
 function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any) {
-  const imageUrl = page === 'article' ?
-    urlForImage(data.mainImage)?.width(720).height(360).url() : '/images/main.webp';
+  // TODO: update to TinaCMS
+  // const imageUrl = page === 'article' ?
+  //   urlForImage(data.mainImage)?.width(720).height(360).url() : '/images/main.webp';
 
   return {
     openGraph: {
@@ -66,7 +66,7 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
       alternateLocale: getAlternateLangs(lang),
       url: getPageUrl(lang, page, data),
       images: [{
-        url: imageUrl,
+        url: '',
         width: 720,
         height: 360
       }],
@@ -76,7 +76,7 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
       card: 'summary_large_image',
       site: getPageUrl(lang, page, data),
       images: [{
-        url: imageUrl,
+        url: '',
         width: 720,
         height: 360
       }]

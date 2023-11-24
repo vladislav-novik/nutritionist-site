@@ -1,6 +1,5 @@
 "use server"
 
-import { sendCustomerRequest } from "@/sanity/lib/clientRequests";
 import { CustomerRequest } from "@/types/customerRequest";
 
 export async function submitRequest(data: FormData) {
@@ -23,9 +22,9 @@ export async function submitRequest(data: FormData) {
         message: (data.get('message') as string).trim(),
     }
 
-    const result = await sendCustomerRequest(customerRequest);
+    // const result = await sendCustomerRequest(customerRequest);
 
-    return result._createdAt ? { success: true } : { success: false, errors: [{ field: 'sanity', value: '', isValid: false, validationMessage: 'Error while sending data' }] };
+    // return result._createdAt ? { success: true } : { success: false, errors: [{ field: 'sanity', value: '', isValid: false, validationMessage: 'Error while sending data' }] };
 }
 
 
