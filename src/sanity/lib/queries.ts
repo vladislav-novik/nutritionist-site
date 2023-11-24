@@ -5,7 +5,11 @@ const postPreviewProjection = `
     title,
     "slug": slug.current,
     publishedAt,
-    mainImage,
+    "mainImage": {
+        "ref": mainImage,
+        "lquip": mainImage.asset->metadata.lqip,
+        "blurHash": mainImage.asset->metadata.blurHash,
+    },
     "category": category->title,
     "tags": tags[]->title,
     excerpt
@@ -14,7 +18,11 @@ const postPreviewProjection = `
 const testimonialProjection = `
     _id,
     author,
-    image,
+    "image": {
+        "ref": image,
+        "lquip": image.asset->metadata.lqip,
+        "blurHash": image.asset->metadata.blurHash,
+    },
     reason,
     content,
     date
@@ -43,7 +51,11 @@ export const postBySlug = groq`
     title,
     "slug": slug.current,
     publishedAt,
-    mainImage,
+    "mainImage": {
+        "ref": mainImage,
+        "lquip": mainImage.asset->metadata.lqip,
+        "blurHash": mainImage.asset->metadata.blurHash,
+    },
     "category": category->title,
     "tags": tags[]->title,
     excerpt,

@@ -17,7 +17,8 @@ export default function PostOverview({ post, dict }: PropsType) {
       <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:flex-shrink-0 lg:w-64 lg:aspect-[1/1]">
         <Link href={`/articles/${encodeURIComponent(post.slug)}`}>
           <Image
-            src={urlForImage(post.mainImage).width(800).height(400).url()}
+            placeholder="blur" blurDataURL={post.mainImage.lquip}
+            src={urlForImage(post.mainImage.ref).width(800).height(400).url()}
             className="w-full h-full absolute inset-0 object-cover bg-gray-50 rounded-2xl"
             width={800}
             height={400}

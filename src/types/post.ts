@@ -5,7 +5,11 @@ export type PostOverview = {
     title: string;
     slug: string;
     publishedAt: string;
-    mainImage: Image;
+    mainImage: {
+        ref: Image,
+        lquip: string,
+        blurHash: string,
+    }
     category: string;
     excerpt: string;
     tags: string[];

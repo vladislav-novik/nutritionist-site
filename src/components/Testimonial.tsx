@@ -18,9 +18,11 @@ export default function Testimonial({ testimonial }: Props) {
         </blockquote>
       </div>
       <div className="col-end-1 w-16 lg:row-span-4 lg:w-52">
-      { testimonial.image ? (
+      { testimonial.image && testimonial.image.ref ? (
         <Image
-          src={urlForImage(testimonial.image).url()}
+          placeholder="blur"
+          blurDataURL={testimonial.image.lquip}
+          src={urlForImage(testimonial.image.ref).url()}
           alt="alt"
           className="mx-auto h-auto rounded-xl"
           width={200}

@@ -25,7 +25,6 @@ export default function Hero({ dict }: Props) {
 
             <Image
               src={'/images/doctor.png'}
-              sizes=''
               width={800}
               height={800}
               quality={100}

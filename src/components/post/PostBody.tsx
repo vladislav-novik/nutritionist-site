@@ -25,7 +25,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
       return (
         <figure>
           {/* @ts-expect-error Server Component */  }
-          <Image src={urlForImage(value).width(1000).height(667)} width={1000} height={667} alt='alt'></Image >
+          <Image src={urlForImage(value.ref).width(1000).height(667)} width={1000} height={667} alt='alt'></Image >
           {value.alt && <figcaption>{value.alt}</figcaption>}
         </figure>
       );

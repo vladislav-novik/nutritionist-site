@@ -14,7 +14,7 @@ type Props = {
 }
 
 export default function Testimonials({ dict, testimonials }: Props) {
-
+  
   return (
     <Section id="testimonials" className="bg-white">
       <div className="relative w-full h-full">
