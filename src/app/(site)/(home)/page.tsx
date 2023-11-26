@@ -7,6 +7,8 @@ import Services from '@/components/home/Services'
 import ContactUs from '@/components/home/ContactMe'
 // import PageAnimation from '@/components/Animation/PageAnimation'
 import { getDictionary } from '../../../utils/dictionaries'
+import { getTestimonials } from '@/sanity/lib/testimonials'
+import { getPostsForHome } from '@/sanity/lib/posts'
 
 
 // export function generateStaticParams() {
@@ -25,10 +27,10 @@ export default async function Page({ params }: Props) {
 
   const dict = await getDictionary(lang)
 
-  // TODO: update to TinaCMS
-  // const testimonials = await getTestimonials();
+  const testimonials = await getTestimonials();
+
   const POSTS_AMOUNT = 3;
-  // const posts = await getPostsForHome(POSTS_AMOUNT);
+  const posts = await getPostsForHome(POSTS_AMOUNT);
 
   return (
     // <PageAnimation>
@@ -38,8 +40,8 @@ export default async function Page({ params }: Props) {
         {/* <Main lang={params.lang}></Main> */}
 
         <Services dict={dict}></Services>
-        {/* <Testimonials dict={dict} testimonials={testimonials}></Testimonials> */}
-        {/* <HomePosts dict={dict} posts={posts}></HomePosts> */}
+        <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
+        <HomePosts dict={dict} posts={posts}></HomePosts>
         <ContactUs dict={dict}></ContactUs>
       </main>
     // </PageAnimation>

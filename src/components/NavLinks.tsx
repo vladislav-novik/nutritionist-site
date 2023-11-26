@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll'
 import classnames from 'classnames'
 

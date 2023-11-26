@@ -1,7 +1,8 @@
+import { urlForImage } from "@/sanity/lib/image";
 import { Post } from "../../types/post"
 import ShareButtons from "../ShareButtons";
 import PostBody from "./PostBody";
-import Image from 'next/image';
+import Image from 'next/image'
 
 type Props = {
   post: Post;
@@ -18,7 +19,7 @@ export default function Post({ post }: Props) {
         </time>
       </header>
       <div className="mt-8 prose lg:prose-lg dark:prose-invert">
-        <Image placeholder="blur" blurDataURL={post.mainImage.lquip} src={''} width={1310} height={872} alt="alt" />
+        <Image placeholder="blur" blurDataURL={post.mainImage.lquip} src={urlForImage(post.mainImage.ref).width(1310).height(872).url()} width={1310} height={872} alt="alt" />
         <PostBody content={post.body}></PostBody>
       </div>
       <div className="mt-8 w-full flex justify-end">
