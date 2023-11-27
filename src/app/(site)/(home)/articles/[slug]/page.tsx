@@ -35,7 +35,7 @@ export default async function Page({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     "headline": post.title,
-    "image": [urlForImage(post.mainImage).width(720).height(360).fit("fill").url()],
+    "image": [urlForImage(post.mainImage.ref).width(720).height(360).fit("fill").url()],
     "datePublished": post.publishedAt,
     "author": [{
       "@type": "Person",

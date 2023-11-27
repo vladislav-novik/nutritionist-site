@@ -57,7 +57,7 @@ function createAlternatesMetadata(lang: string, page: 'home' | 'articles' | 'art
 
 function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any) {
   const imageUrl = page === 'article' ?
-    urlForImage(data.mainImage)?.width(720).height(360).url() : '/images/main.webp';
+    urlForImage(data.mainImage.ref)?.width(720).height(360).url() : '/images/main.webp';
 
   return {
     openGraph: {

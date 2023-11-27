@@ -1,7 +1,6 @@
 import { Testimonial } from "@/types/testimonial";
 import { FaUserCircle } from "react-icons/fa";
-import Image from 'next/image'
-import { urlForImage } from "@/sanity/lib/image";
+import Image from './Shared/Image'
 
 type Props = {
   testimonial: Testimonial;
@@ -20,9 +19,8 @@ export default function Testimonial({ testimonial }: Props) {
       <div className="col-end-1 w-16 lg:row-span-4 lg:w-52">
       { testimonial.image && testimonial.image.ref ? (
         <Image
-          placeholder="blur"
           blurDataURL={testimonial.image.lquip}
-          src={urlForImage(testimonial.image.ref).url()}
+          src={testimonial.image.ref}
           alt="alt"
           className="mx-auto h-auto rounded-xl"
           width={200}
