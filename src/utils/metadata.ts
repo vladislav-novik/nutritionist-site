@@ -26,7 +26,7 @@ export async function generateMetadataForPage(page: 'home' | 'articles' | 'artic
   return {
     title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
     description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
-    metadataBase: new URL(process.env.BASE_URL!),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
     alternates: createAlternatesMetadata(lang, page, data),
     keywords: [],
 
@@ -85,7 +85,7 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
 }
 
 function getPageUrl(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any): string {
-  let path = `${process.env.BASE_URL}/${lang}`;
+  let path = `${process.env.NEXT_PUBLIC_BASE_URL}/${lang}`;
 
   switch (page) {
     case 'articles': path += getSearchParamsPerPage(page, []); break;

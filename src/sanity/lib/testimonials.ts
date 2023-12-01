@@ -1,5 +1,5 @@
 import { Testimonial } from "@/types/testimonial";
-import client from "./client";
+import { client } from "./client";
 import { testimonialsForHome, testimonialsPerPage } from "./queries";
 
 export async function getTestimonials(): Promise<Testimonial[]> {

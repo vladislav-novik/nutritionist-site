@@ -24,9 +24,8 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
     image: ({ value }: any) => {
       return (
         <figure>
-          {/* @ts-expect-error Server Component */  }
-          <Image src={urlForImage(value.ref).width(1000).height(667)} width={1000} height={667} alt='alt'></Image >
-          {value.alt && <figcaption>{value.alt}</figcaption>}
+          <Image src={urlForImage(value).width(1000).height(667).url()} width={1000} height={667} alt='alt'></Image >
+          {value.alt && <figcaption className="text-center">{value.alt}</figcaption>}
         </figure>
       );
     }
@@ -34,6 +33,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 
   marks: {
     em: ({ children }: any) => <em>{children}</em>,
+    u: ({ children }: any) => <u>{children}</u>,
 
     // Ex. 2: rendering a custom `link` annotation
     link: ({ value, children }: any) => {

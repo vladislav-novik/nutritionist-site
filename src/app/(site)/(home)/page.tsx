@@ -9,6 +9,7 @@ import ContactUs from '@/components/home/ContactMe'
 import { getDictionary } from '../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
+import { PostOverview } from '@/types/post'
 
 
 // export function generateStaticParams() {
@@ -30,7 +31,8 @@ export default async function Page({ params }: Props) {
   const testimonials = await getTestimonials();
 
   const POSTS_AMOUNT = 3;
-  const posts = await getPostsForHome(POSTS_AMOUNT);
+  // const posts = await getPostsForHome(POSTS_AMOUNT);
+  const posts = [] as PostOverview[];
 
   return (
     // <PageAnimation>
