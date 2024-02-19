@@ -24,7 +24,10 @@ type Props = {
 }
 
 export default async function Page({ params }: Props) {
-  const { lang } = params
+  let { lang } = params
+  if (!lang) {
+    lang = 'ru'
+  }
 
   const dict = await getDictionary(lang)
 

@@ -69,9 +69,13 @@ export default async function Page({ params }: Props) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang, slug } = params
+  let { lang, slug } = params
+
+  if (!lang) {
+    lang = 'ru'
+  }
 
   const post = await getPostBySlug(slug);
 
-  return await generateMetadataForPage('article', lang, post);
+  return await generateMetadataForPage('article', lang, post)
 }

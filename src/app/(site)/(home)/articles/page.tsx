@@ -7,7 +7,10 @@ import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = params
+  let { lang } = params
+  if (!lang) {
+    lang = 'ru'
+  }
 
   return await generateMetadataForPage('articles', lang);
 }
@@ -19,7 +22,12 @@ type Props = {
 }
 
 export default async function Page({ params }: Props) {
-  const dict = await getDictionary(params.lang);
+  let { lang } = params
+  if (!lang) {
+    lang = 'ru'
+  }
+
+  const dict = await getDictionary(lang)
   const posts = await getPosts()
 
   return (
