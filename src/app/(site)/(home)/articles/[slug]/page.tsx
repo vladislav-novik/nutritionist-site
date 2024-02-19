@@ -9,7 +9,7 @@ import { generateMetadataForPage } from "@/utils/metadata";
 type Props = {
   params: {
     slug: string;
-    lang: string;
+    // lang: string;
   }
 }
 
@@ -69,11 +69,9 @@ export default async function Page({ params }: Props) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  let { lang, slug } = params
+  let { slug } = params
 
-  if (!lang) {
-    lang = 'ru'
-  }
+  const lang = 'ru'
 
   const post = await getPostBySlug(slug);
 

@@ -9,25 +9,21 @@ import ContactUs from '@/components/home/ContactMe'
 import { getDictionary } from '../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
-import { PostOverview } from '@/types/post'
 
-
+ 
 // export function generateStaticParams() {
 //   return langs.map(l => ({ lang: l }));
 // }
 
-type Props = {
-  params: {
-    lang: string,
-  },
-  searchParams: any;
-}
+// type Props = {
+//   params: {
+//     lang: string,
+//   },
+//   searchParams: any;
+// }
 
-export default async function Page({ params }: Props) {
-  let { lang } = params
-  if (!lang) {
-    lang = 'ru'
-  }
+export default async function Page() {
+  let lang = 'ru'
 
   const dict = await getDictionary(lang)
 

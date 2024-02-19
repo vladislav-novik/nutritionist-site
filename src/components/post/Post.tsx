@@ -16,7 +16,7 @@ export default function Post({ post }: Props) {
         </time>
       </header>
       <div className="mt-8 prose lg:prose-lg dark:prose-invert">
-        {/* <PostBody content={post.body}></PostBody> */}
+        <PostBody content={post.body}></PostBody>
       </div>
       <div className="mt-8 w-full flex justify-end">
         <ShareButtons />
