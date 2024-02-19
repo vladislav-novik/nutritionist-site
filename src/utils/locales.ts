@@ -1,11 +1,10 @@
 const regex = /((([a-zA-Z]+(-[a-zA-Z0-9]+){0,2})|\*)(;q=[0-1](\.[0-9]+)?)?)*/g;
 
 export const defaultLang = "ru";
-export const langs = ["ru", "be", "en"];
+export const langs = ["ru", "en"];
 
 export const locales: Map<string, string[]> = new Map([
   ["ru", ["ru-RU", "ru"]],
-  ["be", ["be-BY", "be"]],
   ["en", ["en"]]
 ]);
 

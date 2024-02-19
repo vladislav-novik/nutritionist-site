@@ -6,20 +6,21 @@ import PageWrapper from "@/components/Animation/PageAnimation";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = params
-
-  return await generateMetadataForPage('articles', lang);
+export async function generateMetadata(): Promise<Metadata> {
+  let lang = 'ru'
+  return await generateMetadataForPage('articles', lang)
 }
 
-type Props = {
-  params: {
-    lang: string,
-  }
-}
+// type Props = {
+//   params: {
+//     lang: string,
+//   }
+// }
 
-export default async function Page({ params }: Props) {
-  const dict = await getDictionary(params.lang);
+export default async function Page() {
+  let lang = 'ru'
+
+  const dict = await getDictionary(lang)
   const posts = await getPosts()
 
   return (

@@ -13,7 +13,7 @@ import Twitter from "./ShareButtons/Twitter";
 import Copy from "./ShareButtons/Copy";
 
 export default function ShareButtons() {
-	const rootUrl = typeof window === 'undefined' ? process.env.BASE_URL : window.location.origin
+	const rootUrl = typeof window === 'undefined' ? process.env.NEXT_PUBLIC_BASE_URL : window.location.origin
 	const pathname = usePathname()
 	const url = `${rootUrl}${pathname}`
 

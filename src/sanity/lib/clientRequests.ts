@@ -1,5 +1,5 @@
 import { CustomerRequest } from '@/types/customerRequest'
-import client from './client'
+import { client } from './client'
 
 export const sendCustomerRequest = async (data: CustomerRequest) => {
     const response = await client.create({

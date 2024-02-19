@@ -1,5 +1,5 @@
 import { Service } from "@/types/service";
-import client from "./client";
+import { client } from "./client";
 import { services } from "./queries";
 
 export async function getServices() {
