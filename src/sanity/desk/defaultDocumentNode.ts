@@ -10,11 +10,16 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
         S.view
           .component(Iframe)
           .options({
-            URL: (doc: SanityDocument) => {
-                console.log('defaultDocumentNode doc', doc)
-                return doc?.slug?.current 
-                  ? `${process.env.NEXT_PUBLIC_BASE_URL}/api/preview?slug=${doc.slug.current}`
-                  : `${process.env.NEXT_PUBLIC_BASE_URL}/api/preview`
+            url: {
+              preview: (doc: SanityDocument) => doc?.slug?.current ? `http://localhost:3454/articles/${doc.slug.current}` : new Error('Missing slug'),
+              draftMode: 'http://localhost:3454/api/preview'
+            },
+            // url: (doc: SanityDocument) => {
+            //   console.log('iframe doc', doc);
+            //   return `http://localhost:3454/articles/${doc.slug.current}`;
+            // },
+            reload: {
+              button: true, // default `undefined`
             },
           })
           .title('Preview'),
