@@ -31,8 +31,7 @@ export default async function Page({ params }: Props) {
   const testimonials = await getTestimonials();
 
   const POSTS_AMOUNT = 3;
-  // const posts = await getPostsForHome(POSTS_AMOUNT);
-  const posts = [] as PostOverview[];
+  const posts = await getPostsForHome(POSTS_AMOUNT);
 
   return (
     // <PageAnimation>
@@ -43,8 +42,8 @@ export default async function Page({ params }: Props) {
 
         <Services dict={dict}></Services>
         <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
-        <HomePosts dict={dict} posts={posts}></HomePosts>
         <ContactUs dict={dict}></ContactUs>
+        <HomePosts dict={dict} posts={posts}></HomePosts>
       </main>
     // </PageAnimation>
   )
