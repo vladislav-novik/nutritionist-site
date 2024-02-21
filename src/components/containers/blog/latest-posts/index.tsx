@@ -1,11 +1,11 @@
 import { PostOverview as PostOverviewType } from "@/types/post";
-import PostOverview from "../post/PostPreview";
-import SectionHeader from "@/components/Section/Header";
-import SectionSubHeader from "@/components/Section/Subheader";
-import SectionDescription from "@/components/Section/Description";
+import PostOverview from "./Post";
+import SectionHeader from "@/components/shared/section/Header";
+import SectionSubHeader from "@/components/shared/section/Subheader";
+import SectionDescription from "@/components/shared/section/Description";
 import Link from "next/link";
-import Section from "@/components/Section/Section";
-import SectionAnimation from "@/components/Animation/SectionAnimation";
+import Section from "@/components/shared/section/Section";
+import SectionAnimation from "@/components/shared/animation/SectionAnimation";
 
 type Props = {
   dict: any;

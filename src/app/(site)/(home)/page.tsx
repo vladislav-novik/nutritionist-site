@@ -1,10 +1,10 @@
 // import { Inter } from 'next/font/google'
 // import Main from '@/components/home/Main'
-import Hero from '@/components/home/Hero'
-import HomePosts from '@/components/home/Articles'
-import Testimonials from '@/components/home/Testimonials'
-import Services from '@/components/home/Services'
-import ContactUs from '@/components/home/ContactMe'
+import Hero from '@/components/containers/hero'
+import HomePosts from '@/components/blog/latest-posts'
+import Testimonials from '@/components/containers/testimonials'
+import Services from '@/components/containers/features'
+import ContactUs from '@/components/containers/contact-me'
 // import PageAnimation from '@/components/Animation/PageAnimation'
 import { getDictionary } from '../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
@@ -36,9 +36,6 @@ export default async function Page() {
     // <PageAnimation>
       <main>
         <Hero dict={dict}></Hero>
-
-        {/* <Main lang={params.lang}></Main> */}
-
         <Services dict={dict}></Services>
         <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
         <ContactUs dict={dict}></ContactUs>

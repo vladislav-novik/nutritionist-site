@@ -1,6 +1,7 @@
-import { Post } from "../../types/post"
-import ShareButtons from "../ShareButtons";
+import { Post } from "../../../../types/post"
+import ShareButtons from "./ShareButtons";
 import PostBody from "./PostBody";
+
 type Props = {
   post: Post;
 };

@@ -1,19 +1,18 @@
-import Carousel from "@/components/Carousel";
-import Testimonial from "../Testimonial";
+import Carousel from "@/components/containers/testimonials/Carousel";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import SectionHeader from "@/components/Section/Header";
-import SectionSubHeader from "@/components/Section/Subheader";
-import SectionDescription from "@/components/Section/Description";
-import Section from "@/components/Section/Section";
-import SectionAnimation from "@/components/Animation/SectionAnimation";
+import SectionHeader from "@/components/shared/section/Header";
+import SectionSubHeader from "@/components/shared/section/Subheader";
+import SectionDescription from "@/components/shared/section/Description";
+import Section from "@/components/shared/section/Section";
 import { Testimonial as TestimonialType } from "@/types/testimonial";
+import Testimonial from './testimonial'
 
 type Props = {
   dict: any;
   testimonials: TestimonialType[];
 }
 
-export default function Testimonials({ dict, testimonials }: Props) {
+export const component = ({ dict, testimonials }: Props) => {
   
   return (
     <Section id="testimonials" className="bg-white">
@@ -40,3 +39,5 @@ export default function Testimonials({ dict, testimonials }: Props) {
     </Section>
   )
 }
+
+export default component

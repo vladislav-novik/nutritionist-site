@@ -1,8 +1,8 @@
-import SectionDescription from '@/components/Section/Description';
-import SectionHeader from '@/components/Section/Header';
-import Section from '@/components/Section/Section';
-import SectionSubHeader from '@/components/Section/Subheader';
-import SectionAnimation from '@/components/Animation/SectionAnimation'
+import SectionDescription from '@/components/shared/section/Description';
+import SectionHeader from '@/components/shared/section/Header';
+import Section from '@/components/shared/section/Section';
+import SectionSubHeader from '@/components/shared/section/Subheader';
+import SectionAnimation from '@/components/shared/animation/SectionAnimation'
 import Image from 'next/image'
 
 type Props = {

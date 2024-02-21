@@ -7,10 +7,10 @@ import {
 	LinkedinShareButton,
 	TwitterShareButton
 } from "react-share";
-import Facebook from "./ShareButtons/Facebook";
-import Linkedin from "./ShareButtons/Linkedin";
-import Twitter from "./ShareButtons/Twitter";
-import Copy from "./ShareButtons/Copy";
+import Facebook from "./Facebook";
+import Linkedin from "./Linkedin";
+import Twitter from "./Twitter";
+import Copy from "./Copy";
 
 export default function ShareButtons() {
 	const rootUrl = typeof window === 'undefined' ? process.env.NEXT_PUBLIC_BASE_URL : window.location.origin

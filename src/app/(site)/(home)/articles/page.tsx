@@ -1,8 +1,8 @@
 import { getPosts } from "@/sanity/lib/posts"
 import { PostOverview } from "@/types/post";
-import PostsPreview from "@/components/post/PostPreview2"
+import PostsPreview from "@/components/containers/blog/posts"
 import { getDictionary } from "../../../../utils/dictionaries";
-import PageWrapper from "@/components/Animation/PageAnimation";
+import PageWrapper from "@/components/shared/animation/PageAnimation";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 

@@ -1,14 +1,14 @@
-import ServicesOverview from '../Services/ServicesOverview';
-import SectionHeader from '@/components/Section/Header';
-import SectionSubHeader from '@/components/Section/Subheader';
-import SectionDescription from '@/components/Section/Description';
-import Section from '@/components/Section/Section';
+import Features from './features';
+import SectionHeader from '@/components/shared/section/Header';
+import SectionSubHeader from '@/components/shared/section/Subheader';
+import SectionDescription from '@/components/shared/section/Description';
+import Section from '@/components/shared/section/Section';
 
 type Props = {
   dict: any,
 }
 
-export default function Services({ dict }: Props) {
+const component = ({ dict }: Props) => {
   return (
     <Section id="services" className="bg-zinc-100">
       {/* <SectionAnimation> */}
@@ -18,10 +18,11 @@ export default function Services({ dict }: Props) {
             <SectionSubHeader>{dict.sections.services.subtitle}</SectionSubHeader>
             <SectionDescription>{dict.sections.services.description}</SectionDescription>
           </div>
-          {/* @ts-expect-error Server Component */}
-          <ServicesOverview dict={dict}></ServicesOverview>
+          <Features dict={dict}></Features>
         </div>
       {/* </SectionAnimation> */}
     </Section>
   )
 }
+
+export default component

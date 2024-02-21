@@ -5,7 +5,7 @@ type Props = {
   service: Service;
 };
 
-export default function ServiceOverview({ service }: Props) {
+export const component = ({ service }: Props) => {
   return (
     <div key={service.name} className="relative pl-[5rem]">
       <dt className="text-base font-semibold leading-7 text-gray-900">
@@ -24,3 +24,5 @@ export default function ServiceOverview({ service }: Props) {
     </div>
   );
 }
+
+export default component;

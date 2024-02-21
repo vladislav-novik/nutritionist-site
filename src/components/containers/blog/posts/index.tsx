@@ -1,6 +1,6 @@
 import { PostOverview } from "@/types/post";
 import Link from "next/link";
-import ReadArticleButton from "./ReadArticleButton";
+import ReadArticleButton from "../shared/ReadArticleButton";
 
 type Props = {
   post: PostOverview;

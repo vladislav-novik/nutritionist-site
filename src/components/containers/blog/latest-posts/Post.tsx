@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PostOverview } from "@/types/post";
 // import Tag from "./Tag";
-import ReadArticleButton from "./ReadArticleButton";
+import ReadArticleButton from "../shared/ReadArticleButton";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from 'next/image';
 

@@ -1,12 +1,12 @@
 import { Testimonial } from "@/types/testimonial";
 import { FaUserCircle } from "react-icons/fa";
-import Image from './Shared/Image'
+import Image from '../../shared/Image'
 
 type Props = {
   testimonial: Testimonial;
 };
 
-export default function Testimonial({ testimonial }: Props) {
+const component = ({ testimonial }: Props) => {
   return (
     <figure
       className="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10 
@@ -39,3 +39,5 @@ export default function Testimonial({ testimonial }: Props) {
     </figure>
   );
 }
+
+export default component;

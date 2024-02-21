@@ -1,7 +1,7 @@
 "use client"
 
 import { Carousel, DeepPartial, FlowbiteCarouselTheme } from "flowbite-react/lib/esm/components";
-import Control from "@/components/Carousel/Control"
+import Control from "@/components/containers/testimonials/Carousel/Control"
 
 type Props = {
     children: JSX.Element | JSX.Element[];

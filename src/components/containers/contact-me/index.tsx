@@ -1,8 +1,5 @@
-import ContactForm from './form';
-import Section from '@/components/Section/Section';
-import SectionAnimation from '@/components/Animation/SectionAnimation';
-import Background from './Background';
-import Image from 'next/image'
+import Section from '@/components/shared/section/Section';
+import Form from './form';
 
 type Props = {
   dict: any,
@@ -45,8 +42,7 @@ export default function ContactUs({ dict }: Props) {
           </div>
         </div>
         {/* <SectionAnimation> */}
-        {/* @ts-expect-error Server Component */}
-          <ContactForm></ContactForm>
+          <Form />
         {/* </SectionAnimation> */}
       </div>
     </Section>
