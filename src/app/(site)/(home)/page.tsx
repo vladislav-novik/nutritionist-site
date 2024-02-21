@@ -1,9 +1,10 @@
 // import { Inter } from 'next/font/google'
 // import Main from '@/components/home/Main'
 import Hero from '@/components/containers/hero'
-import HomePosts from '@/components/blog/latest-posts'
+import HomePosts from '@/components/containers/blog/latest-posts'
 import Testimonials from '@/components/containers/testimonials'
 import Services from '@/components/containers/features'
+import About from '@/components/containers/about-me'
 import ContactUs from '@/components/containers/contact-me'
 // import PageAnimation from '@/components/Animation/PageAnimation'
 import { getDictionary } from '../../../utils/dictionaries'
@@ -35,11 +36,12 @@ export default async function Page() {
   return (
     // <PageAnimation>
       <main>
-        <Hero dict={dict}></Hero>
-        <Services dict={dict}></Services>
-        <Testimonials dict={dict} testimonials={testimonials}></Testimonials>
-        <ContactUs dict={dict}></ContactUs>
-        <HomePosts dict={dict} posts={posts}></HomePosts>
+        <Hero dict={dict} />
+        <Services dict={dict} />
+        <About />
+        <Testimonials dict={dict} testimonials={testimonials} />
+        <ContactUs dict={dict} />
+        <HomePosts dict={dict} posts={posts} />
       </main>
     // </PageAnimation>
   )
