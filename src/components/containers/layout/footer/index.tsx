@@ -2,7 +2,7 @@ import SocialLinks from "@/components/shared/SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-50">
+    <footer className="bg-[#fbf8e9]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <hr className="border-gray-200" />
         <div className="py-12 mx-auto md:flex md:items-center md:justify-between">

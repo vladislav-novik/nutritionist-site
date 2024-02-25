@@ -19,7 +19,7 @@ export default function HomePosts({ dict, posts }: Props) {
   };
   
   return (
-    <Section id="articles" className="py-16 sm:py-24">
+    <Section id="articles" className="bg-[#fbf8e9] py-16 sm:py-24">
       {/* <SectionAnimation> */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
