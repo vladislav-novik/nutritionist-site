@@ -1,5 +1,5 @@
 import SectionDescription from '@/components/shared/section/Description';
-import SectionHeader from '@/components/shared/section/Header';
+import SectionTitle from '@/components/shared/section/Title';
 import Section from '@/components/shared/section/Section';
 import SectionSubHeader from '@/components/shared/section/Subheader';
 import SectionAnimation from '@/components/shared/animation/SectionAnimation'

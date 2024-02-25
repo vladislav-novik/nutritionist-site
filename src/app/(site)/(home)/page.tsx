@@ -6,6 +6,7 @@ import Testimonials from '@/components/containers/testimonials'
 import Services from '@/components/containers/features'
 import About from '@/components/containers/about-me'
 import ContactUs from '@/components/containers/contact-me'
+import HowItWors from '@/components/containers/how-it-works'
 // import PageAnimation from '@/components/Animation/PageAnimation'
 import { getDictionary } from '../../../utils/dictionaries'
 import { getTestimonials } from '@/sanity/lib/testimonials'
@@ -36,10 +37,11 @@ export default async function Page() {
   return (
     // <PageAnimation>
       <main>
-        <Hero dict={dict} />
-        <Services dict={dict} />
+        {/* <Hero dict={dict} /> */}
         <About />
-        <Testimonials dict={dict} testimonials={testimonials} />
+        <Services dict={dict} />
+        <HowItWors />
+        {/* <Testimonials dict={dict} testimonials={testimonials} /> */}
         <ContactUs dict={dict} />
         <HomePosts dict={dict} posts={posts} />
       </main>

@@ -1,11 +1,10 @@
 import { PostOverview as PostOverviewType } from "@/types/post";
 import PostOverview from "./Post";
-import SectionHeader from "@/components/shared/section/Header";
+import SectionTitle from "@/components/shared/section/Title";
 import SectionSubHeader from "@/components/shared/section/Subheader";
 import SectionDescription from "@/components/shared/section/Description";
 import Link from "next/link";
 import Section from "@/components/shared/section/Section";
-import SectionAnimation from "@/components/shared/animation/SectionAnimation";
 
 type Props = {
   dict: any;
@@ -14,11 +13,11 @@ type Props = {
 
 export default function HomePosts({ dict, posts }: Props) {
   return (
-    <Section id="articles" className="bg-zinc-50">
+    <Section id="articles" className="bg-zinc-50 py-16 sm:py-24">
       {/* <SectionAnimation> */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <SectionHeader>{dict.sections.articles.title}</SectionHeader>
+            <SectionTitle>{dict.sections.articles.title}</SectionTitle>
             <SectionSubHeader>{dict.sections.articles.subtitle}</SectionSubHeader>
             <SectionDescription>{dict.sections.articles.description}</SectionDescription>
           </div>

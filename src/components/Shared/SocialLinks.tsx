@@ -28,7 +28,7 @@ type Props = {
 
 export default function SocialLinks({ withBorder, size }: Props) {
   return (
-    <div className="flex justify-center space-x-6 md:order-2">
+    <div className="flex justify-center space-x-8 md:order-2">
       {socials.map(s => {
         let Component = s.icon;
 

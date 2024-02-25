@@ -3,10 +3,10 @@
 import { useState } from 'react'
 
 import Image from 'next/image'
-import LanguageSelector from './LanguageSelector'
 import MobilePanel from './MobilePanel'
 import NavLinks from './NavLinks'
 import { Squash as Hamburger } from 'hamburger-react'
+import SocialLinks from '../../../shared/SocialLinks'
 
 type Props = {
   lang: string
@@ -16,12 +16,13 @@ export default function Header({ lang }: Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white max-h-16 my-auto sticky top-0 z-20 shadow-md shadow-slate-900/5">
+    <header className="max-h-16 bg-[#fbf8e9] py-2">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8" aria-label="Global">
         <div className="flex md:flex-1">
-          <a href="/" className="-m-1.5">
+          <a href="/" className="-m-1.5 text-xl leading-relaxed text-[#345753">
             <span className="sr-only">Your Company</span>
-            <Image src={'/images/vegetables.png'} width={36} height={36} alt="logo"></Image>
+            <Image className="inline-block" src={'/images/vegetables.png'} width={36} height={36} alt="logo"></Image>
+            MaryaNovikBrand
           </a>
         </div>
         <div className="flex md:hidden">
@@ -31,10 +32,8 @@ export default function Header({ lang }: Props) {
           </div>
         </div>
         <div className="hidden md:flex md:gap-x-12">
-          <NavLinks mobileMenu={false} />
-        </div>
-        <div className="hidden md:flex md:flex-1 md:justify-end">
-          <LanguageSelector lang={lang} />
+          {/* <NavLinks mobileMenu={false} /> */}
+          <SocialLinks size={24} />
         </div>
       </nav>
       <MobilePanel open={mobileMenuOpen} closeHandler={() => setMobileMenuOpen(false)} ></MobilePanel>

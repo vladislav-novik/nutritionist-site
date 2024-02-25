@@ -4,6 +4,6 @@ type Props = {
 
 export default function SectionDescription({ children }: Props) {
     return (
-        <p className="mt-6 text-lg leading-8 text-emerald-900">{children}</p>
+        <p className="mt-6 text-lg leading-8 text-gray-600">{children}</p>
     );
 }

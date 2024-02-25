@@ -1,6 +1,6 @@
 import Carousel from "@/components/containers/testimonials/Carousel";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import SectionHeader from "@/components/shared/section/Header";
+import SectionTitle from "@/components/shared/section/Title";
 import SectionSubHeader from "@/components/shared/section/Subheader";
 import SectionDescription from "@/components/shared/section/Description";
 import Section from "@/components/shared/section/Section";
@@ -20,7 +20,7 @@ export const component = ({ dict, testimonials }: Props) => {
         {/* <SectionAnimation> */}
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="w-full text-left lg:text-center">
-              <SectionHeader>{dict.sections.testimonials.title}</SectionHeader>
+              <SectionTitle>{dict.sections.testimonials.title}</SectionTitle>
               <SectionSubHeader>{dict.sections.testimonials.subtitle}</SectionSubHeader>
               <SectionDescription>{dict.sections.testimonials.description}</SectionDescription>
             </div>
