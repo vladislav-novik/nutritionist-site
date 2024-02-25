@@ -6,7 +6,7 @@ import Image from 'next/image'
 import MobilePanel from './MobilePanel'
 import NavLinks from './NavLinks'
 import { Squash as Hamburger } from 'hamburger-react'
-import SocialLinks from '../../../shared/SocialLinks'
+import SocialLinks from '@/components/shared/SocialLinks'
 
 type Props = {
   lang: string

@@ -1,7 +1,7 @@
 'use client';
 
 import classnames from 'classnames'
-import React, { MouseEventHandler } from 'react'
+import React from 'react'
 
 type Props = {
   className?: string;

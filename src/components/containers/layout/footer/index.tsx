@@ -1,4 +1,4 @@
-import SocialLinks from "../../../shared/SocialLinks";
+import SocialLinks from "@/components/shared/SocialLinks";
 
 export default function Footer() {
   return (
