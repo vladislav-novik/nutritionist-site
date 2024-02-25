@@ -24,25 +24,19 @@ export default async function Page() {
   const posts = await getPosts();
 
   return (
-    <PageWrapper>
-      <div className="text-gray-800">
-        <h2 className="text-2xl font-bold text-center">
-          {dict.sections.articles.title}: {dict.sections.articles.subtitle}
-        </h2>
-        <p className="leading-8 text-lg mt-2 text-center">
-          {dict.sections.articles.description}
-        </p>
-
-        <div className="max-w-6xl mx-auto mt-16 sm:mt-20">
-          <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-            <div className="flex max-w-3xl flex-col space-y-16">
-              {posts.map((post: PostOverview) => (
-                <PostsPreview key={post._id} post={post} dict={dict} />
-              ))}
-            </div>
-          </div>
-        </div>
+    // <PageWrapper>
+    <div className="py-12 sm:py-20">
+      <div className="text-center max-w-md mx-auto">
+        <h2 className="text-3xl font-bold">{dict.sections.articles.title}</h2>
+        <p className="mt-5 leading-6 font-normal text-base">{dict.sections.articles.description}</p>
       </div>
-    </PageWrapper>
+      <div className="grid grid-cols-1 gap-4 max-w-2xl mx-auto mt-12
+        sm:gap-6 lg:mt-20 lg:gap-8 xl:grid-cols-2 xl:max-w-none">
+        {posts.map((post: PostOverview) => (
+          <PostsPreview key={post._id} post={post} dict={dict} />
+        ))}
+      </div>
+    </div>
+    // </PageWrapper>
   );
 }

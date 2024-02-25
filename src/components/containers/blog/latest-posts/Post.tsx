@@ -11,10 +11,33 @@ type PropsType = {
 };
 
 
-export default function PostOverview({ post, dict }: PropsType) {
+const component = ({ post, dict }: PropsType) => {
   return (
-    <article className="flex flex-col gap-8 lg:flex-row relative">
-      <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:flex-shrink-0 lg:w-64 lg:aspect-[1/1]">
+    <article className="relative group px-5 py-6 sm:p-8">
+      <div className="relative overflow-hidden aspect-[16/8] rounded-2xl">
+        <Image
+          placeholder="blur" blurDataURL={post.mainImage.lquip}
+          src={urlForImage(post.mainImage.ref).width(800).height(400).url()}
+          className="transition duration-300 object-cover w-full h-full absolute inset-0 group-hover:scale-125"
+          width={800}
+          height={400}
+          alt={post.title}
+        ></Image>
+      </div>
+      <h3 className="mt-7 font-bold text-xl line-clamp-2">{post.title}</h3>
+      <p className="mt-3 text-base font-normal line-clamp-3">{post.excerpt}</p>
+      <div className="mt-8">
+        {post.tags.map((tag, index) => (
+          <span key={index} className="uppercase tracking-widest font-bold text-gray-400 text-xs">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <Link href={`/articles/${encodeURIComponent(post.slug)}`}>
+        <span className="absolute inset-0" aria-hidden></span>
+      </Link>
+
+      {/* <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:flex-shrink-0 lg:w-64 lg:aspect-[1/1]">
         <Link href={`/articles/${encodeURIComponent(post.slug)}`}>
           <Image
             placeholder="blur" blurDataURL={post.mainImage.lquip}
@@ -46,7 +69,9 @@ export default function PostOverview({ post, dict }: PropsType) {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </article>
   );
 }
+
+export default component;

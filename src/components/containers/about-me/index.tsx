@@ -1,3 +1,4 @@
+import Button from '@/components/shared/buttons/Button'
 import CTAButton from '@/components/shared/buttons/CTAButton'
 import Image from "next/image";
 
@@ -32,11 +33,12 @@ const component = () => {
               </a>
             </p> */}
             
-            <CTAButton />
+            {/* <CTAButton /> */}
+            <Button className="mt-8 px-12 py-2" />
           </div>
 
           <div className="relative">
-            <div className="absolute inset-x-0 bottom-0 -mb-40 -left-8">
+            <div className="absolute inset-x-0 bottom-0 -mb-40 left-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="551" height="545" viewBox="0 0 551 545" fill="none">
                 <path d="M551 224.656C551 373.677 434.779 545 285.54 545C136.3 545 15.3176 424.195 15.3176 275.174C15.3176 126.154 -52.379 0 96.8605 0C246.1 0 551 75.636 551 224.656Z" fill="#ffe536"/>
                 {/* <defs>

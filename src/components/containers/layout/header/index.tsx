@@ -19,7 +19,7 @@ export default function Header({ lang }: Props) {
     <header className="max-h-16 bg-[#fbf8e9] py-2">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8" aria-label="Global">
         <div className="flex md:flex-1">
-          <a href="/" className="-m-1.5 text-xl leading-relaxed text-[#345753">
+          <a href="/" className="-m-1.5 text-xl leading-relaxed text-[#345753]">
             <span className="sr-only">Your Company</span>
             <Image className="inline-block" src={'/images/vegetables.png'} width={36} height={36} alt="logo"></Image>
             MaryaNovikBrand
