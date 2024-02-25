@@ -32,12 +32,6 @@ const Component = ({ show, hideFormHandler }: Props) => {
           className="absolute top-0 left-0 w-full h-[120%] bg-[#fbf8e9] p-4 rounded-t shadow"
         >
           <div className="flex justify-end">
-            <button
-              className=" bg-[#5dc3fa] hover:bg-[#50a4d1] text-white "
-              
-            >
-              
-            </button>
             <Button className="ml-auto py-1 px-2" onClick={(e) => {
                 e.preventDefault();
                 hideFormHandler();
