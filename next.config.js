@@ -5,6 +5,10 @@ const nextConfig = {
     remotePatterns:  [{
       protocol: 'https',
       hostname: 'cdn.sanity.io',
+    }, {
+      hostname: 'cdn.rareblocks.xyz',
+    }, {
+      hostname: 'landingfoliocom.imgix.net',
     }],
   },
   

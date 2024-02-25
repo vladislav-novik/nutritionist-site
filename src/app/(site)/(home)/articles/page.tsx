@@ -1,14 +1,14 @@
-import { getPosts } from "@/sanity/lib/posts"
+import { getPosts } from "@/sanity/lib/posts";
 import { PostOverview } from "@/types/post";
-import PostsPreview from "@/components/post/PostPreview2"
+import PostsPreview from "@/components/containers/blog/posts";
 import { getDictionary } from "../../../../utils/dictionaries";
-import PageWrapper from "@/components/Animation/PageAnimation";
+import PageWrapper from "@/components/shared/animation/PageAnimation";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  let lang = 'ru'
-  return await generateMetadataForPage('articles', lang)
+  let lang = "ru";
+  return await generateMetadataForPage("articles", lang);
 }
 
 // type Props = {
@@ -18,16 +18,20 @@ export async function generateMetadata(): Promise<Metadata> {
 // }
 
 export default async function Page() {
-  let lang = 'ru'
+  let lang = "ru";
 
-  const dict = await getDictionary(lang)
-  const posts = await getPosts()
+  const dict = await getDictionary(lang);
+  const posts = await getPosts();
 
   return (
     <PageWrapper>
       <div className="text-gray-800">
-        <h2 className="text-2xl font-bold text-center">{dict.sections.articles.title}: {dict.sections.articles.subtitle}</h2>
-        <p className="leading-8 text-lg mt-2 text-center">{dict.sections.articles.description}</p>
+        <h2 className="text-2xl font-bold text-center">
+          {dict.sections.articles.title}: {dict.sections.articles.subtitle}
+        </h2>
+        <p className="leading-8 text-lg mt-2 text-center">
+          {dict.sections.articles.description}
+        </p>
 
         <div className="max-w-6xl mx-auto mt-16 sm:mt-20">
           <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

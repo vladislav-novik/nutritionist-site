@@ -1,4 +1,4 @@
-import Post from "@/components/post/Post";
+import Post from "@/components/containers/blog/post";
 import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";

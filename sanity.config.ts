@@ -23,6 +23,6 @@ export default defineConfig({
     unsplashImageAsset(),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({ defaultApiVersion: apiVersion }),
+    process.env.NODE_ENV !== 'production' && visionTool({ defaultApiVersion: apiVersion }),
   ],
 })
