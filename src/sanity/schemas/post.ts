@@ -43,31 +43,13 @@ export default defineType({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
-      validation: Rule => Rule.required().min(70).max(320)
-    }),
-    defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: [{type: 'category'}],
+      validation: Rule => Rule.required().min(50).max(200)
     }),
     defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],
-    }),
-    defineField({
-      name: 'originUrl',
-      title: 'Origin URL',
-      type: 'url',
-      hidden: ({document}) => document?.category === 'Internal',
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'body',

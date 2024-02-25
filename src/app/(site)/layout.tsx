@@ -13,6 +13,8 @@ type Props = {
 export default function RootLayout({
   children
 }: Props): React.JSX.Element {
+  const isDev = process.env.NODE_ENV === 'development'
+
   return (
     <html lang="ru">
       <body className={openSans.className}>
@@ -34,8 +36,12 @@ export default function RootLayout({
           }}
         />
         {children}
-        <SpeedInsights />
-        <Analytics />
+        {!isDev && (
+          <>
+            <SpeedInsights />
+            <Analytics />
+          </>
+        )}
       </body>
     </html>
   )
