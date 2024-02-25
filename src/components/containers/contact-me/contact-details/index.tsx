@@ -3,7 +3,7 @@
 
 import Button from "@/components/shared/buttons/Button";
 import { useState } from 'react'
-import { IoLogoWhatsapp, IoMailOutline, IoClose } from "react-icons/io5";
+import { IoLogoWhatsapp, IoMailOutline } from "react-icons/io5";
 import { PiTelegramLogo } from "react-icons/pi";
 import Form from '../form'
 import Contact from './contact'

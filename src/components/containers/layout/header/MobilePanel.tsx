@@ -1,6 +1,6 @@
 import NavLinks from './NavLinks';
 import { AnimatePresence, motion } from 'framer-motion';
-import SocialLinks from '../../../shared/SocialLinks';
+import SocialLinks from '@/components/shared/SocialLinks';
 
 type Props = {
   open: boolean;
