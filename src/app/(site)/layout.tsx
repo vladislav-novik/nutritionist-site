@@ -1,6 +1,7 @@
 import './globals.css'
 import { Open_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
 
 const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'] })
@@ -33,6 +34,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
