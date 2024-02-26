@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
+import classnames from 'classnames'
 
 const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'] })
 
@@ -17,7 +18,7 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
-      <body className={openSans.className}>
+      <body className={classnames("bg-[#fbf8e9]", openSans.className)}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"
             height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
