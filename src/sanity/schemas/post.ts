@@ -6,6 +6,9 @@ export default defineType({
   title: 'Post',
   type: 'document',
   icon: RiArticleLine,
+  initialValue: () => ({
+    publishedAt: new Date().toISOString()
+  }),
   fields: [
     defineField({
       name: 'title',
@@ -50,6 +53,11 @@ export default defineType({
       title: 'Tags',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],
+    }),
+    defineField({
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
     }),
     defineField({
       name: 'body',

@@ -2,6 +2,9 @@ import Post from "@/components/containers/blog/post";
 import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
+import Image from 'next/image';
+import { urlForImage } from '@/sanity/lib/image'
+import ShareButtons from '@/components/containers/blog/post/ShareButtons'
 // import { draftMode } from "next/headers";
 // import PreviewProvider from "@/components/Preview/PreviewProvider";
 // import PreviewPost from "@/components/Preview/PreviewPost";
@@ -47,22 +50,40 @@ export default async function Page({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       /> */}
-
-      <div className="sm:px-8">
-        <div className="mx-auto max-w-7xl lg:px-8">
-          <div className="relative px-4 sm:px-8 lg:px-12">
-            <div className="mx-auto max-w-2xl">
-              {/* {
-                isDraftMode && !!token ?
-                (<PreviewProvider token={token}>
-                  <PreviewPost post={post} slug={slug} />
-                </PreviewProvider>) :
-                <Post post={post}></Post>
-              } */}
-              <Post post={post}></Post>
-            </div>
-          </div>
+      <div className="max-w-xl mx-auto text-center">
+        <h1 className="text-zinc-900 mt-6 text-4xl font-bold sm:text-5xl">{post.title}</h1>
+        <div className="flex items-center justify-center mt-8 space-x-2">
+          <p className="text-zinc-900 font-medium text-base">Food</p>
+          <span className="font-medium text-base text-zinc-500">&#x2022;</span>
+          <time dateTime={new Date(post.publishedAt).toISOString()} className="text-base text-zinc-500">
+            {new Date(post.publishedAt).toLocaleDateString('ru-RU', { month: 'long', day: 'numeric', year: 'numeric'})}
+          </time>
         </div>
+      </div>
+      <div className="relative mt-8 aspect-[16/9] sm:mt-12 lg:mt-16 lg:aspect-[16/6]">
+        <Image 
+          className="absolute inset-0 w-full h-full object-cover"
+          placeholder="blur"
+          blurDataURL={post.mainImage.lquip}
+          src={urlForImage(post.mainImage.ref).width(2600).height(900).url()}
+          width={2600}
+          height={900}
+          alt=""
+        />
+      </div>
+      <div className="mt-8 grid gap-y-8 grid-cols-1 sm:mt-12 lg:mt-16 lg:gap-x-12 lg:grid-cols-12">
+        {/* {
+          isDraftMode && !!token ?
+          (<PreviewProvider token={token}>
+            <PreviewPost post={post} slug={slug} />
+          </PreviewProvider>) :
+          <Post post={post}></Post>
+        } */}
+        <div className="lg:sticky lg:order-last lg:self-start lg:col-span-2 lg:top-6">
+          <ShareButtons />
+        </div>
+        <div className="hidden lg:block lg:col-span-2"></div>
+        <Post post={post}></Post>
       </div>
     </>
   );
