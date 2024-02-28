@@ -1,6 +1,6 @@
 import Section from '@/components/shared/section/Section';
-import Image from 'next/image';
 import ContactDetails from './contact-details'
+import ContactImage from './contact-image'
 
 type Props = {
   dict: any,
@@ -13,9 +13,7 @@ export default function ContactUs({ dict }: Props) {
         {/* <SectionAnimation> */}
         <ContactDetails />
         {/* </SectionAnimation> */}
-        <div className="px-6 relative max-w-3xl lg:max-w-2xl lg:mx-0 lg:px-8">
-          <Image className="mx-auto" src="/images/phone-mockup.svg" width={500} height={700} alt="" />
-        </div>
+        <ContactImage />
       </div>
     </Section>
   )
