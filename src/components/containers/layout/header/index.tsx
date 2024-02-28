@@ -1,13 +1,7 @@
 import Image from 'next/image'
-import MobilePanel from './MobilePanel'
-import { Squash as Hamburger } from 'hamburger-react'
 import SocialLinks from '@/components/shared/SocialLinks'
 
-type Props = {
-  lang: string
-}
-
-export default function Header({ lang }: Props) {
+export default function Header() {
   return (
     <header className="max-h-16 bg-[#fbf8e9] py-2">
       <nav className="mx-auto flex max-w-7xl items-center justify-center py-3 px-6 sm:justify-between lg:px-8" aria-label="Global">
