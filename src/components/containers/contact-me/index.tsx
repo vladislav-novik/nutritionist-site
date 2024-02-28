@@ -12,8 +12,7 @@ export default function ContactUs({ dict }: Props) {
       <div className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 relative">
         {/* <SectionAnimation> */}
         <ContactDetails />
-        {/* </SectionAnimation> */}
-        <ContactImage />
+        <ContactImage className="mt-12 lg:mt-0" />
       </div>
     </Section>
   )

@@ -8,7 +8,7 @@ const component = () => {
     <Section id="steps" className="bg-[#fbf8e9] py-16 sm:py-24">
       {/* <SectionAnimation> */}
       <div className="mx-auto max-w-5xl px-6 lg:px-20">
-        <div className="mx-auto max-w-2xl mb-16 lg:text-center">
+        <div className="mx-auto max-w-2xl mb-16 text-center">
           <SectionTitle>How it Works</SectionTitle>
           <SectionDescription>
             We believe there&apos;s power in finding balance. Sunnyside helps

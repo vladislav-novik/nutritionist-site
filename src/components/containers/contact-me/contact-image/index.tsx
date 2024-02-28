@@ -2,10 +2,15 @@
 
 import Image from "next/image";
 import Message from "./message";
+import classnames from 'classnames'
 
-const component = () => {
+type Props = {
+  className?: string;
+};
+
+const component = ({ className }: Props) => {
   return (
-    <div className="px-6 relative max-w-3xl lg:max-w-2xl lg:mx-0 lg:px-8">
+    <div className={classnames("px-6 relative max-w lg:max-w-2xl lg:mx-0 lg:px-8", className)}>
       <div className="relative">
         <Image
           className="mx-auto"
