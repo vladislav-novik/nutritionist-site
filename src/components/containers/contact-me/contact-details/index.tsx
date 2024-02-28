@@ -12,7 +12,7 @@ const ContactComponent = () => {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div className="px-8 max-w-md mx-auto relative">
+    <div className="px-8 max-w-md mx-auto text-center relative lg:text-left">
       <div className="text-white">
         <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
         <p className="mb-4">

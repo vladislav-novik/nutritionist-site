@@ -26,7 +26,7 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Header lang={'ru'}></Header>
+      <Header></Header>
       {children}
       <Footer></Footer>
     </>
