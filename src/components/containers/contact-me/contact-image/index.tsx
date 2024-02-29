@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Message from "./message";
 import classnames from 'classnames'

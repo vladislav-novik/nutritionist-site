@@ -1,6 +1,6 @@
 import Button from '@/components/shared/buttons/Button'
 import classnames from 'classnames'
-import Image from "next/image";
+import Step1 from './assets/step-1'
 
 type Props = {
   index: number,
@@ -17,27 +17,11 @@ const component = (props: Props) => {
   return (
     <div className="grid gap-y-6 items-center grid-cols-1 md:gap-x-16 md:grid-cols-2 md:gap-y-8">
       <div className={classnames("relative sm:pl-6 md:px-0", { "md:order-1": !isOdd })}>
-        <div className={classnames("max-w-xs w-full mx-auto relative", {
+        <div className={classnames("max-w-lg w-full mx-auto relative", {
           "md:mr-auto": isOdd,
           "md:ml-auto": !isOdd
         })}>
-          <div className="relative">
-
-          
-          <Image className="ml-auto"
-            src={`/images/how-it-works/step-${index}.png`}
-            width={846} height={548}
-            alt={`step ${index}`}
-          />
-          <div className={classnames("absolute -top-8", {
-            "-right-16": isOdd,
-            "-left-16": !isOdd
-          })}>
-            <div className="bg-white rounded-md drop-shadow-xl">
-              {children}
-            </div>
-          </div>
-          </div>
+          <Step1 />
         </div>
       </div>
       <div className="text-center mx-auto max-w-xs md:text-left md:mx-0">

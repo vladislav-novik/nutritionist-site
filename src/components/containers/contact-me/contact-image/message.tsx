@@ -1,3 +1,5 @@
+"use client"
+
 import classnames from 'classnames'
 import {  motion, useAnimation, useInView } from 'framer-motion'
 import Image from "next/image";
