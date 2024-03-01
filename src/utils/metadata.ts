@@ -1,8 +1,8 @@
-import { getDictionary } from '@/utils/dictionaries';
 import { Post } from '@/types/post'
 import { Metadata } from 'next/types'
 import { getAlternateLangs } from './locales';
 import { urlForImage } from '@/sanity/lib/image';
+import config from '@/app/app.config';
 
 const MAX_GENERAL_TITLE_LENGTH = 65;
 const MAX_GENERAL_DESCRIPTION_LENGTH = 320;
@@ -11,14 +11,16 @@ const MAX_TWITTER_TITLE_LENGTH = 70;
 const MAX_TWITTER_DESCRIPTION_LENGTH = 200;
 
 export async function generateMetadataForPage(page: 'home' | 'articles' | 'article', lang: string, data?: Post | any): Promise<Partial<Metadata>> {
-  const dict = await getDictionary(lang)
+  const { dict } = config;
 
   const titleAndDescription = page === 'article' ? {
     title: (data as Post).title,
     description: (data as Post).excerpt,
   } : {
-    title: dict.SEO[page].title,
-    description: dict.SEO[page].description,
+    title: 'seo title',
+    description: 'seo description',
+    // title: dict.SEO[page].title,
+    // description: dict.SEO[page].description,
   }
 
   const { openGraph, twitter } = createOGAndTwitterMetadata(lang, page, data)
