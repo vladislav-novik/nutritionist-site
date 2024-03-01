@@ -1,4 +1,4 @@
-import Button from '@/components/shared/buttons/Button'
+import Button from '@/components/shared/Button'
 import classnames from 'classnames'
 import Step1 from './assets/step-1'
 

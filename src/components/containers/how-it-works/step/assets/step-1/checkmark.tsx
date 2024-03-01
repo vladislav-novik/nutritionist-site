@@ -21,10 +21,10 @@ const Component = ({ delay, d, id }) => {
       animate={controls}
       initial="hidden"
       variants={{
-        hidden: { opacity: 0, y: -20 },
+        hidden: { opacity: 0, y: -10 },
         visible: { opacity: 1, y: 0 },
       }}
-      transition={{ delay: delay, type: 'spring', bounce: 0.2, stiffness: 100 }}
+      transition={{ delay: delay, type: 'spring', bounce: 0.1, stiffness: 200 }}
       id={id}
       fill="#e30613"
       d={d}

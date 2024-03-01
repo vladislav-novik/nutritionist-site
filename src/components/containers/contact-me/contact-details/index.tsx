@@ -1,7 +1,7 @@
 // import Form from './form'
 "use client";
 
-import Button from "@/components/shared/buttons/Button";
+import Button from "@/components/shared/Button";
 import { useState } from 'react'
 import { IoLogoWhatsapp, IoMailOutline } from "react-icons/io5";
 import { PiTelegramLogo } from "react-icons/pi";

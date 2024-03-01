@@ -10,6 +10,15 @@ module.exports = {
       fontSize: {
         '3xl': '2rem',
       },
+      colors: {
+        'primary': '#1f525e',
+        'primary-dark': '#00373e',
+        'secondary': '#94954c',
+        'tetriary': '#cafff2',
+        'accent': '#fbad9c',
+        'btn-border': '#d6cfc4',
+        'light': '#f8f6f5',
+      },
     },
   },
   plugins: [

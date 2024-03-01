@@ -2,7 +2,7 @@
 
 'use client'
 
-import Button from "@/components/shared/buttons/Button";
+import Button from "@/components/shared/Button";
 import { AnimatePresence, motion } from 'framer-motion'
 import { IoClose } from 'react-icons/io5'
 import Input from './input'
