@@ -1,6 +1,6 @@
 import { Testimonial } from "@/types/testimonial";
 import { FaUserCircle } from "react-icons/fa";
-import Image from '../../shared/Image'
+import Image from '@/components/shared/Image'
 
 type Props = {
   testimonial: Testimonial;
