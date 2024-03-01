@@ -1,6 +1,6 @@
 "use client"
 
-import Post from "@/components/containers/blog/post";
+import Post from "@/components/blog/post";
 import { postBySlug } from "@/sanity/lib/queries";
 import { Post as PostType } from "@/types/post";
 import { useLiveQuery } from "next-sanity/preview";

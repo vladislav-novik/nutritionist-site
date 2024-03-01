@@ -35,8 +35,8 @@ export default function SocialLinks({ withBorder, size }: Props) {
         return (
           <div key={s.title} 
             className={classNames(`flex justify-center items-center cursor-pointer
-             text-zinc-400 transition hover:text-[#154a2c] `,
-            [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-zinc-400 hover:border-[#154a2c]': withBorder}])}>
+             text-primary transition hover:text-secondary`,
+            [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-primary hover:border-secondary': withBorder}])}>
             <Link href={s.href} target="_blank">
               <Component size={size || 16} />
             </Link>

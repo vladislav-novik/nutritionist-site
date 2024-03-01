@@ -1,5 +1,5 @@
-import Header from '@/components/containers/layout/header'
-import Footer from '@/components/containers/layout/footer'
+import Header from '@/components/layout/header'
+import Footer from '@/components/layout/footer'
 
 import { generateMetadataForPage } from '@/utils/metadata'
 import { Metadata } from 'next/types';

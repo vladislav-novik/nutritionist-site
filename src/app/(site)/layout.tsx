@@ -1,11 +1,13 @@
 import './globals.css'
-import { Open_Sans } from 'next/font/google'
+import { Montserrat_Alternates, Montserrat, Caveat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
 import classnames from 'classnames'
 
-const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'] })
+const heading = Montserrat_Alternates({ subsets: ['cyrillic'], weight: ['600', '700'] , variable: '--font-heading' })
+const content = Montserrat({ subsets: ['latin', 'cyrillic'], weight: ['400', '600'], variable: '--font-content'})
+const cursive = Caveat({ subsets: ['cyrillic'], weight: ['500'], variable: '--font-cursive'})
 
 type Props = {
   children: React.ReactNode,
@@ -17,8 +19,8 @@ export default function RootLayout({
   const isDev = process.env.NODE_ENV === 'development'
 
   return (
-    <html lang="ru">
-      <body className={classnames("bg-[#fbf8e9]", openSans.className)}>
+    <html lang="ru" className={`${heading.variable} ${content.variable} ${cursive.variable}`}>
+      <body className={classnames(content.className)}> 
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"
             height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
