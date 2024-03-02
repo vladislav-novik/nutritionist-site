@@ -1,29 +1,49 @@
-import './globals.css'
-import { Montserrat_Alternates, Montserrat, Caveat } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import Script from 'next/script';
-import classnames from 'classnames'
+import "./globals.css";
+import { Montserrat_Alternates, Montserrat, Caveat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
+import classnames from "classnames";
 
-const heading = Montserrat_Alternates({ subsets: ['cyrillic'], weight: ['600', '700'] , variable: '--font-heading' })
-const content = Montserrat({ subsets: ['latin', 'cyrillic'], weight: ['400', '600'], variable: '--font-content'})
-const cursive = Caveat({ subsets: ['cyrillic'], weight: ['500'], variable: '--font-cursive'})
+const heading = Montserrat_Alternates({
+  subsets: ["cyrillic"],
+  weight: ["600", "700"],
+  style: ["normal"],
+  variable: "--font-heading",
+});
+const content = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "600"],
+  style: ["normal"],
+  variable: "--font-content",
+});
+const cursive = Caveat({
+  subsets: ["cyrillic"],
+  weight: ["500"],
+  style: ["normal"],
+  variable: "--font-cursive",
+});
 
 type Props = {
-  children: React.ReactNode,
-}
+  children: React.ReactNode;
+};
 
-export default function RootLayout({
-  children
-}: Props): React.JSX.Element {
-  const isDev = process.env.NODE_ENV === 'development'
+export default function RootLayout({ children }: Props): React.JSX.Element {
+  const isDev = process.env.NODE_ENV === "development";
 
   return (
-    <html lang="ru" className={`${heading.variable} ${content.variable} ${cursive.variable}`}>
-      <body className={classnames(content.className)}> 
+    <html
+      lang="ru"
+      className={`${heading.variable} ${content.variable} ${cursive.variable}`}
+    >
+      <body className={classnames(content.className)}>
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"
-            height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
         </noscript>
         <Script
           id="gtm-script"
@@ -47,5 +67,5 @@ export default function RootLayout({
         )}
       </body>
     </html>
-  )
+  );
 }
