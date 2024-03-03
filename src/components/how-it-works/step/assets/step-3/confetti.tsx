@@ -1,48 +1,35 @@
 "use client"
 
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from 'react'
-
+import { motion } from "framer-motion";
 type Props = {
   delay?: number;
+  duration: number;
+  rotate: number;
+  startY: number;
   d: string;
   fill: string;
 };
 
-const Component = ({ fill, d, delay = 0 }: Props) => {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const randDelay = Math.random() * 0.8;
-  const randDuration = Math.random() * 0.5 + 1;
-  const randRotate = Math.random() * 360 + 90;
-  const randY = Math.random() * (-100);
+const Component = ({ fill, d, delay = 0, duration, rotate, startY }: Props) => {
 
   const confettiTransition = {
-    delay: randDelay + delay,
-    duration: randDuration,
+    delay: delay,
+    duration: duration,
     ease: "easeInOut",
     loop: Infinity,
   };
 
   const confettiVariants = {
-    hidden: { opacity: 0, y: randY, rotate: 0 },
-    visible: { opacity: 1, y: 0, rotate: randRotate },
+    hidden: { opacity: 0, y: startY, rotate: 0 },
+    visible: { opacity: 1, y: 0, rotate: rotate },
   };
 
   return (
     <motion.path
-      ref={ref}
       variants={confettiVariants}
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
+      viewport={{ once: true }}
       transition={confettiTransition}
       d={d}
       fill={fill}
