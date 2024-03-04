@@ -4,7 +4,7 @@ import Textarea from "./textarea";
 import { submitRequest } from "@/app/(site)/(home)/action";
 import config from "@/app/app.config";
 
-const Component = () => {
+const component = () => {
   const { dict } = config;
 
   return (
@@ -14,6 +14,7 @@ const Component = () => {
         label={dict.contactForm.name.label}
         placeholder={dict.contactForm.name.placeholder}
         focus
+        focusDelay={1000}
       />
       <Input
         name="howToReach"
@@ -32,4 +33,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default component
