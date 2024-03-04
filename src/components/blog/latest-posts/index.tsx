@@ -1,7 +1,7 @@
 import { PostOverview as PostOverviewType } from "@/types/post";
 import PostOverview from "./Post";
 import SectionTitle from "@/components/shared/section/Title";
-import SectionDescription from "@/components/shared/section/Description";
+import SectionSubtitle from "@/components/shared/section/Subtitle";
 import Section from "@/components/shared/section/Section";
 import config from "@/app/app.config";
 import Link from '@/components/shared/Link'
@@ -24,7 +24,7 @@ export default function HomePosts({ posts }: Props) {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <SectionTitle>{dict.sections.blog.title}</SectionTitle>
-            <SectionDescription>{dict.sections.blog.content}</SectionDescription>
+            <SectionSubtitle>{dict.sections.blog.content}</SectionSubtitle>
           </div>
 
           <div className="relative max-w-md mx-auto mt-8 sm:mt-12 md:max-w-none">
@@ -40,7 +40,7 @@ export default function HomePosts({ posts }: Props) {
           </div>
 
           <div className="mt-20 flex justify-center">
-            <Link to='/articles' size='md' type='primary'>Читать больше!</Link>
+            <Link to='/articles' size='md' variant='primary'>Читать больше!</Link>
           </div>
         </div>
       {/* </SectionAnimation> */}

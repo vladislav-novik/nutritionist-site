@@ -16,26 +16,8 @@ const component = () => {
               {dict.sections.hero.title}
             </h1>
             <Description>{dict.sections.hero.content}</Description>
-
-            {/* <p className="mt-4 text-xl text-gray-600 md:mt-8">
-              <span className="relative inline-block">
-                <span className="absolute inline-block w-full bottom-0.5 h-2 bg-yellow-300"></span>
-                <span className="relative"> Have a question? </span>
-              </span>
-              <br className="block sm:hidden" />
-              Ask me on{" "}
-              <a
-                href="#"
-                title=""
-                className="transition-all duration-200 text-sky-500 hover:text-sky-600 hover:underline"
-              >
-                Twitter
-              </a>
-            </p> */}
-            
-            {/* <CTAButton /> */}
             <div className="mt-8 flex justify-center md:justify-start">
-              <Link type="primary" size="lg" to="#" >How it works</Link>
+              <Link variant="primary" size="lg" to="#" >How it works</Link>
             </div>
           </div>
 

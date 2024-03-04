@@ -6,7 +6,7 @@ export const sendCustomerRequest = async (data: CustomerRequest) => {
         _type: 'customerRequest',
         ...data,
     }, {
-        token: process.env.SANITY_EDITOR_TOKEN,
+        token: process.env.SANITY_API_WRITE_TOKEN,
     });
 
     return response;

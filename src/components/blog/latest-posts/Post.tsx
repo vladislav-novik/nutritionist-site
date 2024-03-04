@@ -24,8 +24,8 @@ const component = ({ post, dict }: PropsType) => {
           alt={post.title}
         ></Image>
       </div>
-      <h3 className="mt-7 font-heading font-bold text-xl line-clamp-2">{post.title}</h3>
-      <p className="mt-3 text-base font-normal line-clamp-3">{post.excerpt}</p>
+      <h3 className="mt-7 text-primary font-heading font-bold text-xl line-clamp-2">{post.title}</h3>
+      <p className="mt-3 text-primary text-base font-normal line-clamp-3">{post.excerpt}</p>
       <div className="mt-8">
         {post.tags.map((tag, index) => (
           <span key={index} className="uppercase tracking-widest font-bold text-gray-400 text-xs">

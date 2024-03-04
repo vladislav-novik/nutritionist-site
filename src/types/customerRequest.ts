@@ -1,6 +1,5 @@
 export type CustomerRequest = {
-    name: string;
-    feedbackWay: string;
-    feedbackWayData: string;
+    firstName: string;
+    howToReach: string;
     message: string;
 };

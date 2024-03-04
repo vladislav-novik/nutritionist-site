@@ -51,7 +51,7 @@ export default async function Page({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       /> */}
       <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-zinc-900 mt-6 text-4xl font-bold sm:text-5xl">{post.title}</h1>
+        <h1 className="text-primary-dark mt-6 text-4xl font-bold sm:text-5xl">{post.title}</h1>
         <div className="flex items-center justify-center mt-8 space-x-2">
           <p className="text-zinc-900 font-medium text-base">Food</p>
           <span className="font-medium text-base text-zinc-500">&#x2022;</span>
