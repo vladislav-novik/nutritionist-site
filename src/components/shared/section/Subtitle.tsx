@@ -1,4 +1,5 @@
 import classnames from 'classnames'
+import classNames from "classnames";
 
 type Props = {
   children: React.ReactNode;
@@ -7,10 +8,15 @@ type Props = {
 
 const component = ({ children, className }: Props) => {
   return (
-    <p className={classnames(className, "mt-6 font-content text-center text-lg leading-8 text-primary md:text-left")}>
+    <p
+      className={classnames(
+        className,
+        "mt-6 font-content text-center text-lg leading-8 text-primary"
+      )}
+    >
       {children}
     </p>
   );
-};
+}
 
 export default component;

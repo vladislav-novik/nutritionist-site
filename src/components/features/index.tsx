@@ -1,6 +1,6 @@
 import Features from './features';
 import SectionTitle from '@/components/shared/section/Title';
-import SectionDescription from '@/components/shared/section/Description';
+import SectionSubtitle from '@/components/shared/section/Subtitle';
 import Section from '@/components/shared/section/Section';
 import config from '@/app/app.config'
 
@@ -15,7 +15,7 @@ const component = () => {
           <div className="text-center max-w-2xl mx-auto mb-16">
             <SectionTitle>{dict.sections.features.title}</SectionTitle>
             {/* <SectionSubHeader>{dict.sections.services.subtitle}</SectionSubHeader> */}
-            <SectionDescription>{dict.sections.features.content}</SectionDescription>
+            <SectionSubtitle>{dict.sections.features.content}</SectionSubtitle>
           </div>
           <Features dict={dict}></Features>
         </div>

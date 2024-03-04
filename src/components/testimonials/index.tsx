@@ -1,7 +1,7 @@
 import Carousel from "@/components/testimonials/Carousel";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 import SectionTitle from "@/components/shared/section/Title";
-import SectionSubHeader from "@/components/shared/section/Subheader";
+import SectionSubHeader from "@/components/shared/section/Subtitle";
 import SectionDescription from "@/components/shared/section/Description";
 import Section from "@/components/shared/section/Section";
 import { Testimonial as TestimonialType } from "@/types/testimonial";
