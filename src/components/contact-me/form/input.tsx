@@ -1,12 +1,25 @@
+import { useRef } from 'react'
+
 type Props = {
   name: string;
   label?: string;
   placeholder?: string;
   type?: 'text' | 'email';
   focus?: boolean;
+  focusDelay?: number;
 };
 
-const component = ({ name, label, placeholder, type = 'text', focus = false }: Props) => {
+const Component = ({ name, label, placeholder, type = 'text', focus = false, focusDelay = 0 }: Props) => {
+  const ref = useRef(null);
+
+  if (focus) {
+    setTimeout(() => {
+      if (ref) {
+        ref.current.focus()
+      }
+    }, focusDelay)
+  }
+
   return (
     <div className="sm:col-span-2">
       <label
@@ -18,7 +31,7 @@ const component = ({ name, label, placeholder, type = 'text', focus = false }: P
       <div className="mt-2.5">
         <input
           // TODO: check why it broke the animation
-          // autoFocus={focus}
+          ref={ref}
           type={type}
           name={name}
           id={name}
@@ -30,4 +43,4 @@ const component = ({ name, label, placeholder, type = 'text', focus = false }: P
   );
 };
 
-export default component;
+export default Component;

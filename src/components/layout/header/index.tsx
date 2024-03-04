@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import SocialLinks from '@/components/shared/SocialLinks'
+import SubscribePointer from './subscribe-pointer'
 
 export default function Header() {
   return (
@@ -18,9 +19,10 @@ export default function Header() {
             <Hamburger rounded size={20} toggled={mobileMenuOpen} toggle={() => setMobileMenuOpen(!mobileMenuOpen)}  aria-hidden="true" />
           </div>
         </div> */}
-        <div className="hidden sm:flex sm:gap-x-12">
+        <div className="hidden relative sm:flex sm:gap-x-12">
           {/* <NavLinks mobileMenu={false} /> */}
           <SocialLinks size={24} />
+          <SubscribePointer />
         </div>
       </nav>
       {/* <MobilePanel open={mobileMenuOpen} closeHandler={() => setMobileMenuOpen(false)} ></MobilePanel> */}

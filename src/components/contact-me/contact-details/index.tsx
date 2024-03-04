@@ -9,7 +9,7 @@ import Contact from "./contact";
 import config from "@/app/app.config";
 import SectionDescription from "@/components/shared/section/Description";
 import Link from '@/components/shared/Link'
-import FormPopup from '../form-popup'
+import FormPopup from './form-popup'
 
 const ContactComponent = () => {
   const { dict } = config;

@@ -10,18 +10,21 @@ const heading = Montserrat_Alternates({
   weight: ["600", "700"],
   style: ["normal"],
   variable: "--font-heading",
+  display: "swap",
 });
 const content = Montserrat({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["cyrillic"],
   weight: ["400", "600"],
   style: ["normal"],
   variable: "--font-content",
+  display: "swap",
 });
 const cursive = Caveat({
   subsets: ["cyrillic"],
   weight: ["500"],
   style: ["normal"],
   variable: "--font-cursive",
+  display: "swap",
 });
 
 type Props = {
