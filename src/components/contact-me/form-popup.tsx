@@ -6,6 +6,8 @@ import Form from './form'
 import useWindowWidth from '@/utils/hooks/useWindowWidth'
 import classnames from 'classnames'
 import IconButton from '../shared/IconButton'
+import { useRef } from 'react'
+import useDetectClickOutside from '@/utils/hooks/useDetectClickOutside'
 
 type Props = {
   show: boolean;
@@ -13,25 +15,29 @@ type Props = {
 }
 
 const Component = ({ show, hideFormHandler }: Props) => {
+  const ref = useRef(null)
+  useDetectClickOutside(ref, hideFormHandler)
+
   const width = useWindowWidth();
   const isMobile = width <= 640;
 
   const mobileFormVariants = {
-    hidden: { opacity: 0, x: "-100vw" },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: "-100vw" },
+    hidden: { x: "-100vw" },
+    visible: { x: 0 },
+    exit: { x: "-100vw" },
   };
 
   const formVariants = {
-    hidden: { opacity: 0, y: "100vh" },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: "100vh" },
+    hidden: { y: "100vh" },
+    visible: { y: 0 },
+    exit: { y: "100vh" },
   };
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
+          ref={ref}
           initial="hidden"
           animate="visible"
           exit="exit"
