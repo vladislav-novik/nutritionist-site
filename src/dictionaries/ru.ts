@@ -1,4 +1,14 @@
 const translations = {
+  SEO: {
+    home: {
+      title: 'Главная страница',
+      description: 'Описание главной страницы',
+    },
+    articles: {
+      title: 'Статьи',
+      description: 'Описание страницы со статьями',
+    },
+  },
   subscribeToSocials: 'Подпишитесь на мои социальные сети!',
   buttons: {
     fillInForm: 'Заполнить форму',
