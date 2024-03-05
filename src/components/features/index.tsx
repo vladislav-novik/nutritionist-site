@@ -9,7 +9,7 @@ const component = () => {
   const { dict } = config
 
   return (
-    <Section id="services" className="bg-light py-16 sm:py-24">
+    <Section id="features" className="bg-light py-16 sm:py-24">
       {/* <SectionAnimation> */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">

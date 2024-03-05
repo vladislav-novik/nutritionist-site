@@ -1,4 +1,5 @@
-import SocialLinks from "@/components/shared/SocialLinks";
+import SocialLinks from "@/components/shared/SocialLinks"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -11,7 +12,14 @@ export default function Footer() {
               © 2020 Your Company, Inc. All rights reserved.
             </p>
           </div>
-          <SocialLinks withBorder />
+          <a href="#header" className="text-xl leading-relaxed text-primary-dark sm:-m-1.5">
+            <span className="sr-only">MaryaNovikBrand</span>
+            <Image className="inline-block" src={'/images/vegetables.png'} width={40} height={40} alt="logo"></Image>
+            <span className="hidden sm:inline">MaryaNovikBrand</span>
+          </a>
+          <div className="flex justify-center space-x-6 sm:space-x-8 md:order-2">
+            <SocialLinks withBorder />
+          </div>
         </div>
       </div>
     </footer>

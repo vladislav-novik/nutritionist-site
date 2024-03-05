@@ -35,7 +35,7 @@ const component = (props: Props) => {
         <p className="text-base my-6 md:my-8">
           {description}
         </p>
-        <Link to="''" size='sm' variant='primary'>Хочу начать!</Link>
+        <Link to="#contact-me" size='sm' variant='primary'>Хочу начать!</Link>
       </div>
     </div>
   );

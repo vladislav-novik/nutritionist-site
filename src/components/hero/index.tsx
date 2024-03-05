@@ -17,7 +17,7 @@ const component = () => {
             </h1>
             <Description>{dict.sections.hero.content}</Description>
             <div className="mt-8 flex justify-center md:justify-start">
-              <Link variant="primary" size="lg" to="#" >How it works</Link>
+              <Link variant="primary" size="lg" to="#features" >How it works</Link>
             </div>
           </div>
 
