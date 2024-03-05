@@ -42,7 +42,7 @@ const Component = ({ show, hideFormHandler }: Props) => {
           animate="visible"
           exit="exit"
           variants={isMobile ? mobileFormVariants : formVariants}
-          transition={{ type: "spring", stiffness: 50 }}
+          transition={{ type: "spring", stiffness: 50, bounce: 0.1 }}
           className={classnames(
             {
               "h-[120%]  rounded-t-lg": !isMobile,

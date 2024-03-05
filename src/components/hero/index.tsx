@@ -15,7 +15,7 @@ const component = () => {
             <h1 className="font-heading text-center text-3xl font-bold leading-tight text-primary-dark md:text-left sm:text-4xl lg:text-5xl lg:leading-[1.1]">
               {dict.sections.hero.title}
             </h1>
-            <Description>{dict.sections.hero.content}</Description>
+            <Description className="md:text-left">{dict.sections.hero.content}</Description>
             <div className="mt-8 flex justify-center md:justify-start">
               <Link variant="primary" size="lg" to="#features" >How it works</Link>
             </div>
