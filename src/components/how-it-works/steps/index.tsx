@@ -8,15 +8,6 @@ const component = () => {
     Velit officia consequat duis enim velit mollit.
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit.`,
-      children: (
-        <div className="p-4">
-          <ul>
-            <li>Point one</li>
-            <li>One more</li>
-            <li>Test second</li>
-          </ul>
-        </div>
-      ),
     },
     {
       title: "Get your results",
@@ -24,15 +15,6 @@ const component = () => {
     Velit officia consequat duis enim velit mollit.
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit.`,
-      children: (
-        <div className="p-4">
-          <ul>
-            <li>Point one</li>
-            <li>One more</li>
-            <li>Test second</li>
-          </ul>
-        </div>
-      ),
     },
     {
       title: "Start your journey",
@@ -40,29 +22,18 @@ const component = () => {
     Velit officia consequat duis enim velit mollit.
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     Velit officia consequat duis enim velit mollit.`,
-      children: (
-        <div className="p-4">
-          <ul>
-            <li>Point one</li>
-            <li>One more</li>
-            <li>Test second</li>
-          </ul>
-        </div>
-      ),
     },
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="mt-16 space-y-16 md:mt-20 md:space-y-20">
       {steps.map((step, index) => (
         <Step
           key={index}
           index={index + 1}
           title={step.title}
           description={step.description}
-        >
-          {step.children}
-        </Step>
+        />
       ))}
     </div>
   );

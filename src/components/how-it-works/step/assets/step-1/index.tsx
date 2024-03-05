@@ -2,7 +2,7 @@ import Checkmark from "./checkmark";
 
 const component = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 762.75 678">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 80 720 610">
       <style>{`.BB{fill:#00373e}.CC{fill:#f79556}.DD{fill:#fff}.EE{fill:#1f525e}.FF{fill:#ec7d40}.GG{fill:#94954c}.HH{fill:#e6e6e6}.II{fill:#d66730}.JJ{clip-rule:nonzero}`}</style>
       <defs>
         <clipPath id="A">

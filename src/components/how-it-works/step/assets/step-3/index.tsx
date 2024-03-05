@@ -2,7 +2,7 @@ import Confetti from "./confetti";
 
 const component = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 762.75 642">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 760 600">
       <style>{`.B{fill:#00373e}.C{fill:#f79556}.D{fill:#ec7d40}.E{fill:#c46c3f}.F{fill:#fff}.G{fill:#fccc44}.H{fill:#f2c72d}.I{fill:#f0af31}.J{fill:#a7d8d1}.K{fill:#94954c}.L{fill:#7fcbc1}.M{fill:#1f525e}.N{fill:#e6e6e6}.O{fill:#d65b5b}`}</style>
       <path
         d="M405.637 622.504c-24.605-9.145-20.937-17.582-82.25-43.52-54.449-23.047-174.609 24.77-236.352-139.227C-.012 208.543 249.633.305 524.336 94.32c56.684 19.402 227.098 123.238 204.258 313.703-11.805 98.371-81.117 183.387-175.398 211.602-42.859 12.82-95.953 22.047-147.559 2.879"
