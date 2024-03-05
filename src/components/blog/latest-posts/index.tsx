@@ -34,13 +34,13 @@ export default function HomePosts({ posts }: Props) {
             <div className="relative bg-white overflow-hidden grid grid-cols-1 rounded-2xl shadow-xl divide-y
               md:grid-cols-3 md:divide-x md:divide-y-0">
               {posts.map((post: PostOverviewType) => (
-                <PostOverview key={post.slug} post={post} dict={dict}></PostOverview>
+                <PostOverview key={post.slug} post={post}></PostOverview>
               ))}
             </div>
           </div>
 
           <div className="mt-20 flex justify-center">
-            <Link to='/articles' size='md' variant='primary'>Читать больше!</Link>
+            <Link to='/articles' size='md' variant='primary'>{dict.buttons.readMore}</Link>
           </div>
         </div>
       {/* </SectionAnimation> */}

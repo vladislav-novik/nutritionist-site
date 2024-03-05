@@ -7,7 +7,7 @@ type Props = {
 
 const component = ({ children, className }: Props) => {
   return (
-    <h2 className={classnames(className, "font-heading text-4xl font-semibold leading-7 text-primary-dark")}>
+    <h2 className={classnames(className, "font-heading text-4xl font-semibold leading-none text-primary-dark")}>
       {children}
     </h2>
   );

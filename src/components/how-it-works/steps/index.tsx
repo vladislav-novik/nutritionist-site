@@ -30,7 +30,7 @@ const component = () => {
       {steps.map((step, index) => (
         <Step
           key={index}
-          index={index + 1}
+          index={index}
           title={step.title}
           description={step.description}
         />
