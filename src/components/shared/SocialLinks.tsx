@@ -3,6 +3,12 @@ import classNames from "classnames";
 import { IconType } from "react-icons";
 import { IoLogoTiktok, IoLogoInstagram, IoLogoFacebook, IoLogoLinkedin } from 'react-icons/io5'
 
+type SocialLink = {
+  href: string;
+  title: string;
+  icon: IconType;
+}
+
 const socials: SocialLink[] = [{
   href: 'https://instagram.com',
   icon: IoLogoInstagram,
@@ -26,29 +32,21 @@ type Props = {
   size?: number;
 }
 
-export default function SocialLinks({ withBorder, size }: Props) {
-  return (
-    <div className="flex justify-center space-x-8 md:order-2">
-      {socials.map(s => {
-        let Component = s.icon;
+const component = ({ withBorder, size }: Props) => (
+  socials.map(s => {
+    let Component = s.icon;
 
-        return (
-          <div key={s.title} 
-            className={classNames(`flex justify-center items-center cursor-pointer
-             text-primary transition hover:text-secondary`,
-            [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-primary hover:border-secondary': withBorder}])}>
-            <Link href={s.href} target="_blank">
-              <Component size={size || 16} />
-            </Link>
-          </div>
-        )
-      })}
-    </div>
-  );
-}
+    return (
+      <div key={s.title} 
+        className={classNames(`flex justify-center items-center cursor-pointer
+         text-primary transition hover:text-secondary`,
+        [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-primary hover:border-secondary': withBorder}])}>
+        <Link href={s.href} target="_blank">
+          <Component size={size || 16} />
+        </Link>
+      </div>
+    )
+  })
+);
 
-type SocialLink = {
-  href: string;
-  title: string;
-  icon: IconType;
-}
+export default component
