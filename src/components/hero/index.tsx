@@ -8,7 +8,7 @@ const component = () => {
   const { dict } = config
 
   return (
-    <Section id="hero" className="pt-10 overflow-hidden bg-white md:pt-0 sm:pt-16 2xl:pt-16">
+    <Section id="hero" className="pt-6 overflow-hidden bg-white sm:pt-16">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid items-center grid-cols-1 md:grid-cols-2">
           <div>

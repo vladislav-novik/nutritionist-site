@@ -24,7 +24,7 @@ const component = ({ to, children, variant, size }: Props) => {
           "px-10 py-5 text-lg": size === "md",
           "px-12 py-6 text-xl": size === "lg",
         },
-        `rounded-full border-1 font-bold transition-all
+        `inline-block rounded-full border-1 font-bold transition-all
         active:scale-95
         focus-visible:outline-2 focus-visible:outline-primary-dark focus-visible:outline-dashed focus-visible:outline-offset-2
       hover:text-white hover:bg-secondary`

@@ -29,7 +29,7 @@ const component = (props: Props) => {
         </div>
       </div>
       <div className="text-center mx-auto max-w-xs md:text-left md:mx-0">
-        <h3 className="font-bold text-primary text-2xl">
+        <h3 className="font-bold text-primary leading-none text-2xl">
           0{index}. {title}
         </h3>
         <p className="text-base my-6 md:my-8">
