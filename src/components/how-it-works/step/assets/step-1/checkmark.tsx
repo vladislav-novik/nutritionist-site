@@ -1,20 +1,22 @@
 "use client"
 
-import { motion } from 'framer-motion'
+import { AnimationControls, VariantLabels, Variants, motion } from 'framer-motion'
 
 type Props = {
-  delay?: number;
-  d: string;
+  delay?: number
+  d: string
+  fill: string
+  controls: AnimationControls
+  initial: { opacity: number, y: number }
 }
 
-const Component = ({ delay = 0, d }: Props) => {
+const Component = ({ delay = 0, d, fill, controls, initial }: Props) => {
   return (
     <motion.path
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{once: true}}
-      initial={{ opacity: 0, y: -10 }}
+      animate={controls}
+      initial={initial}
       transition={{ delay: delay, type: 'spring', bounce: 0.1, stiffness: 200 }}
-      fill="#1f525e"
+      fill={fill}
       d={d}
     />
   );

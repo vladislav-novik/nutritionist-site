@@ -8,7 +8,7 @@ type Props = {
 
 const Component = ({ Icon, children, description }: Props) => {
   return (
-    <div className="flex justify-center gap-x-4 lg:justify-start">
+    <div className="flex justify-start gap-x-4 lg:justify-start">
       <dt className="flex items-center">
         <span className="sr-only">{ description }</span>
         <Icon size={20} />

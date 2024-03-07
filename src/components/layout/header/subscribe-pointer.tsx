@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import config from '@/app/app.config';
 
 const component = () => {
+  const { dict } = config
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -43,7 +46,7 @@ const component = () => {
         variants={textVariants}
         className="absolute top-full w-36 font-cursive leading-5 text-2xl text-primary"
       >
-        Подписывайтесь на мои соцсети!
+        {dict.subscribeToSocials}
       </motion.p>
     </motion.div>
   );

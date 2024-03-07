@@ -5,6 +5,7 @@ const postPreviewProjection = `
     title,
     "slug": slug.current,
     publishedAt,
+    keywords,
     "mainImage": {
         "ref": mainImage,
         "lquip": mainImage.asset->metadata.lqip,

@@ -10,36 +10,36 @@ const MAX_GENERAL_DESCRIPTION_LENGTH = 320;
 const MAX_TWITTER_TITLE_LENGTH = 70;
 const MAX_TWITTER_DESCRIPTION_LENGTH = 200;
 
-export async function generateMetadataForPage(page: 'home' | 'articles' | 'article', lang: string, data?: Post | any): Promise<Partial<Metadata>> {
+export async function generateMetadataForPage(page: 'home' | 'articles' | 'article', lang?: string, data?: Post | any): Promise<Partial<Metadata>> {
   const { dict } = config;
 
-  const titleAndDescription = page === 'article' ? {
+  const pageMetadata = page === 'article' ? {
     title: (data as Post).title,
     description: (data as Post).excerpt,
+    keywords: (data as Post).keywords,
   } : {
-    title: 'seo title',
-    description: 'seo description',
-    // title: dict.SEO[page].title,
-    // description: dict.SEO[page].description,
+    title: dict.SEO[page].title,
+    description: dict.SEO[page].description,
+    keywords: dict.SEO[page].keywords,
   }
 
-  const { openGraph, twitter } = createOGAndTwitterMetadata(lang, page, data)
+  const { openGraph, twitter } = createOGAndTwitterMetadata(page, lang, data)
 
   return {
-    title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-    description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+    title: pageMetadata.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
+    description: pageMetadata.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
     alternates: createAlternatesMetadata(lang, page, data),
-    keywords: [],
+    keywords: pageMetadata.keywords,
 
     openGraph: {
-      title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-      description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+      title: pageMetadata.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
+      description: pageMetadata.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
       ...openGraph
     },
     twitter: {
-      title: titleAndDescription.title.slice(0, MAX_TWITTER_TITLE_LENGTH),
-      description: titleAndDescription.description.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
+      title: pageMetadata.title.slice(0, MAX_TWITTER_TITLE_LENGTH),
+      description: pageMetadata.description.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
       ...twitter
     }
   }
@@ -48,16 +48,16 @@ export async function generateMetadataForPage(page: 'home' | 'articles' | 'artic
 function createAlternatesMetadata(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any) {
   const alternateLangs = getAlternateLangs(lang);
   const alternates = alternateLangs.reduce(
-    (acc, l) => ({ ...acc, [l]: getPageUrl(l, page, data) }), {}
+    (acc, l) => ({ ...acc, [l]: getPageUrl(page, l, data) }), {}
   );
 
   return {
-    canonical: getPageUrl(lang, page, data),
+    canonical: getPageUrl(page, lang, data),
     languages: alternates
   }
 }
 
-function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any) {
+function createOGAndTwitterMetadata(page: 'home' | 'articles' | 'article', lang: string = 'ru', data?: Post | any) {
   const imageUrl = page === 'article' ?
     urlForImage(data.mainImage.ref)?.width(720).height(360).url() : '/images/main.webp';
 
@@ -66,7 +66,7 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
       type: page === 'article' ? 'article' : 'website',
       locale: lang,
       alternateLocale: getAlternateLangs(lang),
-      url: getPageUrl(lang, page, data),
+      url: getPageUrl(page, lang, data),
       images: [{
         url: imageUrl,
         width: 720,
@@ -76,7 +76,7 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
 
     twitter: {
       card: 'summary_large_image',
-      site: getPageUrl(lang, page, data),
+      site: getPageUrl(page, lang, data),
       images: [{
         url: imageUrl,
         width: 720,
@@ -86,8 +86,8 @@ function createOGAndTwitterMetadata(lang: string, page: 'home' | 'articles' | 'a
   };
 }
 
-function getPageUrl(lang: string, page: 'home' | 'articles' | 'article', data?: Post | any): string {
-  let path = `${process.env.NEXT_PUBLIC_BASE_URL}/${lang}`;
+function getPageUrl(page: 'home' | 'articles' | 'article', lang: string = 'ru', data?: Post | any): string {
+  let path = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
   switch (page) {
     case 'articles': path += getSearchParamsPerPage(page, []); break;

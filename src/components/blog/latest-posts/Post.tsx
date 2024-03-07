@@ -7,11 +7,10 @@ import Image from 'next/image';
 
 type PropsType = {
   post: PostOverview;
-  dict: any;
 };
 
 
-const component = ({ post, dict }: PropsType) => {
+const component = ({ post }: PropsType) => {
   return (
     <article className="relative group px-5 py-6 sm:p-8">
       <div className="relative overflow-hidden aspect-[16/8] rounded-2xl">

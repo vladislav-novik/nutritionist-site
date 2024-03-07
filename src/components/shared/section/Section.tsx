@@ -1,15 +1,13 @@
-import { CSSProperties } from "react";
-
 type Props = {
-    children: React.ReactNode;
-    className: string;
-    id: string;
-}
+  children: React.ReactNode;
+  className: string;
+  id: string;
+};
 
-export default function Section({ children, id, className }: Props) {
-    return (
-        <section id={id} className={`${className} overflow-hidden`}>
-            {children}
-        </section>
-    )
-}
+const component = ({ children, id, className }: Props) => (
+  <section id={id} className={`${className} overflow-hidden`}>
+    {children}
+  </section>
+);
+
+export default component

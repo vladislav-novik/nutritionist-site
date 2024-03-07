@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { motion, AnimationControls } from "framer-motion";
 type Props = {
   delay?: number;
   duration: number;
@@ -8,9 +8,10 @@ type Props = {
   startY: number;
   d: string;
   fill: string;
+  animate: AnimationControls;
 };
 
-const Component = ({ fill, d, delay = 0, duration, rotate, startY }: Props) => {
+const Component = ({ fill, d, delay = 0, animate, duration, rotate, startY }: Props) => {
 
   const confettiTransition = {
     delay: delay,
@@ -28,11 +29,10 @@ const Component = ({ fill, d, delay = 0, duration, rotate, startY }: Props) => {
     <motion.path
       variants={confettiVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
       transition={confettiTransition}
       d={d}
       fill={fill}
+      animate={animate}
     />
   );
 };
