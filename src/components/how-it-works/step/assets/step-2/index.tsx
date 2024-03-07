@@ -1,10 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from 'react'
 
-const component = () => {
+const Component = () => {
+  const container = useRef(null)
+  const controls = useAnimation()
+  const inView = useInView(container, { once: true, amount: 1 })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const windowVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.5, type: 'spring', bounce: 0.1, stiffness: 200 }}
+  };
+  const personVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.8, type: 'spring', stiffness: 100 } }
+  };
+
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 586">
+    <motion.svg ref={container} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 586">
       <style>{`.Bb{fill:#00373e}.Cc{fill:#fff}.Dd{fill:#a55b35}.Ee{fill:#c46c3f}.Ff{fill:#1f525e}.Gg{fill:#d66730}.Hh{fill:#f79556}.Ii{fill:#a7d8d1}.Jj{fill:#e6e6e6}.Kk{clip-rule:nonzero}`}</style>
       <defs>
         <clipPath id="Aa">
@@ -182,10 +202,9 @@ const component = () => {
       />
       {/* start woman */}
       <motion.g
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{once: true}}
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
+        animate={controls}
+        initial="hidden"
+        variants={personVariants}
       >
         <path
           d="M688.578 218.254c-6.488-6.629-14.633-13.055-24.281-17.637-18.332-8.699-35.77-8.629-50.719-6.453-10.562 1.535-25.836 6.539-34.48 14.586-16.02 7.773-25.941 26.742-33.23 40.695-2.648 5.066-4.937 9.441-7.113 12.598-3.156 4.574-6.113 8.367-9.035 11.59l-.18.195.152.227 1.684 2.371h173.387c5.941 0 10.781-4.687 11.027-10.559l-5.68-13.754c-7.367-17.523-13.691-29.352-21.531-33.859"
@@ -259,10 +278,9 @@ const component = () => {
       />
       {/* window start? */}
       <motion.g
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{once: true}}
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ type: 'spring', bounce: 0.1, stiffness: 200 }}
+        animate={controls}
+        initial="hidden"
+        variants={windowVariants}
       >
         <g clipPath="url(#Bb)" className="Dd">
           <path d="M444.613 49.336a13.41 13.41 0 0 0-13.398 13.398v200.301c0 7.391 6.004 13.402 13.398 13.402h257.832c7.387 0 13.406-6.012 13.406-13.402V62.734c0-7.391-6.02-13.398-13.406-13.398zm257.832 230.621H444.613c-9.328 0-16.922-7.59-16.922-16.922V62.734c0-9.328 7.594-16.922 16.922-16.922h257.832c9.332 0 16.922 7.594 16.922 16.922v200.301c0 9.332-7.59 16.922-16.922 16.922" />
@@ -297,8 +315,8 @@ const component = () => {
         />
       </motion.g>
       {/* window end */}
-    </svg>
+    </motion.svg>
   );
 };
 
-export default component;
+export default Component

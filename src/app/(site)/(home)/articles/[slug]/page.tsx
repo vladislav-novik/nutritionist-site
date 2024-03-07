@@ -2,9 +2,9 @@ import Post from "@/components/blog/post";
 import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
-import Image from 'next/image';
-import { urlForImage } from '@/sanity/lib/image'
-import ShareButtons from '@/components/blog/post/ShareButtons'
+import Image from "next/image";
+import { urlForImage } from "@/sanity/lib/image";
+import ShareButtons from "@/components/blog/post/ShareButtons";
 // import { draftMode } from "next/headers";
 // import PreviewProvider from "@/components/Preview/PreviewProvider";
 // import PreviewPost from "@/components/Preview/PreviewPost";
@@ -13,8 +13,8 @@ type Props = {
   params: {
     slug: string;
     // lang: string;
-  }
-}
+  };
+};
 
 export async function generateStaticParams() {
   const slugs = await getPostsSlugs();
@@ -25,43 +25,35 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: Props) {
-  const { slug } = params
+  const { slug } = params;
   const post = await getPostBySlug(slug);
   // const isDraftMode = draftMode().isEnabled;
 
   // const token = process.env.SANITY_API_READ_TOKEN;
 
-  // const jsonLd = {
-  //   '@context': 'https://schema.org',
-  //   '@type': 'Article',
-  //   "headline": post.title,
-  //   "image": [urlForImage(post.mainImage.ref).width(720).height(360).fit("fill").url()],
-  //   "datePublished": post.publishedAt,
-  //   "author": [{
-  //     "@type": "Person",
-  //     "name": "Marya Novik",
-  //     "url": "https://example.com/profile/janedoe123"
-  //   }]
-  // };
-
   return (
     <>
-      {/* <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      /> */}
       <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-primary-dark mt-6 text-4xl font-bold sm:text-5xl">{post.title}</h1>
+        <h1 className="text-primary-dark mt-6 text-4xl font-bold sm:text-5xl">
+          {post.title}
+        </h1>
         <div className="flex items-center justify-center mt-8 space-x-2">
           <p className="text-zinc-900 font-medium text-base">Food</p>
           <span className="font-medium text-base text-zinc-500">&#x2022;</span>
-          <time dateTime={new Date(post.publishedAt).toISOString()} className="text-base text-zinc-500">
-            {new Date(post.publishedAt).toLocaleDateString('ru-RU', { month: 'long', day: 'numeric', year: 'numeric'})}
+          <time
+            dateTime={new Date(post.publishedAt).toISOString()}
+            className="text-base text-zinc-500"
+          >
+            {new Date(post.publishedAt).toLocaleDateString("ru-RU", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
           </time>
         </div>
       </div>
       <div className="relative mt-8 aspect-[16/9] sm:mt-12 lg:mt-16 lg:aspect-[16/6]">
-        <Image 
+        <Image
           className="absolute inset-0 w-full h-full object-cover"
           placeholder="blur"
           blurDataURL={post.mainImage.lquip}
@@ -90,11 +82,10 @@ export default async function Page({ params }: Props) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  let { slug } = params
+  let { slug } = params;
 
-  const lang = 'ru'
-
+  const lang = "ru";
   const post = await getPostBySlug(slug);
 
-  return await generateMetadataForPage('article', lang, post)
+  return await generateMetadataForPage("article", lang, post);
 }
