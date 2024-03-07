@@ -14,12 +14,14 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      description: 'The title of the post',
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description: 'The slug for the post',
       options: {
         source: 'title',
         maxLength: 70,
@@ -30,6 +32,7 @@ export default defineType({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      description: 'The main image of the post',
       options: {
         hotspot: true,
       },
@@ -43,15 +46,24 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'string',
+      description: 'Separate keywords with a comma. Example: "food, health, nutrition"',
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
+      description: 'A short description of the post',
       validation: Rule => Rule.required().min(50).max(200)
     }),
     defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
+      description: 'Add tags that describe the post',
       of: [{type: 'reference', to: {type: 'tag'}}],
     }),
     defineField({

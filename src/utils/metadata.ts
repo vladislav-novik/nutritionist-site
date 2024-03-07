@@ -13,31 +13,33 @@ const MAX_TWITTER_DESCRIPTION_LENGTH = 200;
 export async function generateMetadataForPage(page: 'home' | 'articles' | 'article', lang?: string, data?: Post | any): Promise<Partial<Metadata>> {
   const { dict } = config;
 
-  const titleAndDescription = page === 'article' ? {
+  const pageMetadata = page === 'article' ? {
     title: (data as Post).title,
     description: (data as Post).excerpt,
+    keywords: (data as Post).keywords,
   } : {
     title: dict.SEO[page].title,
     description: dict.SEO[page].description,
+    keywords: dict.SEO[page].keywords,
   }
 
   const { openGraph, twitter } = createOGAndTwitterMetadata(page, lang, data)
 
   return {
-    title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-    description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+    title: pageMetadata.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
+    description: pageMetadata.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
     alternates: createAlternatesMetadata(lang, page, data),
-    keywords: [],
+    keywords: pageMetadata.keywords,
 
     openGraph: {
-      title: titleAndDescription.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
-      description: titleAndDescription.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
+      title: pageMetadata.title.slice(0, MAX_GENERAL_TITLE_LENGTH),
+      description: pageMetadata.description.slice(0, MAX_GENERAL_DESCRIPTION_LENGTH),
       ...openGraph
     },
     twitter: {
-      title: titleAndDescription.title.slice(0, MAX_TWITTER_TITLE_LENGTH),
-      description: titleAndDescription.description.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
+      title: pageMetadata.title.slice(0, MAX_TWITTER_TITLE_LENGTH),
+      description: pageMetadata.description.slice(0, MAX_TWITTER_DESCRIPTION_LENGTH),
       ...twitter
     }
   }

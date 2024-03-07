@@ -3,11 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import Form from "../form";
-import useWindowWidth from "@/utils/hooks/useWindowWidth";
 import classnames from "classnames";
 import IconButton from "../../shared/IconButton";
-import { useMemo, useRef, useState } from "react";
-import useDetectClickOutside from "@/utils/hooks/useDetectClickOutside";
+import { useMemo, useRef } from "react";
+import useDetectClickOutside from "@/utils/hooks/useDetectClickOutside"
+import useViewportType from '@/utils/hooks/useViewportWidth'
 
 type Props = {
   show: boolean;
@@ -18,8 +18,11 @@ const Component = ({ show, hideFormHandler }: Props) => {
   const ref = useRef(null);
   useDetectClickOutside(ref, hideFormHandler);
 
-  const width = useWindowWidth();
-  const isMobile = width <= 640;
+  const viewportType = useViewportType()
+  const isMobileViewport = useMemo(
+    () => viewportType === 'Mobile',
+    [viewportType]
+  );
 
   const mobileFormVariants = {
     hidden: { x: "-100vw" },
@@ -41,17 +44,17 @@ const Component = ({ show, hideFormHandler }: Props) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          variants={isMobile ? mobileFormVariants : formVariants}
+          variants={isMobileViewport ? mobileFormVariants : formVariants}
           transition={{ type: "spring", stiffness: 50, bounce: 0.1 }}
           className={classnames(
             {
-              "h-[120%]  rounded-t-lg": !isMobile,
-              "h-full rounded-r-lg": isMobile,
+              "h-[120%]  rounded-t-lg": !isMobileViewport,
+              "h-full rounded-r-lg": isMobileViewport,
             },
             "absolute top-0 -left-6 w-full bg-light py-4 px-6 shadow"
           )}
         >
-          <div className={classnames({ "ml-6": isMobile })}>
+          <div className={classnames({ "ml-6": isMobileViewport })}>
             <div className="flex justify-end">
               <IconButton
                 className="ml-auto py-1 px-2 text-primary-dark"

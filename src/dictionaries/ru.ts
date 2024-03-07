@@ -3,10 +3,12 @@ const translations = {
     home: {
       title: 'Главная страница',
       description: 'Описание главной страницы',
+      keywords: "ключевые, слова, для, главной, страницы",
     },
     articles: {
       title: 'Статьи',
       description: 'Описание страницы со статьями',
+      keywords: "ключевые, слова, для, статей",
     },
   },
   subscribeToSocials: 'Подпишитесь на мои социальные сети!',

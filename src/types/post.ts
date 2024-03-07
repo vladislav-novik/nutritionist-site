@@ -5,6 +5,7 @@ export type PostOverview = {
     title: string;
     slug: string;
     publishedAt: string;
+    keywords: string;
     mainImage: {
         ref: Image,
         lquip: string,

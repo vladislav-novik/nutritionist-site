@@ -9,15 +9,15 @@ const component = () => {
   const { dict } = config
 
   return (
-    <Section id="features" className="bg-light py-16 sm:py-24">
+    <Section id="features" className="bg-white py-16 sm:py-24">
       {/* <SectionAnimation> */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <SectionTitle>{dict.sections.features.title}</SectionTitle>
             {/* <SectionSubHeader>{dict.sections.services.subtitle}</SectionSubHeader> */}
             <SectionSubtitle>{dict.sections.features.content}</SectionSubtitle>
           </div>
-          <Features dict={dict}></Features>
+          <Features></Features>
         </div>
       {/* </SectionAnimation> */}
     </Section>
