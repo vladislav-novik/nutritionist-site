@@ -44,7 +44,7 @@ const component = () => {
       </motion.div>
       <motion.p
         variants={textVariants}
-        className="absolute top-full w-36 font-cursive leading-5 text-2xl text-primary"
+        className="absolute top-full w-36 font-cursive leading-5 text-2xl text-brand-dark"
       >
         {dict.subscribeToSocials}
       </motion.p>

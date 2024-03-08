@@ -9,14 +9,14 @@ const component = () => {
   const { dict } = config
 
   return (
-    <Section id="hero" className="overflow-hidden bg-white">
+    <Section id="hero" className="overflow-hidden bg-brand-light">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid items-center grid-cols-1 md:grid-cols-2">
           <div className="py-6 sm:py-16">
-            <h1 className="font-heading text-center text-3xl font-bold leading-tight text-primary-dark md:text-left sm:text-4xl lg:text-5xl lg:leading-[1.1]">
+            <h1 className="font-heading text-center text-3xl font-bold leading-tight text-brand md:text-left sm:text-4xl lg:text-5xl lg:leading-[1.1]">
               {dict.sections.hero.title}
             </h1>
-            <Description className="md:text-left">{dict.sections.hero.content}</Description>
+            <Description className="text-brand-darker md:text-left">{dict.sections.hero.content}</Description>
             <div className="mt-8 flex justify-center md:justify-start">
               <Link variant="primary" size="lg" to="#features">{dict.buttons.learnMore}</Link>
             </div>
