@@ -3,6 +3,7 @@ import SectionTitle from '@/components/shared/section/Title';
 import SectionSubtitle from '@/components/shared/section/Subtitle';
 import Section from '@/components/shared/section/Section';
 import config from '@/app/app.config'
+import Link from '../shared/Link'
 
 
 const component = () => {
@@ -18,6 +19,11 @@ const component = () => {
             <SectionSubtitle>{dict.sections.features.content}</SectionSubtitle>
           </div>
           <Features></Features>
+          <div className="mt-16 md:mt-20 flex justify-center">
+            <Link to="#contact-me" size="md" variant="primary">
+              {dict.buttons.wantToStart}
+            </Link>
+          </div>
         </div>
       {/* </SectionAnimation> */}
     </Section>

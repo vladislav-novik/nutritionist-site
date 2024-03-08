@@ -1,10 +1,10 @@
-import Post from "@/components/blog/post";
+import Post from "@/components/blog/post-page";
 import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
-import ShareButtons from "@/components/blog/post/ShareButtons";
+import ShareButtons from "@/components/blog/post-page/ShareButtons";
 // import { draftMode } from "next/headers";
 // import PreviewProvider from "@/components/Preview/PreviewProvider";
 // import PreviewPost from "@/components/Preview/PreviewPost";

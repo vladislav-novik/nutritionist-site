@@ -36,7 +36,7 @@ const Component = () => {
     variants: {
       hidden: {
         opacity: 0,
-        x: 100,
+        x: isDesktop ? 200 : 100,
       },
       visible: {
         opacity: 1,
@@ -44,8 +44,8 @@ const Component = () => {
       },
     },
     transition: {
-      type: 'spring',
-      stiffness: 30,
+      type: 'tween',
+      duration: 0.5,
       delay: !isDesktop ? 0 : staggerFeatures(i, features.length),
     },
     initial: 'hidden',
