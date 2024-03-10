@@ -9,7 +9,7 @@ const component = () => {
   const { dict } = config
 
   return (
-    <Section id="hero" className="overflow-hidden bg-brand-light">
+    <Section id="hero" className="overflow-hidden bg-white">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid items-center grid-cols-1 md:grid-cols-2">
           <div className="py-6 sm:py-16">
@@ -25,9 +25,10 @@ const component = () => {
           <div className="relative w-full h-full">
             <Image
               src={hero}
+              className="absolute inset-0 h-full max-w-none object-contain"
+              width={800}
               quality={100}
               alt=""
-              fill
               priority
             />
           </div>
