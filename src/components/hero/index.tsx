@@ -3,7 +3,8 @@ import Section from '@/components/shared/section/Section'
 import Image from "next/image";
 import config from '@/app/app.config'
 import Description from '../shared/section/Description'
-import hero from 'public/images/hero.png'
+import hero from 'public/images/hero/hero.png'
+import heroDashboard from 'public/images/hero/hero-dashboard.png'
 
 const component = () => {
   const { dict } = config
@@ -29,6 +30,13 @@ const component = () => {
               alt=""
               fill
               priority
+            />
+            <Image
+              src={heroDashboard}
+              quality={100}
+              alt=""
+              width={400}
+              height={300}
             />
           </div>
         </div>
