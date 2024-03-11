@@ -12,7 +12,7 @@ export default function Footer() {
               © 2020 Your Company, Inc. All rights reserved.
             </p>
           </div>
-          <a href="#header" className="text-xl leading-relaxed text-primary-dark sm:-m-1.5">
+          <a href="#top" className="text-xl leading-relaxed text-primary-dark sm:-m-1.5">
             <span className="sr-only">MaryaNovikBrand</span>
             <Image className="inline-block" src={'/images/vegetables.png'} width={40} height={40} alt="logo"></Image>
             <span className="hidden sm:inline">MaryaNovikBrand</span>
