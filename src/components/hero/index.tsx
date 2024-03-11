@@ -27,7 +27,7 @@ const component = () => {
             <Image
               src={hero}
               className="absolute inset-0 h-full max-w-none object-contain"
-              width={800}
+              width={600}
               quality={100}
               alt=""
               priority
