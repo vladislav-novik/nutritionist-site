@@ -6,7 +6,7 @@ export async function getPostsForHome(amount: number): Promise<PostOverview[]> {
     const posts = await sanityFetch<PostOverview[]>({
         query: postsForHome,
         params: { amount }
-    });
+    })
 
     return posts;
 }

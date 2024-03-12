@@ -19,7 +19,7 @@ const ContactComponent = () => {
       <SectionTitle className="text-white text-2xl font-bold mb-2">
         {dict.sections.contactMe.title}
       </SectionTitle>
-      <SectionDescription className="text-white lg:text-left">
+      <SectionDescription className="mt-6 text-white lg:text-left">
         {dict.sections.contactMe.content}
       </SectionDescription>
       <div className="flex justify-center my-10 lg:justify-start">

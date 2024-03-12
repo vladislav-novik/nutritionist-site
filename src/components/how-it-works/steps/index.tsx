@@ -27,7 +27,7 @@ const component = () => {
 
   return (
     <div className="mt-16 space-y-16 md:mt-20 md:space-y-20">
-      {steps.map((step, index) => (
+      {steps && steps.map((step, index) => (
         <Step
           key={index}
           index={index}

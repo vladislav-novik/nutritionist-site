@@ -18,7 +18,7 @@ const Component = () => {
     variants: {
       hidden: {
         opacity: 0,
-        x: isDesktop ? 200 : 100,
+        x: isDesktop ? 200 : 90,
       },
       visible: {
         opacity: 1,
@@ -32,15 +32,15 @@ const Component = () => {
     },
     initial: "hidden",
     whileInView: "visible",
-    viewport: { once: true, amount: !isDesktop ? 0.8 : 0.4 },
+    viewport: { once: true, amount: !isDesktop ? 0.7 : 0.4 },
   });
 
   return (
     <div
       // className="grid grid-cols-1 justify-center gap-12 lg:grid-cols-2 xl:gap-y-18 xl:grid-cols-3 2xl:gap-24"
-      className="w-fit flex flex-col gap-12 lg:flex-row xl:gap-18 2xl:gap-24"
+      className="w-fit flex flex-col gap-16 sm:gap-12 lg:flex-row xl:gap-18 2xl:gap-24"
     >
-      {features.map((feature, index) => (
+      {features && features.map((feature, index) => (
         <Feature
           key={index}
           feature={feature}

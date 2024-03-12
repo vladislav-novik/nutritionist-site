@@ -8,7 +8,7 @@ const component = () => {
   const { dict } = config;
 
   return (
-    <Section id="steps" className="py-16 sm:py-24">
+    <Section id="steps" className="py-12 sm:py-24">
       {/* <SectionAnimation> */}
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <div className="mx-auto max-w-2xl text-center">
