@@ -31,7 +31,7 @@ const component = () => {
               className="max-w-none w-full h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]"
               width={900}
               quality={100}
-              alt=""
+              alt="Hero image"
               priority
             />
           </div>

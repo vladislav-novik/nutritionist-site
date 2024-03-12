@@ -24,7 +24,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
     image: ({ value }: any) => {
       return (
         <figure>
-          <Image src={urlForImage(value).width(1000).height(667).url()} width={1000} height={667} alt='alt'></Image >
+          <Image src={urlForImage(value).width(1000).height(667).url()} width={1000} height={667} alt={value.alt}></Image >
           {value.alt && <figcaption className="text-center">{value.alt}</figcaption>}
         </figure>
       );

@@ -38,7 +38,7 @@ const component = () => {
       <motion.div variants={arrowVariants} className="w-full h-full">
         <Image
           src="/images/arrows/top-left.svg"
-          alt="socials pointer"
+          alt={dict.subscribeToSocials}
           fill
         />
       </motion.div>

@@ -62,7 +62,7 @@ export default async function Page({ params }: Props) {
           src={urlForImage(post.mainImage.ref).width(2600).height(900).url()}
           width={2600}
           height={900}
-          alt=""
+          alt={`Cover for article: ${post.title}`}
         />
       </div>
       <div className="mt-8 grid gap-y-8 grid-cols-1 sm:mt-12 lg:mt-16 lg:gap-x-12 lg:grid-cols-12">

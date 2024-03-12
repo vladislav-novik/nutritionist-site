@@ -41,7 +41,7 @@ const Component = ({ messageAssetPath, className, animation }: Props) => {
         src={messageAssetPath}
         width={350}
         height={200}
-        alt=""
+        alt="Message"
       />
     </motion.div>
   );

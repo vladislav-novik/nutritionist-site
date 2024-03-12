@@ -15,10 +15,12 @@ const component = ({ className }: Props) => {
           src="/images/contact/phone.png"
           width={400}
           height={600}
-          alt=""
+          alt="Contact me"
         />
         <div className="absolute inset-0 top-32">
-          <Message animation={{delay: 0}} messageAssetPath="/images/contact/message-1.png" />
+          <Message 
+            animation={{delay: 0}}
+            messageAssetPath="/images/contact/message-1.png" />
           <Message
               animation={{delay: 1.5}}
               className="mt-8"

@@ -25,7 +25,7 @@ const component = ({
       onClick={(e) => onClick && onClick(e)}
       className={classnames(
         {
-          "bg-brand-darkest text-tetriary border-brand-darkest":
+          "bg-brand-dark text-white border-brand-dark":
             variant === "primary",
           "bg-white text-brand-darkest border-btn-border":
             variant === "secondary",
@@ -36,7 +36,7 @@ const component = ({
         },
         `rounded-full border-2 font-bold transition-all
         active:scale-95
-        focus-visible:outline-2 focus-visible:outline-brand-darkest focus-visible:outline-dashed focus-visible:outline-offset-2
+        focus-visible:outline-2 focus-visible:outline-brand-darker focus-visible:outline-dashed focus-visible:outline-offset-2
         hover:text-brand-dark hover:bg-white`
       )}
     >
