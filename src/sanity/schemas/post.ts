@@ -57,12 +57,13 @@ export default defineType({
       title: 'Excerpt',
       type: 'text',
       description: 'A short description of the post',
-      validation: Rule => Rule.required().min(50).max(200)
+      validation: Rule => Rule.required().min(100).max(360)
     }),
     defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
+      validation: Rule => Rule.required(),
       description: 'Add tags that describe the post',
       of: [{type: 'reference', to: {type: 'tag'}}],
     }),

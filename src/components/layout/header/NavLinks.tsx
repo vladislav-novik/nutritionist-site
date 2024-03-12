@@ -26,7 +26,7 @@ type Props = {
 export default function NavLinks({ mobileMenu }: Props) {
   return (
     <>
-      {links.map(l => (
+      {links && links.map(l => (
         <Link
           key={l.title}
           className={classnames("text-gray-900 transition hover:text-emerald-700", [{

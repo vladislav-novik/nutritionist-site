@@ -32,7 +32,7 @@ const component = ({ post, withExcrpt }: PropsType) => {
       </h3>
       {withExcrpt && <p className="mt-3 text-brand-darker text-base font-normal line-clamp-3">{post.excerpt}</p>}
       <div className="mt-6">
-        {post.tags.map((tag, index) => (
+        {post.tags && post.tags.map((tag, index) => (
           <span key={index} className="uppercase tracking-widest font-bold text-gray-400 text-xs">
             {tag}
           </span>

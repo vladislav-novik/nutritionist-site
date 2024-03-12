@@ -31,7 +31,7 @@ export default function Index({ urlPrefix, page, totalItems, itemsPerPage = DEFA
             href={`${urlPrefix}${page - 1}`}
           ><span aria-hidden="true">&laquo;</span></a>
         </li>
-        {pageNumbers.map(pageNumber => {
+        {pageNumbers && pageNumbers.map(pageNumber => {
           const attrs = {} as any;
           
           if (pageNumber === page) {

@@ -16,17 +16,17 @@ export const component = ({ testimonials }: Props) => {
   const { dict } = config
 
   return (
-    <Section id="testimonials" className="bg-accent">
+    <Section id="testimonials" className="bg-accent py-12 sm:py-24">
       <div className="relative w-full h-full">
         {/* <SectionAnimation> */}
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="w-full text-left lg:text-center">
               <SectionTitle>{dict.sections.testimonials.title}</SectionTitle>
-              <SectionDescription>{dict.sections.testimonials.content}</SectionDescription>
+              <SectionDescription className="mt-6">{dict.sections.testimonials.content}</SectionDescription>
             </div>
             <div className="mx-auto max-w-7xl h-[28rem] lg:px-8 relative z-10">
               {/* <Carousel>
-                {testimonials.map(testimonial => (
+                {testimonials && testimonials.map(testimonial => (
                   <Testimonial key={testimonial._id} testimonial={testimonial}></Testimonial>
                 ))}
               </Carousel> */}

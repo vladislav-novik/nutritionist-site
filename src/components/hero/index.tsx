@@ -12,28 +12,49 @@ const component = () => {
     <Section id="hero" className="relative overflow-hidden bg-white">
       <div className="max-w-7xl px-4 mx-auto pt-6 md:pt-10 lg:pt-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:items-center xl:gap-x-16">
-          <div className="pb-6 md:pb-10 lg:pb-16">
-            <h1 className="font-heading text-center text-3xl font-bold leading-tight text-brand sm:text-4xl lg:text-left lg:text-4xl lg:leading-none xl:text-5xl xl:leading-[1.1]">
+          <div className="sm:pb-6 md:pb-10 lg:pb-16">
+            <h1 className="font-heading text-center text-3xl font-bold leading-tight text-brand 
+              sm:text-4xl 
+              lg:text-left lg:text-4xl lg:leading-none
+              xl:text-5xl xl:leading-[1.1]">
               {dict.sections.hero.title}
             </h1>
-            <Description className="text-brand-darker lg:text-left">
+            <Description className="hidden mt-6 text-brand-darker
+              sm:block
+              lg:text-left lg:mt-8">
               {dict.sections.hero.content}
             </Description>
-            <div className="mt-6 flex justify-center lg:justify-start">
+            <div className="hidden mt-6
+              sm:flex sm:justify-center
+              lg:mt-8 lg:justify-start">
               <Link variant="primary" size="lg" to="#features">
                 {dict.buttons.learnMore}
               </Link>
             </div>
           </div>
-          <div className="w-full h-full lg:flex lg:items-end">
+          <div className="mb-12 mt-6 w-full 
+            sm:mt-0 sm:mb-0 sm:h-full 
+            lg:flex lg:items-end">
             <Image
               src={hero}
-              className="max-w-none w-full h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]"
+              className="max-w-none w-full sm:h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]"
               width={900}
               quality={100}
               alt="Hero image"
               priority
             />
+            <div className="sm:hidden">
+              <Description className="mt-6 text-brand-darker 
+                lg:text-left lg:mt-8">
+                {dict.sections.hero.content}
+              </Description>
+              <div className="mt-6 flex justify-center
+                lg:mt-8 lg:justify-start">
+                <Link variant="primary" size="lg" to="#features">
+                  {dict.buttons.learnMore}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

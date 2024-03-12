@@ -33,7 +33,7 @@ type Props = {
 }
 
 const component = ({ withBorder, size }: Props) => (
-  socials.map(s => {
+  socials && socials.map(s => {
     let Component = s.icon;
 
     return (
