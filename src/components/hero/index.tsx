@@ -25,7 +25,7 @@ const component = () => {
               </Link>
             </div>
           </div>
-          <div className="w-full h-full flex justify-center lg:items-end">
+          <div className="w-full h-full lg:flex lg:items-end">
             <Image
               src={hero}
               className="max-w-none w-full h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]"
