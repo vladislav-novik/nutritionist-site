@@ -57,7 +57,7 @@ const Component = ({ show, hideFormHandler }: Props) => {
           <div className={classnames({ "ml-6": isMobileViewport })}>
             <div className="flex justify-end">
               <IconButton
-                className="ml-auto py-1 px-2 text-primary-dark"
+                className="ml-auto py-1 px-2 text-brand-darkest"
                 onClick={(e) => {
                   e.preventDefault();
                   hideFormHandler();

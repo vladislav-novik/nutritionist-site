@@ -39,8 +39,8 @@ const component = ({ withBorder, size }: Props) => (
     return (
       <div key={s.title} 
         className={classNames(`flex justify-center items-center cursor-pointer
-         text-primary transition hover:text-secondary`,
-        [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-primary hover:border-secondary': withBorder}])}>
+         text-brand-dark transition hover:text-brand`,
+        [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-brand-darker hover:border-secondary': withBorder}])}>
         <Link href={s.href} target="_blank">
           <Component size={size || 16} />
         </Link>

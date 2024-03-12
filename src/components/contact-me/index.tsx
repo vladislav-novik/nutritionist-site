@@ -5,7 +5,7 @@ import ContactImage from './contact-image'
 
 export default function ContactUs() {
   return (
-    <Section id="contact-me" className="bg-primary pt-20">
+    <Section id="contact-me" className="bg-brand-dark pt-20">
       <div className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 relative">
         <div className="px-8 max-w-md mx-auto text-center relative lg:text-left">
           <ContactDetails />

@@ -24,6 +24,16 @@ module.exports = {
         'btn-border': '#d6cfc4',
         'light': '#f8f6f5',
         'dark': '#c46c3f',
+
+        'brand': {
+          lightest: "#f0f9f0",
+          lighter: "#e6f9dd",
+          light: "#d7fec9",
+          DEFAULT: "#219d6c",
+          dark: "#006a42",
+          darker: "#004e2f",
+          darkest: "#003d24",
+        },
       },
       typography: (theme) => ({
         DEFAULT: {

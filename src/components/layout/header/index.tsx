@@ -4,10 +4,10 @@ import SubscribePointer from './subscribe-pointer'
 
 export default function Header() {
   return (
-    <header id="header" className="max-h-16 py-2">
+    <header className="max-h-16 py-2 bg-white">
       <nav className="mx-auto flex max-w-7xl items-center py-3 px-6 justify-between lg:px-8" aria-label="Global">
         <div className="flex md:flex-1">
-          <a href="/" className="text-xl leading-relaxed text-primary-dark sm:-m-1.5">
+          <a href="/" className="text-xl leading-relaxed text-brand-darkest sm:-m-1.5">
             <span className="sr-only">MaryaNovikBrand</span>
             <Image className="inline-block" src={'/images/vegetables.png'} width={40} height={40} alt="logo"></Image>
             <span className="hidden sm:inline">MaryaNovikBrand</span>
@@ -25,7 +25,7 @@ export default function Header() {
           <div className="flex justify-center space-x-6 sm:space-x-8 md:order-2">
             <SocialLinks size={24} />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden xl:block">
             <SubscribePointer />
           </div>
         </div>
