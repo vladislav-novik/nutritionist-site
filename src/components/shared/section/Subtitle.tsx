@@ -11,7 +11,7 @@ const component = ({ children, className }: Props) => {
     <p
       className={classnames(
         className,
-        "mt-6 font-content text-center text-lg leading-8 text-primary"
+        "mt-6 font-content text-center text-lg leading-8 text-brand-darker"
       )}
     >
       {children}

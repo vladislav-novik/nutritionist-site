@@ -34,7 +34,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-primary-dark mt-6 text-4xl font-bold sm:text-5xl">
+        <h1 className="text-brand-darkest mt-6 text-4xl font-bold sm:text-5xl">
           {post.title}
         </h1>
         <div className="flex items-center justify-center mt-8 space-x-2">
