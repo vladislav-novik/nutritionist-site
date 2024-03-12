@@ -27,10 +27,10 @@ const component = ({ post, withExcrpt }: PropsType) => {
           alt={post.title}
         />
       </Link>
-      <h3 className="mt-6 text-primary font-heading font-bold text-xl line-clamp-3">
+      <h3 className="mt-6 text-brand-darker font-heading font-bold text-xl line-clamp-3">
         <Link href={`/articles/${encodeURIComponent(post.slug)}`}>{post.title}</Link>
       </h3>
-      {withExcrpt && <p className="mt-3 text-primary text-base font-normal line-clamp-3">{post.excerpt}</p>}
+      {withExcrpt && <p className="mt-3 text-brand-darker text-base font-normal line-clamp-3">{post.excerpt}</p>}
       <div className="mt-6">
         {post.tags.map((tag, index) => (
           <span key={index} className="uppercase tracking-widest font-bold text-gray-400 text-xs">

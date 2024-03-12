@@ -25,9 +25,9 @@ const component = ({
       onClick={(e) => onClick && onClick(e)}
       className={classnames(
         {
-          "bg-primary-dark text-tetriary border-primary-dark":
+          "bg-brand-darkest text-tetriary border-brand-darkest":
             variant === "primary",
-          "bg-white text-primary-dark border-btn-border":
+          "bg-white text-brand-darkest border-btn-border":
             variant === "secondary",
           "bg-brand-light text-brand-dark border-brand-light": variant === "accent",
           "px-8 py-4 text-md": size === "sm",
@@ -36,7 +36,7 @@ const component = ({
         },
         `rounded-full border-2 font-bold transition-all
         active:scale-95
-        focus-visible:outline-2 focus-visible:outline-primary-dark focus-visible:outline-dashed focus-visible:outline-offset-2
+        focus-visible:outline-2 focus-visible:outline-brand-darkest focus-visible:outline-dashed focus-visible:outline-offset-2
         hover:text-brand-dark hover:bg-white`
       )}
     >
