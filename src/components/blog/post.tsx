@@ -24,7 +24,7 @@ const component = ({ post, withExcrpt }: PropsType) => {
           className="transition duration-200 object-cover absolute inset-0 w-full h-full group-hover:scale-125"
           width={480}
           height={270}
-          alt={post.title}
+          alt={`Cover for article: ${post.title}`}
         />
       </Link>
       <h3 className="mt-6 text-brand-darker font-heading font-bold text-xl line-clamp-3">
