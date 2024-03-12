@@ -29,10 +29,10 @@ const component = ({ index, title, description }: Props) => {
       </div>
       <div className="flex justify-center">
       <div className="text-center mx-auto max-w-xs md:text-left md:mx-0">
-        <h3 className="font-bold text-primary leading-none text-2xl">
+        <h3 className="font-bold text-brand leading-none text-2xl">
           0{index + 1}. {dict.sections.howItWorks.steps[index].title}
         </h3>
-        <p className="text-base text-primary my-6 md:my-8">
+        <p className="text-base text-brand-darker my-6 md:my-8">
           {dict.sections.howItWorks.steps[index].description}
         </p>
         <Link to="#contact-me" size='sm' variant='primary'>{dict.buttons.wantToStart}</Link>

@@ -1,10 +1,10 @@
-import Post from "@/components/blog/post";
+import Post from "@/components/blog/post-page";
 import { getPostBySlug, getPostsSlugs } from "@/sanity/lib/posts";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
-import ShareButtons from "@/components/blog/post/ShareButtons";
+import ShareButtons from "@/components/blog/post-page/ShareButtons";
 // import { draftMode } from "next/headers";
 // import PreviewProvider from "@/components/Preview/PreviewProvider";
 // import PreviewPost from "@/components/Preview/PreviewPost";
@@ -34,7 +34,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-primary-dark mt-6 text-4xl font-bold sm:text-5xl">
+        <h1 className="text-brand-darkest mt-6 text-4xl font-bold sm:text-5xl">
           {post.title}
         </h1>
         <div className="flex items-center justify-center mt-8 space-x-2">
