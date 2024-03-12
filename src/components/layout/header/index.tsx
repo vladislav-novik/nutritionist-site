@@ -25,7 +25,7 @@ export default function Header() {
           <div className="flex justify-center space-x-6 sm:space-x-8 md:order-2">
             <SocialLinks size={24} />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden xl:block">
             <SubscribePointer />
           </div>
         </div>

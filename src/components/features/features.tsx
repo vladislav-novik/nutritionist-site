@@ -64,7 +64,6 @@ const Component = () => {
           key={service._id}
           feature={service}
           animationConfig={getAnmationConfig(index)}
-          isLast={index === features.length - 1}
         />
       ))}
     </div>

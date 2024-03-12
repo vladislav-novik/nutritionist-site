@@ -4,17 +4,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 type Props = {
-  isLast: boolean;
   feature: Service;
   animationConfig: any;
 };
 
-export const component = ({ feature, animationConfig, isLast = false }: Props) => {
+export const component = ({ feature, animationConfig }: Props) => {
   return (
     <motion.div
       {...animationConfig}
       // className={classnames("mx-auto", {"lg:col-span-2 xl:col-span-1": isLast})}
-      className="bg-brand-lightest text-center rounded-[4rem] py-6 px-8 sm:max-w-96"
+      className="bg-white text-center rounded-[4rem] py-6 px-8 sm:max-w-96"
     >
       {/* <div className="bg-light text-center rounded-[4rem] py-6 px-8 sm:max-w-96"> */}
         <h3 className="font-content text-lg font-semibold text-brand-dark">
