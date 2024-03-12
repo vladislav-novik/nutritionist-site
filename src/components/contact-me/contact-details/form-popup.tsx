@@ -51,7 +51,7 @@ const Component = ({ show, hideFormHandler }: Props) => {
               "h-[120%]  rounded-t-lg": !isMobileViewport,
               "h-full rounded-r-lg": isMobileViewport,
             },
-            "absolute top-0 -left-6 w-full bg-light py-4 px-6 shadow"
+            "absolute top-0 -left-6 w-full bg-brand-lighter py-4 px-6 shadow"
           )}
         >
           <div className={classnames({ "ml-6": isMobileViewport })}>
