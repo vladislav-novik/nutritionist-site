@@ -13,10 +13,10 @@ const component = () => {
       <div className="max-w-7xl px-4 mx-auto pt-6 md:pt-10 lg:pt-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:items-center xl:gap-x-16">
           <div className="sm:pb-6 md:pb-10 lg:pb-16">
-            <h1 className="font-heading text-center text-3xl font-bold leading-tight text-brand 
+            <h1 className="font-heading text-center text-3xl font-bold leading-[1.1] text-brand 
               sm:text-4xl 
-              lg:text-left lg:text-4xl lg:leading-none
-              xl:text-5xl xl:leading-[1.1]">
+              lg:text-left lg:text-4xl
+              xl:text-5xl">
               {dict.sections.hero.title}
             </h1>
             <Description className="hidden mt-6 text-brand-darker
@@ -37,8 +37,10 @@ const component = () => {
             lg:flex lg:items-end">
             <Image
               src={hero}
-              className="max-w-none w-full sm:h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]"
-              width={900}
+              //sm:h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]
+              className="max-w-none w-full"
+              // width={900}
+              sizes="(min-width: 1024px) 60vw, (min-width: 1280px) 80vw, (min-width: 1536px) 100vw, 50vw"
               quality={100}
               alt="Hero image"
               priority
