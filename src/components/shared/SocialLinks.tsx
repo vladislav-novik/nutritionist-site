@@ -30,19 +30,21 @@ const socials: SocialLink[] = [{
 type Props = {
   withBorder?: boolean;
   size?: number;
+  color?: 'green' | 'blue'
 }
 
-const component = ({ withBorder, size }: Props) => (
+const component = ({ withBorder, size = 16, color = 'green' }: Props) => (
   socials && socials.map(s => {
     let Component = s.icon;
 
     return (
       <div key={s.title} 
-        className={classNames(`flex justify-center items-center cursor-pointer
-         text-brand-dark transition hover:text-brand`,
-        [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-brand-darker hover:border-secondary': withBorder}])}>
+        className={classNames(`flex justify-center items-center cursor-pointer`,
+        {'w-8 h-8 rounded-full bg-transparent border-[1px] border-brand-darker hover:border-secondary': withBorder},
+        {'text-brand-dark transition hover:text-brand': color === 'green' },
+        {'text-brand-blue-dark transition hover:text-brand': color === 'blue' },)}>
         <Link href={s.href} target="_blank">
-          <Component size={size || 16} />
+          <Component size={size} />
         </Link>
       </div>
     )
