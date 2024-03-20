@@ -8,11 +8,7 @@ const component = () => {
   const { dict } = config;
 
   return (
-    <form
-      action={submitRequest}
-      className="grid gap-y-6 grid-cols-1
-      "
-    >
+    <form action={submitRequest} className="grid gap-y-6 grid-cols-1">
       <Input
         name="firstName"
         label={dict.contactForm.name.label}
@@ -30,14 +26,11 @@ const component = () => {
         label={dict.contactForm.message.label}
         placeholder={dict.contactForm.message.placeholder}
       />
-      <div
-        >
-        <Button type="submit" size="sm" variant="primary">
-          {dict.contactForm.submit}
-        </Button>
-      </div>
+      <Button type="submit" size="sm" variant="primary">
+        {dict.contactForm.submit}
+      </Button>
     </form>
   );
 };
 
-export default component;
+export default component

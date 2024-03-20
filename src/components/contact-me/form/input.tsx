@@ -1,7 +1,6 @@
-// import { useRef } from 'react'
+import { useRef } from 'react'
 
 type Props = {
-  className?: string;
   name: string;
   label?: string;
   placeholder?: string;
@@ -10,9 +9,19 @@ type Props = {
   focusDelay?: number;
 };
 
-const Component = ({ name, label, placeholder, type = 'text', focus = false, focusDelay = 0, className }: Props) => {
+const Component = ({ name, label, placeholder, type = 'text', focus = false, focusDelay = 0 }: Props) => {
+  const ref = useRef(null);
+
+  if (focus) {
+    setTimeout(() => {
+      if (ref) {
+        ref.current.focus()
+      }
+    }, focusDelay)
+  }
+
   return (
-    <div className={className}>
+    <div className="sm:col-span-2">
       <label
         htmlFor={name}
         className="block text-left text-md font-semibold leading-6 text-brand-darker"
@@ -21,6 +30,8 @@ const Component = ({ name, label, placeholder, type = 'text', focus = false, foc
       </label>
       <div className="mt-2.5">
         <input
+          // TODO: check why it broke the animation
+          ref={ref}
           type={type}
           name={name}
           id={name}

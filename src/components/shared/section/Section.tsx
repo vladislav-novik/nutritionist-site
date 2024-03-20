@@ -5,7 +5,7 @@ type Props = {
 };
 
 const component = ({ children, id, className }: Props) => (
-  <section id={id} className={`${className}`}>
+  <section id={id} className={`${className} overflow-hidden`}>
     {children}
   </section>
 );
