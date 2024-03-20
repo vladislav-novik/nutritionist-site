@@ -3,12 +3,11 @@ type Props = {
     label?: string;
     placeholder?: string;
     rows?: number;
-    className?: string;
   };
   
-  const component = ({ name, label, placeholder, rows = 5, className }: Props) => {
+  const component = ({ name, label, placeholder, rows = 5 }: Props) => {
     return (
-      <div className={className}>
+      <div className="sm:col-span-2">
         <label
           htmlFor={name}
           className="block text-left text-md font-semibold leading-6 text-brand-darker"

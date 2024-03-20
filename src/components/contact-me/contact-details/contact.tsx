@@ -4,15 +4,14 @@ type Props = {
   description?: string;
   children?: React.ReactNode;
   Icon: IconType;
-  iconClass?: string
 };
 
-const Component = ({ Icon, children, description, iconClass = "text-lg" }: Props) => {
+const Component = ({ Icon, children, description }: Props) => {
   return (
     <div className="flex justify-start gap-x-4 lg:justify-start">
       <dt className="flex items-center">
         <span className="sr-only">{ description }</span>
-        <Icon className={iconClass}  />
+        <Icon size={20} />
       </dt>
       <dd>{ children }</dd>
     </div>
