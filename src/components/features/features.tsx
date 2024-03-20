@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, stagger } from "framer-motion";
+import { stagger } from "framer-motion";
 import Feature from "./feature";
 import useViewportType from "@/utils/hooks/useViewportWidth";
 import { useMemo } from "react";
