@@ -1,8 +1,7 @@
-import classnames from "classnames";
-import Contact from "./contact-details/contact";
 import { IoLogoWhatsapp, IoMailOutline } from "react-icons/io5";
 import { PiTelegramLogo } from "react-icons/pi";
 import config from "@/app/app.config";
+import Contact from './contact'
 
 const { dict } = config;
 
