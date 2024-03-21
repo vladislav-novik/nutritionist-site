@@ -1,9 +1,9 @@
 import HomePosts from '@/components/blog/latest-posts'
-// import Features from '@/components/features'
+import Features from '@/components/features'
 import ContactUs from '@/components/contact-me'
-// import HowItWors from '@/components/how-it-works'
+import HowItWors from '@/components/how-it-works'
 import { getPostsForHome } from '@/sanity/lib/posts'
-// import Hero from '@/components/hero'
+import Hero from '@/components/hero'
 
 export default async function Page() {
   // const testimonials = await getTestimonials();
@@ -13,9 +13,9 @@ export default async function Page() {
 
   return (
       <main>
-        {/* <Hero />
+        <Hero />
         <Features />
-        <HowItWors /> */}
+        <HowItWors />
         <ContactUs />
         <HomePosts posts={posts} />
       </main>
