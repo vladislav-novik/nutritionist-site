@@ -33,6 +33,15 @@ module.exports = {
           dark: "#006a42",
           darker: "#004e2f",
           darkest: "#003d24",
+
+          green: "#D7FEC9",
+          "green-dark": "#003D24",
+          pink: "#FFC3B6",
+          "pink-dark": "#673125",
+          blue: "#C0F0FF",
+          "blue-dark": "#0A4153",
+          yellow: "#FAE395",
+          "yellow-dark": "#504316",
         },
       },
       typography: (theme) => ({
