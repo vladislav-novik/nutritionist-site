@@ -8,8 +8,8 @@ type Props = {
 
 const component = ({ className }: Props) => {
   return (
-    <div className={classnames("relative max-w lg:max-w-2xl lg:mx-0", className)}>
-      <div className="relative">
+    <div className={classnames("relative w-full", className)}>
+      <div className="relative max-w-80 mx-auto md:max-w-sm lg:max-w-md">
         <Image
           className="mx-auto w-full"
           src="/images/contact/phone.png"

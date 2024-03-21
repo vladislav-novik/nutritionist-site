@@ -55,6 +55,18 @@ const translations = {
     content: 'Оптимизируйте свое питание, создав персонализированную стратегию.',
     image: "/images/features/3.svg"
   }],
+  header: {
+    links: [{
+      title: 'Главная',
+      href: '/'
+    }, {
+      title: 'Контакты',
+      href: '#contacts'
+    }, {
+      title: 'Блог',
+      href: '#articles'
+    }],
+  },
   sections: {
     hero: {
       title: 'Добро пожаловать на мой сайт!',

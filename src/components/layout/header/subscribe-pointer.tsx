@@ -30,7 +30,7 @@ const component = () => {
 
   return (
     <motion.div
-      className="absolute z-10 top-full left-3/4 w-20 h-20"
+      className="absolute z-10 top-full right-0 w-20 h-20"
       variants={container}
       initial="hidden"
       animate="show"

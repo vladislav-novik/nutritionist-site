@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { stagger } from "framer-motion";
 import Feature from "./feature";
 import useViewportType from "@/utils/hooks/useViewportWidth";
 import { useMemo } from "react";
 import config from "@/app/app.config";
 import classnames from "classnames";
 import Image from "next/image";
+import { stagger } from 'framer-motion'
 
 const staggerFeatures = stagger(0.5, { from: "first" });
 
@@ -17,7 +17,6 @@ const Component = () => {
 
   const viewportType = useViewportType();
   const isDesktop = useMemo(() => viewportType === "Desktop", [viewportType]);
-
   const getAnimationConfig = (i) => ({
     variants: {
       hidden: {
@@ -156,8 +155,7 @@ const Component = () => {
       lg:gap-x-4 lg:gap-y-4
       xl:gap-x-8 xl:gap-y-8"
     >
-      {features &&
-        features.map((feature, index) => (
+      {features && features.map((feature, index) => (
           <Feature
             key={index}
             className={classnames({

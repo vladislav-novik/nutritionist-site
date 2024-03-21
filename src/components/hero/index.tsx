@@ -1,14 +1,15 @@
-import Section from "@/components/shared/section/Section";
+import Link from "@/components/shared/Link";
+import Section from "@/components/layout/section/Section";
 import Image from "next/image";
 import config from "@/app/app.config";
-import Description from "../shared/section/Description";
+import Description from "../layout/section/Description";
 import hero from "public/images/hero/hero.png";
 
 const component = () => {
   const { dict } = config;
 
   return (
-    <Section id="hero" className="relative overflow-hidden bg-white">
+    <Section id="hero" className="pb-12 sm:pb-24">
       <div
         className="xl:max-w-7xl mx-auto px-2
         sm:px-4 md:px-6 lg:px-8"
@@ -50,6 +51,15 @@ const component = () => {
             >
               {dict.sections.hero.content}
             </Description>
+            {/* <div
+              className="hidden mt-6
+              sm:flex sm:justify-center
+              lg:mt-8 lg:justify-start"
+            >
+              <Link variant="primary" size="lg" to="#features">
+                {dict.buttons.learnMore}
+              </Link>
+            </div> */}
           </div>
           <div
             className="bg-brand-green rounded-3xl flex
