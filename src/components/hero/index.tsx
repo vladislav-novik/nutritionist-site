@@ -1,15 +1,15 @@
 import Link from "@/components/shared/Link";
-import Section from "@/components/shared/section/Section";
+import Section from "@/components/layout/section/Section";
 import Image from "next/image";
 import config from "@/app/app.config";
-import Description from "../shared/section/Description";
+import Description from "../layout/section/Description";
 import hero from "public/images/hero/hero.png";
 
 const component = () => {
   const { dict } = config;
 
   return (
-    <Section id="hero" className="relative overflow-hidden ">
+    <Section id="hero" className="pb-12 sm:pb-24">
       <div
         className="xl:max-w-7xl mx-auto px-2
         sm:px-4 md:px-6 lg:px-8"

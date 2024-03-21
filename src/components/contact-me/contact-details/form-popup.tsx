@@ -31,9 +31,9 @@ const Component = ({ show, hideFormHandler }: Props) => {
   };
 
   const formVariants = {
-    hidden: { y: "100vh" },
+    hidden: { y: "100%" },
     visible: { y: 0 },
-    exit: { y: "100vh" },
+    exit: { y: "100%" },
   };
 
   return (

@@ -1,12 +1,14 @@
-import Section from '@/components/shared/section/Section';
+import Section from '@/components/layout/section/Section';
 import ContactDetails from './contact-details'
 import ContactImage from './contact-image'
 
 
 export default function ContactUs() {
   return (
-    <Section id="contact-me" className="bg-brand-dark pt-12 sm:pt-24">
-      <div className="grid grid-cols-1 max-w-7xl mx-auto lg:grid-cols-2 relative">
+    <Section id="contacts" className="overflow-hidden mx-2 my-12 sm:my-24" animated>
+      <div className="bg-brand-dark rounded-3xl grid grid-cols-1 max-w-7xl mx-auto pt-12
+        sm:pt-24
+        lg:grid-cols-2 lg:rounded-[2.5rem]">
         <div className="px-8 max-w-md mx-auto text-center relative lg:max-w-lg lg:text-left">
           <ContactDetails />
         </div>

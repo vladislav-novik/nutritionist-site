@@ -1,13 +1,13 @@
 "use client";
 
-import SectionTitle from "@/components/shared/section/Title";
+import SectionTitle from "@/components/layout/section/Title";
 import Button from "@/components/shared/Button";
 import { useState } from "react";
 import { IoLogoWhatsapp, IoMailOutline } from "react-icons/io5";
 import { PiTelegramLogo } from "react-icons/pi";
 import Contact from "./contact";
 import config from "@/app/app.config";
-import SectionDescription from "@/components/shared/section/Description";
+import SectionDescription from "@/components/layout/section/Description";
 import FormPopup from "./form-popup";
 
 const ContactComponent = () => {
