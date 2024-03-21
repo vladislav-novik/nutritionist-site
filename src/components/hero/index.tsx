@@ -9,7 +9,7 @@ const component = () => {
   const { dict } = config;
 
   return (
-    <Section id="hero" className="relative overflow-hidden bg-white">
+    <Section id="hero" className="relative overflow-hidden ">
       <div
         className="xl:max-w-7xl mx-auto px-2
         sm:px-4 md:px-6 lg:px-8"

@@ -14,7 +14,7 @@ const component = ({ posts }: Props) => {
   const { dict } = config;
 
   return (
-    <Section id="articles" className="bg-white py-12 sm:py-24">
+    <Section id="articles" className="py-12 sm:py-24">
       {/* <SectionAnimation> */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
