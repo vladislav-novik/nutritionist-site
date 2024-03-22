@@ -1,21 +1,28 @@
+"use client";
+
 import classnames from "classnames";
 import Link from "@/components/shared/Link";
-// import Step1 from "./assets/step-1";
-// import Step2 from "./assets/step-2";
-// import Step3 from "./assets/step-3";
-import Image from 'next/image'
+import Image from "next/image";
 import config from "@/app/app.config";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from 'react'
 
 type Props = {
   index: number;
 };
 
-const colors = ['brand-yellow', 'brand-pink', 'brand-blue']
+const colors = ["brand-yellow", "brand-pink", "brand-blue"];
 
-const component = ({ index }: Props) => {
+const Component = ({ index }: Props) => {
   const { dict } = config;
   const isOdd = (index + 1) % 2 === 1;
-  const { title, description } = dict.sections.howItWorks.steps[index]
+  const { title, description } = dict.sections.howItWorks.steps[index];
+
+  const thirdStep = index === 2;
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const bottom = useTransform(scrollYProgress, [1, 0], ["0px", "50px"]);
 
   return (
     <div className="grid gap-y-8 items-center grid-cols-1 md:gap-x-16 md:grid-cols-2 md:gap-y-8">
@@ -25,17 +32,29 @@ const component = ({ index }: Props) => {
         })}
       >
         <div
-          className={classnames(`bg-${colors[index]}`, "pt-8 px-8 rounded-xl max-w-lg w-full mx-auto lg:rounded-[2.5rem]")}
+          className={classnames(
+            `bg-${colors[index]}`,
+            `pt-8 px-8 rounded-xl max-w-lg w-full mx-auto 
+            lg:rounded-[2.5rem]`
+          )}
         >
-          {/* {index === 0 && <Step1 />}
-          {index === 1 && <Step2 />}
-          {index === 2 && <Step3 />} */}
-          <Image
-            src={`/images/how-it-works/${index + 1}.png`}
-            alt={title}
-            width={500}
-            height={500}
-          />
+          {thirdStep ? (
+            <motion.div ref={ref} className="relative" style={{ bottom }}>
+              <Image
+                src={`/images/how-it-works/${index + 1}.png`}
+                alt={title}
+                width={500}
+                height={500}
+              />
+            </motion.div>
+          ) : (
+            <Image
+              src={`/images/how-it-works/${index + 1}.png`}
+              alt={title}
+              width={500}
+              height={500}
+            />
+          )}
         </div>
       </div>
       <div className="flex justify-center">
@@ -55,4 +74,4 @@ const component = ({ index }: Props) => {
   );
 };
 
-export default component;
+export default Component;
