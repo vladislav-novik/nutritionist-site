@@ -1,4 +1,3 @@
-import Carousel from "@/components/testimonials/Carousel";
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 import SectionTitle from "@/components/layout/section/Title";
 import SectionSubHeader from "@/components/layout/section/Subtitle";

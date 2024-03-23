@@ -33,8 +33,9 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-brand-darkest mt-6 text-4xl font-bold sm:text-5xl">
+      <div className="max-w-4xl mx-auto text-center">
+        <h1 className="text-brand-darkest mt-6 text-3xl leading-tight font-heading font-bold 
+          lg:text-5xl lg:leading-snug">
           {post.title}
         </h1>
         <div className="flex items-center justify-center mt-8 space-x-2">
@@ -52,9 +53,11 @@ export default async function Page({ params }: Props) {
           </time>
         </div>
       </div>
-      <div className="relative mt-8 aspect-[16/9] sm:mt-12 lg:mt-16 lg:aspect-[16/6]">
+      <div className="relative mt-8 aspect-[16/9]  
+        sm:mt-12 
+        lg:mt-16 lg:aspect-[16/6]">
         <Image
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-2xl lg:rounded-[2.5rem]"
           placeholder="blur"
           blurDataURL={post.mainImage.lquip}
           src={urlForImage(post.mainImage.ref).width(2600).height(900).url()}
@@ -62,8 +65,12 @@ export default async function Page({ params }: Props) {
           height={900}
           alt={`Cover for article: ${post.title}`}
         />
+        {/* <div className="absolute w-full h-full -z-10 -top-2 -right-2 bg-brand-blue rounded-2xl 
+          lg:-top-4 lg:-right-4 lg:rounded-[2.5rem]"></div> */}
       </div>
-      <div className="mt-8 grid gap-y-8 grid-cols-1 sm:mt-12 lg:mt-16 lg:gap-x-12 lg:grid-cols-12">
+      <div className="mt-8 grid gap-y-8 grid-cols-1 
+        sm:mt-12
+        lg:mt-16 lg:gap-x-12 lg:grid-cols-12">
         {/* {
           isDraftMode && !!token ?
           (<PreviewProvider token={token}>
