@@ -34,7 +34,7 @@ const Component = ({ index }: Props) => {
         <div
           className={classnames(
             `bg-${colors[index]}`,
-            `pt-8 px-8 rounded-xl max-w-lg w-full mx-auto 
+            `pt-8 px-8 rounded-xl max-w-xl w-full mx-auto 
             lg:rounded-[2.5rem]`
           )}
         >
@@ -58,7 +58,7 @@ const Component = ({ index }: Props) => {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="text-center mx-auto max-w-xs md:text-left md:mx-0">
+        <div className="text-center mx-auto max-w-sm md:text-left md:mx-0">
           <h3 className="font-bold text-brand leading-none text-2xl">
             0{index + 1}. {title}
           </h3>

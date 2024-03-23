@@ -3,9 +3,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-light">
+    <footer>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="py-8 sm:py-12 mx-auto grid grid-cols-1 md:flex md:items-center md:justify-between">
+        <hr className="border-brand-dark" />
+        <div className="py-6 mx-auto grid grid-cols-1 md:flex md:items-center md:justify-between">
           <div className="mt-4 w-full flex justify-center md:w-auto md:mt-0">
             <a
               href="#"
@@ -27,8 +28,8 @@ export default function Footer() {
             <SocialLinks withBorder />
           </div>
           <div className="order-1 mt-8 md:mt-0 md:order-none">
-            <p className="text-gray-400 text-sm leading-5 text-center">
-              © 2020 by Maryia Novik
+            <p className="text-brand-darker text-base font-semibold leading-5 text-center">
+              © 2024 by Marya Novik
             </p>
           </div>
         </div>
