@@ -16,8 +16,8 @@ type Props = {
 
 export default function Layout({children}: Props) {
   return (
-    <main className="w-full">
-      <div className="max-w-7xl mx-auto py-4 px-4 sm:py-8 sm:px-6 lg:py-16 lg:px-8">
+    <main className="w-full mb-16 py-8 md:py-16 md:mb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {children}
       </div>
     </main>

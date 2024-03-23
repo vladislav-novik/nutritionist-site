@@ -2,8 +2,10 @@ import { getPosts } from "@/sanity/lib/posts";
 import PageWrapper from "@/components/shared/animation/PageAnimation";
 import { Metadata } from "next";
 import { generateMetadataForPage } from "@/utils/metadata";
-import config from '@/app/app.config';
-import Posts from '@/components/blog/posts'
+import config from "@/app/app.config";
+import Posts from "@/components/blog/posts";
+import SectionTitle from "@/components/layout/section/Title";
+import SectionSubtitle from "@/components/layout/section/Subtitle";
 
 export async function generateMetadata(): Promise<Metadata> {
   let lang = "ru";
@@ -24,15 +26,15 @@ export default async function Page() {
 
   return (
     // <PageWrapper>
-    <div className="py-12 sm:py-20">
-      <div className="text-center max-w-md mx-auto">
-        <h2 className="text-3xl font-bold">{dict.sections.blog.title}</h2>
-        <p className="mt-5 leading-6 font-normal text-base">{dict.sections.blog.content}</p>
+    <>
+      <div className="text-center max-w-lg mx-auto">
+        <SectionTitle>{dict.sections.blog.title}</SectionTitle>
+        <SectionSubtitle>{dict.sections.blog.content}</SectionSubtitle>
       </div>
-      <div className="mx-auto mt-12 lg:mt-20 xl:max-w-none">
-        <Posts posts={posts} withExcrpt />
+      <div className="mx-auto mt-16 lg:mt-24 xl:max-w-none">
+        <Posts posts={posts} maxCols={2} withExcrpt />
       </div>
-    </div>
+    </>
     // </PageWrapper>
   );
 }
