@@ -12,17 +12,22 @@ module.exports = {
       "cursive": "var(--font-cursive)",
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/images/vegetables.png')",
+      },
       fontSize: {
         '3xl': '2rem',
       },
       colors: {
         'btn-border': '#d6cfc4',
+        'main': '#F3FBF2',
+        'accent': '#3C8FC3',
 
         'brand': {
           lightest: "#f0f9f0",
           lighter: "#e6f9dd",
           light: "#d7fec9",
-          DEFAULT: "#219d6c",
+          DEFAULT: "#4CC33C",
           dark: "#006a42",
           darker: "#004e2f",
           darkest: "#003d24",
