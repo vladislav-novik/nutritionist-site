@@ -11,74 +11,49 @@ const component = () => {
   return (
     <Section id="hero" className="pb-12 sm:pb-24">
       <div
-        className="xl:max-w-7xl mx-auto px-2
+        className="xl:max-w-7xl mx-auto px-6
         sm:px-4 md:px-6 lg:px-8"
       >
-        <div
-          className="w-full 
-          grid
-          grid-cols-1 gap-y-2
-          sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-4 sm:gap-y-4 
-          md:grid-cols-12 md:grid-rows-9 md:gap-x-6 md:gap-y-6
-          lg:gap-x-8 lg:gap-y-8
-        "
-        >
-          <div
-            className="bg-brand-blue rounded-3xl p-8
-            order-0
-            sm:row-start-1 sm:row-end-2 sm:col-start-1 sm:col-end-2
-            md:row-start-1 md:row-end-5 md:col-start-1 md:col-end-6 md:rounded-[2.5rem]
-            lg:row-start-1 lg:row-end-5 lg:col-start-1 lg:col-end-6"
-          >
-            <h1
-              className="font-heading text-center text-3xl font-bold leading-[1.1] text-brand 
-                sm:text-4xl 
-                lg:text-left lg:text-4xl
-                xl:text-5xl"
-            >
-              {dict.sections.hero.title}
+        <div className="mt-16 w-full md:mt-24">
+          <div className="flex justify-center">
+            <h1 className="text-brand text-[5rem] leading-[0.8] flex flex-col w-full
+              sm:inline-block sm:text-6xl
+              md:inline md:text-8xl md:leading-none md:w-fit md:-mr-12
+              lg:text-9xl lg:leading-none lg:-mr-16
+              xl:text-[10rem] xl:leading-[1.1]">
+              <span className="font-heading inline-block sm:inline">
+                Пита
+                <span className="relative inline-flex justify-center  
+                xl:leading-[0.8] 
+                before:content-[''] before:absolute before:bg-hero-pattern 
+                before:bg-[length:2.5rem_2.5rem] before:w-10 before:h-10">и</span>
+                ся
+              </span>
+              <span className="font-cursive text-accent text-right z-10
+                sm:relative sm:text-left sm:z-unset sm:top-2 sm:left-44
+                md:top-16 md:right-12 md:left-auto
+                lg:top-20 lg:right-16
+                xl:top-24">
+                Здорово
+              </span>
+              <br className="hidden sm:block" />
+              <span className="font-content font-bold uppercase
+                tracking-[0.8rem]
+                sm:tracking-[0.5rem]
+                md:tracking-[1rem]
+                lg:tracking-[1.2rem]
+                xl:tracking-[1.6rem]">
+                Живи
+              </span>
             </h1>
           </div>
-          <div
-            className="bg-brand-yellow rounded-3xl p-8
-            order-2
-            sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3
-            md:row-start-5 md:row-end-10 md:col-start-1 md:col-end-6 md:rounded-[2.5rem]
-            lg:row-start-5 lg:row-end-10 lg:col-start-1 lg:col-end-6"
-          >
-            <Description
-              className="text-brand-darker lg:text-left"
-            >
-              {dict.sections.hero.content}
-            </Description>
-            {/* <div
-              className="hidden mt-6
-              sm:flex sm:justify-center
-              lg:mt-8 lg:justify-start"
-            >
-              <Link variant="primary" size="lg" to="#features">
-                {dict.buttons.learnMore}
-              </Link>
-            </div> */}
-          </div>
-          <div
-            className="bg-brand-green rounded-3xl flex
-            order-1
-            sm:row-start-2 sm:row-end-4 sm:col-start-1 sm:col-end-3
-            md:row-start-1 md:row-end-10 md:col-start-6 md:col-end-13 md:rounded-[2.5rem]
-            lg:row-start-1 lg:row-end-10 lg:col-start-6 lg:col-end-13"
-          >
-            <Image
-              src={hero}
-              placeholder="blur"
-              //sm:h-full object-contain lg:w-[520px] lg:h-auto xl:w-[650px] 2xl:w-[750px]
-              className="max-w-none self-end w-full"
-              // width={900}
-              sizes="(min-width: 1024px) 60vw, (min-width: 1280px) 80vw, (min-width: 1536px) 100vw, 60vw"
-              quality={100}
-              alt="Hero image"
-              priority
-            />
+          <Description className="mt-16 max-w-2xl mx-auto md:mt-24">
+            {dict.sections.hero.content}
+          </Description>
+          <div className="mt-8 flex justify-center">
+            <Link variant="primary" size="md" to="#features">
+              {dict.buttons.learnMore}
+            </Link>
           </div>
         </div>
       </div>

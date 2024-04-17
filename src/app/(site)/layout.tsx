@@ -1,25 +1,25 @@
 import "./globals.css";
-import { Montserrat_Alternates, Montserrat, Caveat } from "next/font/google";
+import { PT_Sans, PT_Sans_Caption, Pacifico } from "next/font/google";
 import Script from "next/script";
 import classnames from "classnames";
 
-const heading = Montserrat_Alternates({
+const heading = PT_Sans({
   subsets: ["cyrillic"],
-  weight: ["600", "700"],
+  weight: "400",
   style: ["normal"],
   variable: "--font-heading",
   display: "swap",
 });
-const content = Montserrat({
+const content = PT_Sans_Caption({
   subsets: ["cyrillic"],
-  weight: ["400", "600"],
+  weight: ["400", "700"],
   style: ["normal"],
   variable: "--font-content",
   display: "swap",
 });
-const cursive = Caveat({
+const cursive = Pacifico({
   subsets: ["cyrillic"],
-  weight: ["500"],
+  weight: "400",
   style: ["normal"],
   variable: "--font-cursive",
   display: "swap",
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
       lang="ru"
       className={`${heading.variable} ${content.variable} ${cursive.variable}`}
     >
-      <body className={classnames(content.className)}>
+      <body className={classnames(content.className, 'bg-main')}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"

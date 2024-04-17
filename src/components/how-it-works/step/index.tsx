@@ -6,6 +6,7 @@ import Image from "next/image";
 import config from "@/app/app.config";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from 'react'
+import TextLine from '../text-line'
 
 type Props = {
   index: number;
@@ -38,6 +39,7 @@ const Component = ({ index }: Props) => {
             lg:rounded-[2.5rem]`
           )}
         >
+          <TextLine />
           {thirdStep ? (
             <motion.div ref={ref} className="relative" style={{ bottom }}>
               <Image
