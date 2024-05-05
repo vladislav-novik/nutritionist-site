@@ -22,7 +22,7 @@ const component = () => {
               md:inline md:text-8xl md:leading-none md:w-fit md:-mr-12
               lg:text-9xl lg:leading-none lg:-mr-16
               xl:text-[10rem] xl:leading-[1.1]">
-              <span className="font-heading inline-block sm:inline">
+              <span className="font-heading inline-block  sm:inline">
                 Пита
                 <span className="relative inline-flex justify-center  
                 xl:leading-[0.8] 
@@ -33,8 +33,8 @@ const component = () => {
                 md:before:w-10 md:before:h-10">и</span>
                 ся
               </span>
-              <span className="font-cursive text-accent text-right z-10
-                sm:relative sm:text-left sm:z-unset sm:top-2 sm:left-44
+              <span className="font-cursive text-accent text-right z-10 relative -top-3
+                sm:text-left sm:z-unset sm:top-2 sm:left-44
                 md:top-16 md:right-12 md:left-auto
                 lg:top-20 lg:right-16
                 xl:top-24">
