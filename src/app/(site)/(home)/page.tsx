@@ -9,6 +9,7 @@ import HowItWors from '@/components/how-it-works'
 import { getTestimonials } from '@/sanity/lib/testimonials'
 import { getPostsForHome } from '@/sanity/lib/posts'
 import Hero from '@/components/hero'
+import About from '@/components/about'
 
 export default async function Page() {
   // const testimonials = await getTestimonials();
@@ -19,9 +20,9 @@ export default async function Page() {
   return (
     // <PageAnimation>
       <main>
-        {/* <Hero dict={dict} /> */}
         <Hero />
         <Services />
+        <About />
         <HowItWors />
         <ContactUs />
         <HomePosts posts={posts} />

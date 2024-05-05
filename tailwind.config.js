@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/images/vegetables.png')",
+        'hero-pattern': "url('/images/leaf.png')",
       },
       fontSize: {
         '3xl': '2rem',

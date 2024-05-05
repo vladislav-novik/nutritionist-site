@@ -11,11 +11,15 @@ export default function Header() {
           <NavLinks mobileMenu={false} />
         </div> */}
         <div className="w-full flex justify-center">
-          <a href="/" className="text-xl leading-relaxed text-brand sm:-m-1.5">
-            <span className="sr-only">Marya Novik</span>
-            <Image className="inline-block" src={'/images/vegetables.png'} width={40} height={40} alt="logo"></Image>
-            <span className="ml-2">Marya Novik</span>
-          </a>
+          <div className="relative flex items-center">
+            <Image className="inline-block w-10 h-auto sm:w-16" src={'/images/logo.png'} width={66} height={66} alt="logo"></Image>
+            <div className="ml-2 flex flex-col items-center">
+              <span className="sr-only">Marya Novik</span>
+              <span className="text-lg leading-none font-content uppercase text-brand sm:text-2xl">Marya Novik</span>
+              <span className="text-base font-cursive text-accent sm:text-xl">Nutritionist</span>
+            </div>
+            <a className="absolute inset-0" href="" />
+          </div>
         </div>
         {/* <div className="flex md:hidden">
           <span className="sr-only">Open main menu</span>

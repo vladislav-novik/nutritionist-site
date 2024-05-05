@@ -12,15 +12,15 @@ export default function Footer() {
               href="#"
               className="flex items-center text-xl leading-relaxed text-brand-darkest"
             >
-              <span className="sr-only">MaryaNovikBrand</span>
+              <span className="sr-only">Marya Novik</span>
               <Image
                 className="inline-block"
-                src={"/images/vegetables.png"}
-                width={40}
-                height={40}
+                src={"/images/logo.png"}
+                width={36}
+                height={36}
                 alt="logo"
               ></Image>
-              <span>MaryaNovikBrand</span>
+              <span className="ml-2 font-content text-brand">Marya Novik</span>
             </a>
           </div>
 

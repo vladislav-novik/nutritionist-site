@@ -20,10 +20,8 @@ const component = () => {
         </div>
         <SectionContent animated delay={1}>
           <div
-            className="w-full grid grid-cols-1 gap-y-16
-              md:grid-cols-2 md:grid-rows-3 md:gap-x-4 md:gap-y-4
-              lg:grid-cols-10 lg:grid-rows-2
-              xl:gap-x-6 xl:gap-y-6"
+            className="w-full flex flex-col gap-y-16
+              md:flex-row md:gap-x-4"
           >
             <Features features={features} />
           </div>
