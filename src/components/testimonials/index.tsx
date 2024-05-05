@@ -1,10 +1,8 @@
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 import SectionTitle from "@/components/layout/section/Title";
-import SectionSubHeader from "@/components/layout/section/Subtitle";
 import SectionDescription from "@/components/layout/section/Description";
 import Section from "@/components/layout/section/Section";
 import { Testimonial as TestimonialType } from "@/types/testimonial";
-import Testimonial from './testimonial'
 import config from "@/app/app.config";
 
 type Props = {

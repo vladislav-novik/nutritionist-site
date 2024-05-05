@@ -39,7 +39,6 @@ const Component = ({ index }: Props) => {
             lg:rounded-[2.5rem]`
           )}
         >
-          <TextLine />
           {thirdStep ? (
             <motion.div ref={ref} className="relative" style={{ bottom }}>
               <Image

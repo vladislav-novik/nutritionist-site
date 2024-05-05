@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/images/vegetables.png')",
+        'hero-pattern': "url('/images/leaf.png')",
       },
       fontSize: {
         '3xl': '2rem',
@@ -24,13 +24,10 @@ module.exports = {
         'accent': '#3C8FC3',
 
         'brand': {
-          lightest: "#f0f9f0",
-          lighter: "#e6f9dd",
-          light: "#d7fec9",
           DEFAULT: "#4CC33C",
-          dark: "#006a42",
-          darker: "#004e2f",
-          darkest: "#003d24",
+          dark: "#1d4b17",
+          darker: "#21541a",
+          darkest: "#122e0e",
 
           "green-light": "#e3ffd8",
           green: "#D7FEC9",

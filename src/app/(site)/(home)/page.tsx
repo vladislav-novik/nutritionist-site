@@ -4,6 +4,7 @@ import ContactUs from '@/components/contact-me'
 import HowItWors from '@/components/how-it-works'
 import { getPostsForHome } from '@/sanity/lib/posts'
 import Hero from '@/components/hero'
+import About from '@/components/about'
 
 export default async function Page() {
   // const testimonials = await getTestimonials();
@@ -15,6 +16,7 @@ export default async function Page() {
       <main>
         <Hero />
         <Features />
+        <About />
         <HowItWors />
         <ContactUs />
         <HomePosts posts={posts} />

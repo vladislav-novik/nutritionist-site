@@ -1,6 +1,6 @@
 import Features from "./features";
 import SectionTitle from "@/components/layout/section/Title";
-import SectionSubtitle from "@/components/layout/section/Subtitle";
+import SectionDescription from "@/components/layout/section/Description";
 import config from "@/app/app.config";
 import Link from "../shared/Link";
 import Section from "../layout/section/Section";
@@ -11,19 +11,17 @@ const component = () => {
 
   return (
     <Section id="features" className="py-12 sm:py-24">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+      <div className="mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <SectionTitle animated>{dict.sections.features.title}</SectionTitle>
-          <SectionSubtitle animated delay={0.5}>
+          <SectionDescription>
             {dict.sections.features.content}
-          </SectionSubtitle>
+          </SectionDescription>
         </div>
         <SectionContent animated delay={1}>
           <div
-            className="w-full grid grid-cols-1 gap-y-16
-              md:grid-cols-2 md:grid-rows-3 md:gap-x-4 md:gap-y-4
-              lg:grid-cols-10 lg:grid-rows-2
-              xl:gap-x-6 xl:gap-y-6"
+            className="w-full flex flex-col gap-y-16
+              md:flex-row md:gap-x-4"
           >
             <Features features={features} />
           </div>
