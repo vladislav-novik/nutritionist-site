@@ -2,7 +2,7 @@
 // import Main from '@/components/home/Main'
 import HomePosts from '@/components/blog/latest-posts'
 import Testimonials from '@/components/testimonials'
-import Services from '@/components/features'
+import Features from '@/components/features'
 import ContactUs from '@/components/contact-me'
 import HowItWors from '@/components/how-it-works'
 // import PageAnimation from '@/components/Animation/PageAnimation'
@@ -21,7 +21,7 @@ export default async function Page() {
     // <PageAnimation>
       <main>
         <Hero />
-        <Services />
+        <Features />
         <About />
         <HowItWors />
         <ContactUs />
