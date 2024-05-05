@@ -1,9 +1,12 @@
 import Section from '@/components/layout/section/Section';
 import ContactDetails from './contact-details'
 import ContactImage from './contact-image'
+import config from "@/app/app.config";
 
 
 export default function ContactUs() {
+  const { dict } = config;
+
   return (
     <Section id="contacts" className="overflow-hidden mx-2 my-12 sm:my-24" animated>
       <div className="bg-brand-dark rounded-3xl grid grid-cols-1 max-w-7xl mx-auto pt-12
@@ -15,5 +18,5 @@ export default function ContactUs() {
         <ContactImage className="mt-12 lg:mt-0" />
       </div>
     </Section>
-  )
+  );
 }

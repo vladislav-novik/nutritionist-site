@@ -1,7 +1,5 @@
 import "./globals.css";
 import { PT_Sans, PT_Sans_Caption, Pacifico } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import classnames from "classnames";
 
@@ -32,8 +30,6 @@ type Props = {
 };
 
 export default function RootLayout({ children }: Props): React.JSX.Element {
-  const isDev = process.env.NODE_ENV === "development";
-
   return (
     <html
       lang="ru"
@@ -62,12 +58,6 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
           }}
         />
         {children}
-        {!isDev && (
-          <>
-            <SpeedInsights />
-            <Analytics />
-          </>
-        )}
       </body>
     </html>
   );

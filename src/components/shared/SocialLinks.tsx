@@ -34,6 +34,7 @@ type Props = {
 }
 
 const component = ({ withBorder = false, size = 16, layout = 'horizontal' }: Props) => (
+
   socials && socials.map(s => {
     let Component = s.icon;
 
@@ -43,6 +44,7 @@ const component = ({ withBorder = false, size = 16, layout = 'horizontal' }: Pro
          text-brand transition hover:text-brand-dark`,
          {'flex-col': layout === 'vertical', 'flex-row': layout === 'horizontal'},
         [{'w-8 h-8 rounded-full bg-transparent border-[1px] border-brand-darker hover:border-secondary': withBorder}])}>
+
         <Link href={s.href} target="_blank">
           <Component size={size} />
         </Link>
