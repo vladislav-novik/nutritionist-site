@@ -45,7 +45,7 @@ const component = ({ animationConfig, index, feature }: Props) => {
       )}
     >
       <Description index={index} title={title} content={content} />
-      <FeatureImage index={index} alt={title} />
+      {/* <FeatureImage index={index} alt={title} /> */}
     </div>
     // </motion.div>
   );

@@ -14,7 +14,7 @@ type Props = {
 const Component = ({ children, className, animated = false, delay = 0 }: Props) => {
   const margin = useResponsiveMargin();
 
-  const classes = classnames(className, `font-heading text-3xl font-semibold leading-none text-brand-dark 
+  const classes = classnames(className, `font-heading text-3xl font-semibold leading-none text-brand 
     md:text-4xl`)
 
   return !animated ? (

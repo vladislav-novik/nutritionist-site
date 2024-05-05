@@ -1,6 +1,6 @@
 import { PostOverview as PostOverviewType } from "@/types/post";
 import SectionTitle from "@/components/layout/section/Title";
-import SectionSubtitle from "@/components/layout/section/Subtitle";
+import SectionDescription from "@/components/layout/section/Description";
 import Section from "@/components/layout/section/Section";
 import SectionContent from "@/components/layout/section/Content"
 import config from "@/app/app.config";
@@ -19,9 +19,9 @@ const component = ({ posts }: Props) => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <SectionTitle animated>{dict.sections.blog.title}</SectionTitle>
-          <SectionSubtitle animated delay={0.5}>
+          <SectionDescription>
             {dict.sections.blog.content}
-          </SectionSubtitle>
+          </SectionDescription>
         </div>
 
         <SectionContent animated delay={1}>
