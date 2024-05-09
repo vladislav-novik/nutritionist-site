@@ -23,7 +23,7 @@ const Component = ({ children, className, animated = false, delay = 0 }: Props) 
 
   const classes = classnames(
     className,
-    "mt-6 font-cursive text-center text-lg leading-8 text-accent"
+    "font-cursive text-lg leading-8 text-accent"
   )
   return !animated ? (
     <p className={classes}>

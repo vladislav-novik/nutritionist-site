@@ -130,20 +130,17 @@ const featureImage = (index: number, alt: string) => {
 };
 
 const component = ({ index, alt }: Props) => (
-  <div
-    className={classnames(
-      { "mt-8": [0, 3].includes(index) },
-      { "my-auto": [1, 2].includes(index) },
-      { "xl:absolute xl:top-auto": [0, 1, 3].includes(index) },
-      { "xl:bottom-0": [0, 1, 3].includes(index) },
-      { "flex -mx-6 sm:mx-0 sm:my-0 xl:h-2/3 xl:inset-x-0": index === 0 },
-      { "xl:inset-x-0 xl:h-1/2 xl:flex xl:justify-center": index === 1 },
-      { "xl:relative xl:inset-0": index === 2 },
-      { "sm:mt-0 md:h-full xl:w-1/2 xl:right-4": index === 3 },
-      "sm:w-1/2 md:w-full"
-    )}
-  >
-    {featureImage(index, alt)}
+  <div className="md:min-h-[40rem]">
+    <div className="bg-slate-200 rounded-3xl">
+      <Image
+        className="w-full rounded-3xl h-auto object-cover"
+        alt="test"
+        src={"/images/hero/hero.png"}
+        width={800}
+        height={600}
+      />
+    </div>
+    
   </div>
 );
 

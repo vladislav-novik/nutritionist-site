@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
       lang="ru"
       className={`${heading.variable} ${content.variable} ${cursive.variable}`}
     >
-      <body className={classnames(content.className, 'bg-main')}>
+      <body className={classnames(content.className, 'bg-main text-brand-darker')}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=G-KKTXDLKGEV"
