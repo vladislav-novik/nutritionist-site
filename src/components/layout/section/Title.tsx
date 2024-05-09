@@ -14,11 +14,11 @@ type Props = {
 const Component = ({ children, className, animated = false, delay = 0 }: Props) => {
   const margin = useResponsiveMargin();
 
-  const classes = classnames(className, `font-heading text-3xl font-semibold leading-none text-brand 
-    md:text-4xl`)
+  const classes = `font-heading text-3xl font-semibold leading-none text-brand 
+    md:text-4xl`;
 
   return !animated ? (
-    <h2 className={classes}>
+    <h2 className={classnames(className, classes)}>
       {children}
     </h2>
   ) : (

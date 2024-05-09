@@ -18,7 +18,7 @@ const component = ({ posts }: Props) => {
     <Section id="articles" className="py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <SectionTitle animated>{dict.sections.blog.title}</SectionTitle>
+          <SectionTitle className="font-content">{dict.sections.blog.title}</SectionTitle>
           <SectionDescription>
             {dict.sections.blog.content}
           </SectionDescription>

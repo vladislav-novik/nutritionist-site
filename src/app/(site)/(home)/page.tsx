@@ -15,8 +15,8 @@ export default async function Page() {
   return (
       <main>
         <Hero />
-        <Features />
         <About />
+        <Features />
         <HowItWors />
         <ContactUs />
         <HomePosts posts={posts} />

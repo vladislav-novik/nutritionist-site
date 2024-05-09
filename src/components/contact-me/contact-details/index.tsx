@@ -16,7 +16,7 @@ const ContactComponent = () => {
 
   return (
     <>
-      <SectionTitle className="text-white text-2xl font-bold mb-2">
+      <SectionTitle className="text-white text-2xl font-bold font-content mb-2">
         {dict.sections.contactMe.title}
       </SectionTitle>
       <SectionDescription className="mt-6 text-white lg:text-left">
