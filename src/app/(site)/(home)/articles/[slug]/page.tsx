@@ -9,6 +9,8 @@ import ShareButtons from "@/components/blog/post-page/ShareButtons";
 // import PreviewProvider from "@/components/Preview/PreviewProvider";
 // import PreviewPost from "@/components/Preview/PreviewPost";
 
+export const runtime = 'edge'
+
 type Props = {
   params: {
     slug: string;
